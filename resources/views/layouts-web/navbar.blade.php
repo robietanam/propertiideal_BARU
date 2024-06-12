@@ -24,18 +24,18 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Beranda<br></a></li>
-            <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="/" class="active">Beranda<br></a></li>
+            <li class="dropdown"><a href="{{ route('pages.services') }}"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Properti Ideal</a></li>
+                <li><a href="#">Properti Solutions</a></li>
                 <li><a href="#">Dropdown 3</a></li>
                 <li><a href="#">Semua Layanan</a></li>
               </ul>
             </li>
-            <li><a href="#services">Jual</a></li>
-            <li><a href="#departments">Beli</a></li>
-            <li><a href="#doctors">Sewa</a></li>
+            <li><a href="{{ route('pages.sell') }}">Jual</a></li>
+            <li><a href="{{ route('pages.buy') }}">Beli</a></li>
+            <li><a href="{{ route('pages.rental') }}">Sewa</a></li>
             <li><a href="#contact">Kontak</a></li>
             <li><a href="#contact">Tentang</a></li>
           </ul>

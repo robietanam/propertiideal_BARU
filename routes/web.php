@@ -24,12 +24,14 @@ Route::get('/', function () {
 Route::get('/tentang', [WebPagesController::class, 'about'])->name('pages.about');
 Route::get('/jual', [WebPagesController::class, 'sell'])->name('pages.sell');
 Route::get('/beli', [WebPagesController::class, 'buy'])->name('pages.buy');
+Route::get('/sewa', [WebPagesController::class, 'rental'])->name('pages.rental');
 Route::get('/properti/{slug}', [WebPagesController::class, 'detail_properties'])->name('pages.detail.properties');
 Route::get('/kategori/properti', [WebPagesController::class, 'by_properties'])->name('pages.category.property');
 Route::get('/kategori/solusi', [WebPagesController::class, 'by_solutions'])->name('pages.category.solution');
 Route::get('/solusi/{slug}', [WebPagesController::class, 'detail_solutions'])->name('pages.detail.solution');
 Route::get('/hak-cipta', [WebPagesController::class, 'copyright'])->name('pages.copyright');
 Route::get('/keranjang', [WebPagesController::class, 'wishlist'])->name('pages.wishlist');
+Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.services');
 
 Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
 

@@ -19,6 +19,10 @@ class WebPagesController extends Controller
         // TODO
     }
 
+    public function rental(){
+        // TODO
+    }
+
     public function detail_properties(){
         // TODO
     }
@@ -48,6 +52,10 @@ class WebPagesController extends Controller
     }
 
     public function wishlist(){
+        // TODO
+    }
+
+    public function services(){
         // TODO
     }
 }
