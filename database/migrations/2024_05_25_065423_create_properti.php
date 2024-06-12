@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('properti', function (Blueprint $table) {
             $table->increments('id_properti');
             $table->string('nama_properti');
-            $table->string('slug_properti');
+            $table->string('slug');
             $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
             $table->string('harga', 20);

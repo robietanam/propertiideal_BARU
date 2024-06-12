@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('properti_ruko', function (Blueprint $table) {
             $table->increments('id_properti_ruko');
+            $table->string('slug');
             $table->string('luas_tanah', 30);
             $table->string('luas_bangunan', 30);
             $table->integer('properti_id')->unsigned();

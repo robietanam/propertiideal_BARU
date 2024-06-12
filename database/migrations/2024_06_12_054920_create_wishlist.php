@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('properti_rumah', function (Blueprint $table) {
-            $table->increments('id_properti_rumah');
-            $table->string('slug');
-            $table->string('luas_tanah', 30);
-            $table->string('luas_bangunan', 30);
-            $table->smallInteger('jumlah_garasi');
-            $table->smallInteger('jumlah_kamar_tidur');
-            $table->smallInteger('jumlah_kamar_mandi');
+        Schema::create('wishlist', function (Blueprint $table) {
+            $table->increments('id_wishlist');
+            $table->bigInteger('user_id')->unsigned();
             $table->integer('properti_id')->unsigned();
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('properti_id')->references('id_properti')->on('properti')->onDelete('cascade');
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('properti_rumah');
+        Schema::dropIfExists('wishlist');
     }
 };

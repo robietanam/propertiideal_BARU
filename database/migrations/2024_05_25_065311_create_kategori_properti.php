@@ -15,7 +15,7 @@ return new class extends Migration
             $table->smallIncrements('id_kategori_properti');
             $table->string('nama_kategori', 20);
             $table->text('deskripsi_kategori')->nullable();
-            $table->string('slug_kategori_properti');
+            $table->string('slug');
             $table->timestamps();
         });
     }
