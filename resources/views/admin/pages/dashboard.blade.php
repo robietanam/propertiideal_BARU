@@ -1,4 +1,4 @@
-@extends('layouts.master-dash')
+@extends('admin.layouts.master-dash')
 @section('page', 'Beranda')
 @section('menu', 'Dashboard')
 @section('content')

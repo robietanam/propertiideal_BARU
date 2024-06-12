@@ -13,7 +13,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Beranda</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark active bg-gradient-primary" href="../pages/dashboard.html">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'dashboard') active bg-gradient-primary @endif" href="/dashboard">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">dashboard</i>
           </div>
@@ -21,9 +21,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/dashboard.html">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'profile') active bg-gradient-primary @endif" href="/profile">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="material-icons opacity-10">apartment</i>
           </div>
           <span class="nav-link-text ms-1">Profile Perusahaan</span>
         </a>
@@ -34,7 +34,7 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="../pages/dashboard.html">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="material-icons opacity-10">recent_actors</i>
           </div>
           <span class="nav-link-text ms-1">Partner Terdaftar</span>
         </a>
@@ -42,7 +42,7 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="../pages/dashboard.html">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="material-icons opacity-10">shopping_cart_checkout</i>
           </div>
           <span class="nav-link-text ms-1">Jual Properti</span>
         </a>
@@ -54,7 +54,7 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="../pages/dashboard.html">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="material-icons opacity-10">view_list</i>
           </div>
           <span class="nav-link-text ms-1">Kategori Solution</span>
         </a>
@@ -62,7 +62,7 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="../pages/dashboard.html">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="material-icons opacity-10">dashboard</i>
+            <i class="material-icons opacity-10">view_kanban</i>
           </div>
           <span class="nav-link-text ms-1">Solusi Properti</span>
         </a>

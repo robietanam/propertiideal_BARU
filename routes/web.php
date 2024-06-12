@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
@@ -32,10 +33,7 @@ Route::get('/keranjang', [WebPagesController::class, 'wishlist'])->name('pages.w
 
 Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-    // return view('layouts.master-dash');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/admin', [DashboardAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
