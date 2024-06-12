@@ -18,7 +18,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
-                    <img src="img/icons/properti-ideal-logo-text.png" class="navbar-brand-img h-20" alt="main_logo">
+                    <img src="{{asset('/img')}}/icons/properti-ideal-logo-text.png" class="navbar-brand-img h-20" alt="main_logo">
                 </a>
             </div>
 

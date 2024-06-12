@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
@@ -35,7 +36,9 @@ Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.ser
 
 Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
 
-Route::get('/dashboard/admin', [DashboardAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/login', [AuthAdminController::class, 'index'])->name('admin.login');
+Route::post('/admin/login', [AuthAdminController::class, 'store'])->name('admin.postlogin');
+Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

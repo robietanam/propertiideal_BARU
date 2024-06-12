@@ -15,7 +15,7 @@ class AuthAdminController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return view('admin.auth.login');
+        return view('admin.pages.auth.login');
     }
 
     /**
