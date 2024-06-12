@@ -13,7 +13,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Beranda</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark @if(Request::segment(1) == 'dashboard') active bg-gradient-primary @endif" href="/dashboard">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'admin' && Request::segment(2) == 'dashboard') active bg-gradient-primary @endif" href="/admin/dashboard">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">dashboard</i>
           </div>
@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark @if(Request::segment(1) == 'profile') active bg-gradient-primary @endif" href="/profile">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'admin' && Request::segment(2) == 'profile') active bg-gradient-primary @endif" href="/admin/profile">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">apartment</i>
           </div>

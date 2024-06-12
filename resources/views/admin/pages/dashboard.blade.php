@@ -11,7 +11,7 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Partner Terdaftar</p>
-          <h4 class="mb-0">$53k</h4>
+          <h4 class="mb-0">{{$partner}} partner</h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">
@@ -25,7 +25,7 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Jual Properti</p>
-          <h4 class="mb-0">2,300</h4>
+          <h4 class="mb-0">{{$properti}} properti</h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">
@@ -39,7 +39,7 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Kategori Solution</p>
-          <h4 class="mb-0">3,462</h4>
+          <h4 class="mb-0">{{$kategori}} kategori</h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">
@@ -53,7 +53,7 @@
         </div>
         <div class="text-end pt-1">
           <p class="text-sm mb-0 text-capitalize">Solusi Properti</p>
-          <h4 class="mb-0">$103,430</h4>
+          <h4 class="mb-0">{{$solusi}} solusi</h4>
         </div>
       </div>
       <hr class="dark horizontal my-0">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
@@ -38,7 +39,10 @@ Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->
 
 Route::get('/admin/login', [AuthAdminController::class, 'index'])->name('admin.login');
 Route::post('/admin/login', [AuthAdminController::class, 'store'])->name('admin.postlogin');
-Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/profile', [DashboardAdminController::class, 'profile']);
+Route::post('/admin/profile/{id}', [DashboardAdminController::class, 'edit_profile']);
+Route::get('/admin/partner', [PartnerController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
