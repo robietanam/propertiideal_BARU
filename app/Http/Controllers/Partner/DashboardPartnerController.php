@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class DashboardPartnerController extends Controller
 {
-    //
+    public function index(){
+        // TODO
+    }
 }
