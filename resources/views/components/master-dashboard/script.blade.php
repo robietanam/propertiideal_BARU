@@ -1,0 +1,1 @@
+<script src="{{asset('/js')}}/material-dashboard.min.js?v=3.1.0"></script>

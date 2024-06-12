@@ -33,8 +33,8 @@ Route::get('/keranjang', [WebPagesController::class, 'wishlist'])->name('pages.w
 Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
 
 Route::get('/dashboard', function () {
-    // return view('dashboard');
-    return view('layouts.master-dash');
+    return view('dashboard');
+    // return view('layouts.master-dash');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("slug");
             $table->text('deskripsi_solution');
             $table->string("harga_solution", 100);
+            $table->enum('status', ['Tersedia', 'Tidak Tersedia', 'Nonaktif'])->default('Tersedia');
             $table->smallInteger("kategori_solution_id")->unsigned();
             $table->timestamps();
 

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->text('link_instagram');
             $table->text('link_website');
             $table->string('foto_ktp');
-            $table->bigInteger('user_id')->unsigned();;
+            $table->bigInteger('user_id')->unsigned();
+            $table->enum('status', ['Belum Verifikasi', 'Sudah Verfikasi', 'Nonaktif'])->default('Belum Verifikasi');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
