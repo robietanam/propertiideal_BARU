@@ -112,27 +112,6 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Top Bar
---------------------------------------------------------------*/
-#topbar {
-  background: #3fbbc0;
-  color: #fff;
-  height: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  z-index: 996;
-  transition: all 0.5s;
-}
-
-#topbar.topbar-scrolled {
-  top: -40px;
-}
-
-#topbar i {
-  padding-right: 6px;
-  line-height: 0;
-}
 
 /*--------------------------------------------------------------
 # Header
@@ -789,7 +768,7 @@ section {
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 35px;
-  border-radius: 25px;
+  border-radius: 10px;
   transition: 0.5s;
   margin-top: 10px;
   border: 2px solid #fff;

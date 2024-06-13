@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\Auth\AuthUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,13 +28,18 @@ Route::get('/tentang', [WebPagesController::class, 'about'])->name('pages.about'
 Route::get('/jual', [WebPagesController::class, 'sell'])->name('pages.sell');
 Route::get('/beli', [WebPagesController::class, 'buy'])->name('pages.buy');
 Route::get('/sewa', [WebPagesController::class, 'rental'])->name('pages.rental');
-Route::get('/properti/{slug}', [WebPagesController::class, 'detail_properties'])->name('pages.detail.properties');
+Route::get('/properti', [WebPagesController::class, 'detail_properties'])->name('pages.detail.properties');
 Route::get('/kategori/properti', [WebPagesController::class, 'by_properties'])->name('pages.category.property');
 Route::get('/kategori/solusi', [WebPagesController::class, 'by_solutions'])->name('pages.category.solution');
 Route::get('/solusi/{slug}', [WebPagesController::class, 'detail_solutions'])->name('pages.detail.solution');
 Route::get('/hak-cipta', [WebPagesController::class, 'copyright'])->name('pages.copyright');
 Route::get('/keranjang', [WebPagesController::class, 'wishlist'])->name('pages.wishlist');
 Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.services');
+Route::get('/kontak', [WebPagesController::class, 'contact'])->name('pages.contact');
+Route::get('/customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
+
+
+Route::get('partner/daftar', [WebPagesController::class, 'submission'])->name('pages.submission');
 
 Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
 

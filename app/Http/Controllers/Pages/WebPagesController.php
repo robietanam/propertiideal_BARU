@@ -8,35 +8,38 @@ use Illuminate\Http\Request;
 class WebPagesController extends Controller
 {
     public function about(){
-        // TODO
+        return view('client.pages.about.index');
+    }
+    public function contact(){
+        return view('client.pages.contact');
     }
 
     public function sell(){
-        // TODO
+        return view('client.pages.sell.index');
     }
 
     public function buy(){
-        // TODO
+        return view('client.pages.buy.index');
     }
 
     public function rental(){
-        // TODO
+        return view('client.pages.rental.index');
     }
 
     public function detail_properties(){
-        // TODO
+        return view('client.pages.buy.show');
     }
 
     public function by_properties(){
-        // TODO
+        return view('client.pages.services.propertiideal');
     }
 
     public function by_solutions(){
-        // TODO
+        return view('client.pages.services.index');
     }
 
     public function detail_solutions(){
-        // TODO
+        return view('client.pages.services.show');
     }
 
     public function by_categories_property($slug){
@@ -56,6 +59,10 @@ class WebPagesController extends Controller
     }
 
     public function services(){
-        // TODO
+        return view('client.pages.services.index');
+    }
+
+    public function submission(){
+        return view('client.pages.sell.show');
     }
 }
