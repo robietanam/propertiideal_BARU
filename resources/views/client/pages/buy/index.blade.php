@@ -110,39 +110,39 @@
             <div class="lg:col-span-2 p-4 bg-white mt-3" id="posted">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     @for ($i = 0; $i <= 10; $i++)
-                                    <a href="">
-                                        <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                                            <div class="flex items-end justify-end h-52 w-full bg-cover relative"
-                                                style="background-image: url('/uploads/')">
-                                            </div>
+                        <a href="">
+                            <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                                <div class="flex items-end justify-end h-52 w-full bg-cover relative"
+                                    style="background-image: url('/uploads/')">
+                                </div>
 
-                                            <div class="px-5 py-3">
-                                                <h3 class="text-gray-700 text-lg font-semibold">icha tai
-                                                </h3>
-                                                <div>
-                                                    <h2 class="text-primarybase text-lg font-semibold">Rp
-                                                        asdad
-                                                        <div class="flex gap-2">
-                                                            <div class="px-2 py-1 rounded-md bg-primarybase">
-                                                                <p class="text-white text-sm">
-                                                                    tai
-                                                                </p>
-                                                            </div>
-                                                            <div class="px-2 py-1 rounded-md bg-primarybase">
-                                                                <p class="text-white text-sm">p
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text-gray-700 text-md font-medium mt-4">ngawi
-                                                        </p>
-
-                                                        <p class="text-gray-700 text-sm font-medium mb-4">
-                                                            3 Terjual</p>
+                                <div class="px-5 py-3">
+                                    <h3 class="text-gray-700 text-lg font-semibold">icha tai
+                                    </h3>
+                                    <div>
+                                        <h2 class="text-primarybase text-lg font-semibold">Rp
+                                            asdad
+                                            <div class="flex gap-2">
+                                                <div class="px-2 py-1 rounded-md bg-primarybase">
+                                                    <p class="text-white text-sm">
+                                                        tai
+                                                    </p>
+                                                </div>
+                                                <div class="px-2 py-1 rounded-md bg-primarybase">
+                                                    <p class="text-white text-sm">p
+                                                    </p>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                @endfor
+                                            <p class="text-gray-700 text-md font-medium mt-4">ngawi
+                                            </p>
+
+                                            <p class="text-gray-700 text-sm font-medium mb-4">
+                                                3 Terjual</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    @endfor
                 </div>
             </div>
         </div>

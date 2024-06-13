@@ -10,7 +10,7 @@
         <div class="pl-4 md:pl-0">
             <a href="/" class="flex flex-wrap gap-x-2 items-center">
                 <img class="rounded-lg w-7 md:w-7" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt="efarm logo"/>
-                <p class="text-primarybase font-bold text-2xl">Properti Ideal</p>
+                <p class="text-primarybase font-bold text-xl">Properti Ideal</p>
             </a>
         </div>
 
@@ -36,26 +36,26 @@
                         class="absolute mt-3 transform bg-white rounded-md shadow-lg  min-w-max">
                         <ul class="flex flex-col ">
                             <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
-                                <a href="{{ route('pages.services') }}"
+                                <a href="{{ route('pages.services.propertiideal') }}"
                                     class="flex items-start px-4 py-2 space-x-2 rounded-md ">
                                     <div class="items-center flex">
                                         <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
                                             class="h-5 mr-4" />
                                         <span class="flex flex-col ">
-                                            <span class="text-textbase text-lg font-semibold ">Partner</span>
+                                            <span class="text-textbase text-lg font-semibold ">Properti Ideal</span>
                                             <span class="text-textbase text-sm ">Jual hewan ternak</span>
                                         </span>
                                     </div>
                                 </a>
                             </li>
                             <li class=" cursor-pointer hover:ring-1 hover:ring-primarybase">
-                                <a href="{{ route('pages.services') }}"
+                                <a href="{{ route('pages.services.propertisolution') }}"
                                     class="flex items-start px-4 py-2 space-x-2 ">
                                     <div class="items-center flex ">
                                         <img src="{{ asset('efarm-market.png') }}" alt="montaña"
                                             class="h-5 mr-4" />
                                         <span class="flex flex-col">
-                                            <span class="text-textbase text-lg font-semibold ">Market</span>
+                                            <span class="text-textbase text-lg font-semibold ">Properti Solution</span>
                                             <span class="text-textbase text-sm ">Beli hewan ternak</span>
                                         </span>
                                     </div>

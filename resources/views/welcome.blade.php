@@ -1,6 +1,6 @@
 @extends('includes.app')
 
-@section('title', 'eFarm | Jual beli hewan')
+@section('title', 'Properti Ideal | Jual beli properti')
 
 @section('content')
     <div class="relative h-[40rem] isolate overflow-hidden bg-primarybase">
