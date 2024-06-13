@@ -35,6 +35,8 @@ Route::get('/solusi/{slug}', [WebPagesController::class, 'detail_solutions'])->n
 Route::get('/hak-cipta', [WebPagesController::class, 'copyright'])->name('pages.copyright');
 Route::get('/keranjang', [WebPagesController::class, 'wishlist'])->name('pages.wishlist');
 Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.services');
+Route::get('/layanan/propertiideal', [WebPagesController::class, 'propertiideal'])->name('pages.services.propertiideal');
+Route::get('/layanan/propertisolution', [WebPagesController::class, 'propertisolution'])->name('pages.services.propertisolution');
 Route::get('/kontak', [WebPagesController::class, 'contact'])->name('pages.contact');
 Route::get('/customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
 
