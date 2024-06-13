@@ -32,7 +32,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Properti Ideal</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/dashboard.html">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'admin' && Request::segment(2) == 'partner') active bg-gradient-primary @endif" href="/admin/partner">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">recent_actors</i>
           </div>

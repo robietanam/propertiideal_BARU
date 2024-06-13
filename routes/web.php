@@ -43,6 +43,9 @@ Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name
 Route::get('/admin/profile', [DashboardAdminController::class, 'profile']);
 Route::post('/admin/profile/{id}', [DashboardAdminController::class, 'edit_profile']);
 Route::get('/admin/partner', [PartnerController::class, 'index']);
+Route::get('/admin/partner/verifikasi/{id}', [PartnerController::class, 'verifikasi']);
+Route::get('/admin/partner/nonaktif/{id}', [PartnerController::class, 'nonaktif']);
+Route::get('/admin/partner/aktif/{id}', [PartnerController::class, 'aktif']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
