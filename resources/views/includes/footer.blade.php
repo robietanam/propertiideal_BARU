@@ -122,7 +122,7 @@
         </div>
     </div>
     <div class="border-t border-white pt-8 sm:mt-20 lg:mt-24">
-        <p class="text-md flex justify-center items-center pb-6 leading-5 text-white">&copy; 2024 eFarm, Tbk.
+        <p class="text-md flex justify-center items-center pb-6 leading-5 text-white">&copy; 2024 PT. Properti Ideal
             All
             rights
             reserved.</p>

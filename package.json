@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "watch": "npx tailwindcss --watch -o ./resources/css/app.css"
+        "watch": "npx tailwindcss --watch -i ./resources/css/app.css -o ./resources/css/style.css "
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
