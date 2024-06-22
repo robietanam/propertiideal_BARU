@@ -1,4 +1,4 @@
-<div class="relative mt-44">
+{{-- <div class="relative mt-44">
     <div class="absolute top-0 left-0 right-0 container mx-auto z-10" style="transform: translateY(-50%);">
         <div class="relative flex flex-col bg-white w-full h-64 rounded-lg">
             <div class="bg-white rounded-4xl">
@@ -14,8 +14,8 @@
             </div>
         </div>
     </div>
-</div>
-<footer class="bg-primarybase relative pt-28" aria-labelledby="footer-heading">
+</div> --}}
+<footer class="bg-primarybase relative pt-64" aria-labelledby="footer-heading">
     <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">

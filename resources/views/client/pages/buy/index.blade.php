@@ -1,10 +1,9 @@
 @extends('includes.app')
 
-@section('title', 'eFarm | Terdekat')
+@section('title', 'Properti Ideal | Beli')
 
 @section('content')
-    <!-- component -->
-    <div class="h-screen overflow-y-scroll bg-white">
+    <div class="bg-white">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2 lg:gap-8">
             <div class="post p-5 lg:p-1 rounded-md">
                 <div class="lg:fixed lg:top-10 lg:pt-20 lg:left-14 lg:w-3/12 md:fixed md:w-5/12">
