@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('luas_tanah', 30);
             $table->string('luas_bangunan', 30);
             $table->integer('properti_id')->unsigned();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
 
             $table->foreign('properti_id')->references('id_properti')->on('properti')->onDelete('cascade');
         });

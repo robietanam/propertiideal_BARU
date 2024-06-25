@@ -17,7 +17,8 @@ return new class extends Migration
             $table->text("deskripsi_foto");
             $table->smallInteger('jenis_foto_id')->unsigned();
             $table->integer('properti_id')->unsigned();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
 
             $table->foreign('jenis_foto_id')->references('id_jenis_foto')->on('jenis_foto')->onDelete('cascade');
             $table->foreign('properti_id')->references('id_properti')->on('properti')->onDelete('cascade');

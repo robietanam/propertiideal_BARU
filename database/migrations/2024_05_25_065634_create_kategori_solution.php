@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('kategori_solution', function (Blueprint $table) {
             $table->smallIncrements("id_kategori_solution");
             $table->string("nama_kategori", 15);
-            $table->text('deskripsi_kategori');
+            $table->text('deskripsi_kategori')->nullable();
             $table->string("slug");
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

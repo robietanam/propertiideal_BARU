@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('jenis_foto', function (Blueprint $table) {
             $table->smallIncrements('id_jenis_foto');
             $table->string('jenis_foto', 30);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->increments('id_wishlist');
             $table->bigInteger('user_id')->unsigned();
             $table->integer('properti_id')->unsigned();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('properti_id')->references('id_properti')->on('properti')->onDelete('cascade');

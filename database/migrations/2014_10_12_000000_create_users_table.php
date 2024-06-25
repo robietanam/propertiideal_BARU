@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('foto_profile', );
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nama_kategori', 20);
             $table->text('deskripsi_kategori')->nullable();
             $table->string('slug');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 

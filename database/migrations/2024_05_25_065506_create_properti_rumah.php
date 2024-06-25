@@ -20,7 +20,8 @@ return new class extends Migration
             $table->smallInteger('jumlah_kamar_tidur');
             $table->smallInteger('jumlah_kamar_mandi');
             $table->integer('properti_id')->unsigned();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
 
             $table->foreign('properti_id')->references('id_properti')->on('properti')->onDelete('cascade');
         });

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\PropertiController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
@@ -49,13 +50,18 @@ Route::get('/admin/login', [AuthAdminController::class, 'index'])->name('admin.l
 Route::post('/admin/login', [AuthAdminController::class, 'store'])->name('admin.postlogin');
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/profile', [DashboardAdminController::class, 'profile']);
     Route::post('/admin/profile/{id}', [DashboardAdminController::class, 'edit_profile']);
+
     Route::get('/admin/partner', [PartnerController::class, 'index']);
     Route::get('/admin/partner/verifikasi/{id}', [PartnerController::class, 'verifikasi']);
     Route::get('/admin/partner/nonaktif/{id}', [PartnerController::class, 'nonaktif']);
     Route::get('/admin/partner/aktif/{id}', [PartnerController::class, 'aktif']);
+    Route::get('/admin/partner/detail/{id}', [PartnerController::class, 'show']);
+
+    Route::get('/admin/jual/{slug}', [PropertiController::class, 'index']);
 });
 
 Route::middleware('auth')->group(function () {

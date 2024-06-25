@@ -43,6 +43,4 @@ class PartnerController extends Controller
         DB::table('partner')->where('id_partner', $id)->update(['status'=>'Sudah Verifikasi']);
         return redirect('/admin/partner');
     }
-
-    
 }

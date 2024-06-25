@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string("email");
             $table->string("instagram");
             $table->text("privacy_policy");
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
     }
 
