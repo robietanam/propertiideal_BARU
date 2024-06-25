@@ -11,7 +11,7 @@
                     <div class="max-w-2xl text-center mx-auto">
                         <div class="mt-5 max-w-2xl">
                             <h1 class="block font-bold text-textbase text-5xl md:text-5xl lg:text-6xl">
-                                Menyediakan Layanan Sesuai Kebutuhan <span class="text-primarybase">Anda</span>
+                                Menyediakan Layanan<span class="text-primarybase"> Sesuai Kebutuhan Anda</span>
                             </h1>
                         </div>
 
