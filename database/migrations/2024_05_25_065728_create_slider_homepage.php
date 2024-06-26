@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('deskripsi_slider');
             $table->string("foto");
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

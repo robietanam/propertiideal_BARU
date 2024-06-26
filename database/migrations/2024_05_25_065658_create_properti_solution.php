@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('status', ['Tersedia', 'Tidak Tersedia', 'Nonaktif'])->default('Tersedia');
             $table->smallInteger("kategori_solution_id")->unsigned();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             $table->foreign("kategori_solution_id")->references("id_kategori_solution")->on("kategori_solution")->onDelete("cascade");
         });

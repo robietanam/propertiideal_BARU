@@ -21,7 +21,7 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->enum('status', ['Belum Verifikasi', 'Sudah Verifikasi', 'Nonaktif'])->default('Belum Verifikasi');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

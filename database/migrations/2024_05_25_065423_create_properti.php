@@ -25,7 +25,7 @@ return new class extends Migration
             $table->smallInteger('kategori_properti_id')->unsigned();
             $table->smallInteger('kategori_penjualan_id')->unsigned();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 
             $table->foreign('kategori_properti_id')->references('id_kategori_properti')->on('kategori_properti')->onDelete('cascade');
             $table->foreign('kategori_penjualan_id')->references('id_kategori_penjualan')->on('kategori_penjualan')->onDelete('cascade');

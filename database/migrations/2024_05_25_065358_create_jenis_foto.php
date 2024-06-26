@@ -15,7 +15,7 @@ return new class extends Migration
             $table->smallIncrements('id_jenis_foto');
             $table->string('jenis_foto', 30);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("instagram");
             $table->text("privacy_policy");
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
