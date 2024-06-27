@@ -53,7 +53,7 @@
                             </svg>
                             Jadi Partner
                         </a>
-                        <a href=""
+                        <a href="{{ route('pages.partner.login') }}"
                             class="flex flex-row items-center justify-center gap-x-2 rounded-lg border border-primarybase px-10 py-3 text-primarybase">Masuk
                             sebagai Partner →
                         </a>

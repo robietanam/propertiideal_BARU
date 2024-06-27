@@ -168,8 +168,8 @@
             </a>
             @else
             <div class="hidden md:visible md:flex">
-                <a href="{{ route('pages.services') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-primarybase font-semibold hover:bg-primarybase hover:text-white">Masuk</a>
-                <a href="{{ route('pages.services') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-white bg-primarybase font-semibold hover:bg-white hover:text-primarybase">Daftar</a>
+                <a href="{{ route('pages.customer.login') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-primarybase font-semibold hover:bg-primarybase hover:text-white">Masuk</a>
+                <a href="{{ route('pages.customer.register') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-white bg-primarybase font-semibold hover:bg-white hover:text-primarybase">Daftar</a>
             </div>
             @endif
         </div>

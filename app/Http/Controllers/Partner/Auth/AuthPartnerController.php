@@ -15,7 +15,7 @@ class AuthPartnerController extends Controller
             return redirect()->route('partner.dashboard');
         }
 
-        return view('partner.pages.auth.login');
+        return view('partner.auth.login');
     }
 
     /**

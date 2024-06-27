@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PropertiController;
 use App\Http\Controllers\Pages\WebPagesController;
+use App\Http\Controllers\Partner\Auth\AuthPartnerController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\Auth\AuthUserController;
@@ -39,7 +40,10 @@ Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.ser
 Route::get('/layanan/propertiideal', [WebPagesController::class, 'propertiideal'])->name('pages.services.propertiideal');
 Route::get('/layanan/propertisolution', [WebPagesController::class, 'propertisolution'])->name('pages.services.propertisolution');
 Route::get('/kontak', [WebPagesController::class, 'contact'])->name('pages.contact');
-Route::get('/customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
+Route::get('customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
+Route::get('customer/register', [AuthUserController::class, 'register'])->name('pages.customer.register');
+
+Route::get('partner/login', [AuthPartnerController::class, 'index'])->name('pages.partner.login');
 
 
 Route::get('partner/daftar', [WebPagesController::class, 'submission'])->name('pages.submission');
