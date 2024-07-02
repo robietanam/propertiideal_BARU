@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class AuthUserController extends Controller
 {
     public function index(){
-        if (Auth::check() && Auth::user()->role == 'Customer') {
-            return redirect()->back();
+        if (Auth::check()) {
+            return redirect('/');
         }
         return view('client.auth.login');
     }
@@ -30,7 +30,7 @@ class AuthUserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->role == 'Customer') {
-                return redirect()->back();
+                return redirect()->back()->with('status', 'Email atau password salah!');
             } else {
                 Auth::guard('web')->logout();
                 return redirect()->back()->with('status', 'Email atau password salah!');
