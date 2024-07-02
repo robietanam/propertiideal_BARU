@@ -38,7 +38,7 @@ class AuthPartnerController extends Controller
             }
         }
 
-        return redirect()->route('admin.partner')->with([
+        return redirect()->back()->with([
             'status' => 'Email atau password anda salah!',
         ]);
     }

@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{{ route('pages.services') }}"
+            <a href="{{ route('pages.customer.logout') }}"
                 class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-3 ml-4 hover:bg-gray-100 md:flex-wrap md:flex">
                 <div class="relative flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
