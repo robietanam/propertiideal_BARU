@@ -9,7 +9,8 @@
         class="bg-white border-b border-gray-200 text-white py-2 items-center flex flex-wrap px-4 md:px-10 md:flex md:items-center md:justify-between justify-start">
         <div class="pl-4 md:pl-0">
             <a href="/" class="flex flex-wrap gap-x-2 items-center">
-                <img class="rounded-lg w-7 md:w-7" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt="efarm logo"/>
+                <img class="rounded-lg w-7 md:w-7" src="{{ asset('img/icons/properti-ideal-icon.png') }}"
+                    alt="efarm logo" />
                 <p class="text-primarybase font-bold text-xl">Properti Ideal</p>
             </a>
         </div>
@@ -52,8 +53,7 @@
                                 <a href="{{ route('pages.services.propertisolution') }}"
                                     class="flex items-start px-4 py-2 space-x-2 ">
                                     <div class="items-center flex ">
-                                        <img src="{{ asset('efarm-market.png') }}" alt="montaña"
-                                            class="h-5 mr-4" />
+                                        <img src="{{ asset('efarm-market.png') }}" alt="montaña" class="h-5 mr-4" />
                                         <span class="flex flex-col">
                                             <span class="text-textbase text-lg font-semibold ">Properti Solution</span>
                                             <span class="text-textbase text-sm ">Beli hewan ternak</span>
@@ -66,8 +66,7 @@
                             <div
                                 class="p-4 text-lg font-medium border-t  rounded-b-md cursor-pointer hover:ring-1 hover:ring-primarybase">
                                 <div class="items-center flex">
-                                    <img src="{{ asset('efarm-layanan.png') }}" alt="montaña"
-                                        class="h-5 mr-4" />
+                                    <img src="{{ asset('efarm-layanan.png') }}" alt="montaña" class="h-5 mr-4" />
                                     <span class="flex flex-col">
                                         <span class="text-textbase text-lg font-semibold ">Semua
                                             layanan</span>
@@ -95,82 +94,86 @@
         </div>
         <div class="flex flex-wrap">
             @if (Auth::check() && Auth::user()->role == 'Customer')
-            <div class="hidden md:visible sm:visible md:flex ">
-                <div x-data="{ isOpen: false }">
-                    <button @click="isOpen = !isOpen"
-                        class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 ring-1 ring-primarybase">
-                        <div class="relative">
-                            <img class="relative inline-block h-6 w-6 rounded-full object-cover object-center"
-                                alt="Image placeholder"
-                                src="/uploads/{{ auth()->user() }}" />
-                        </div>
-                        <span class="font-semibold whitespace-nowrap text-textbase">
-                            {{ auth()->user()->nama }}
-                        </span>
-                    </button>
-
-                    <div @click.away="isOpen = false" @keydown.escape="isOpen = false"
-                        x-show.transition.opacity="isOpen"
-                        class="absolute mt-3 transform bg-white rounded-md shadow-lg  min-w-max">
-                        <ul class="flex flex-col ">
-                            <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
-                                <a href="{{ route('pages.services') }}"
-                                    class="flex items-start px-4 py-2 space-x-2 rounded-md ">
-                                    <div class="items-center flex">
-                                        <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
-                                            class="h-5 mr-4" />
-                                        <span class="flex flex-col ">
-                                            <span class="text-textbase text-lg font-semibold ">Akun</span>
-                                            <span class="text-textbase text-sm ">Kelola akun</span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class=" cursor-pointer hover:ring-1 hover:ring-primarybase">
-                                <a href="{{ route('pages.services') }}"
-                                    class="flex items-start px-4 py-2 space-x-2 ">
-                                    <div class="items-center flex ">
-                                        <img src="{{ asset('efarm-market.png') }}" alt="montaña"
-                                            class="h-5 mr-4" />
-                                        <span class="flex flex-col">
-                                            <span class="text-textbase text-lg font-semibold ">Lacak</span>
-                                            <span class="text-textbase text-sm ">Lacak orderan</span>
-                                        </span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                        <a href="{{ route('pages.services') }}" class="">
-                            <div
-                                class="p-4 text-lg font-medium border-t  rounded-b-md cursor-pointer hover:ring-1 hover:ring-primarybase">
-                                <div class="items-center flex">
-                                    <img src="{{ asset('efarm-layanan.png') }}" alt="montaña"
-                                        class="h-5 mr-4" />
-                                    <span class="flex flex-col">
-                                        <span class="text-textbase text-lg font-semibold ">Dashboard</span>
-                                    </span>
-                                </div>
+                <div class="hidden md:visible sm:visible md:flex ">
+                    <div x-data="{ isOpen: false }">
+                        <button @click="isOpen = !isOpen"
+                            class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 ring-1 ring-primarybase">
+                            <div class="relative">
+                                <img class="relative inline-block h-6 w-6 rounded-full object-cover object-center"
+                                    alt="Image placeholder" src="/uploads/{{ auth()->user() }}" />
                             </div>
-                        </a>
+                            <span class="font-semibold whitespace-nowrap text-textbase">
+                                {{ auth()->user()->nama }}
+                            </span>
+                        </button>
+
+                        <div @click.away="isOpen = false" @keydown.escape="isOpen = false"
+                            x-show.transition.opacity="isOpen"
+                            class="absolute mt-3 transform bg-white rounded-md shadow-lg  min-w-max">
+                            <ul class="flex flex-col ">
+                                <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
+                                    <a href="{{ route('profile.customer') }}"
+                                        class="flex items-start px-4 py-2 space-x-2 rounded-md ">
+                                        <div class="items-center flex">
+                                            <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
+                                                class="h-5 mr-4" />
+                                            <span class="flex flex-col ">
+                                                <span class="text-textbase text-lg font-semibold ">Akun</span>
+                                                <span class="text-textbase text-sm ">Kelola akun</span>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
+                                    <a href="{{ route('profile.customer.wishlist') }}"
+                                        class="flex items-start px-4 py-2 space-x-2 rounded-md ">
+                                        <div class="items-center flex">
+                                            <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
+                                                class="h-5 mr-4" />
+                                            <span class="flex flex-col ">
+                                                <span class="text-textbase text-lg font-semibold ">Wishlist</span>
+                                                <span class="text-textbase text-sm ">Kelola wishlist</span>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="{{ route('pages.customer.logout') }}" class="">
+                                <div
+                                    class="p-4 text-lg font-medium border-t rounded-b-md cursor-pointer hover:ring-1 hover:ring-primarybase">
+                                    <div class="items-center flex gap-x-3 justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#444444">
+                                            <path
+                                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                                        </svg>
+                                        <span class="flex flex-col">
+                                            <span class="text-textbase text-lg font-semibold ">Logout</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <a href="{{ route('pages.customer.logout') }}"
-                class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-3 ml-4 hover:bg-gray-100 md:flex-wrap md:flex">
-                <div class="relative flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                        width="24">
-                        <path
-                            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z" />
-                    </svg>
-                    <span class="font-semibold text-textbase ml-2 hidden md:flex md:visible">Logout</span>
-                </div>
-            </a>
+                <a href="{{ route('pages.customer.logout') }}"
+                    class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-3 ml-4 hover:bg-gray-100 md:flex-wrap md:flex">
+                    <div class="relative flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                            width="24">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z" />
+                        </svg>
+                        <span class="font-semibold text-textbase ml-2 hidden md:flex md:visible">Logout</span>
+                    </div>
+                </a>
             @else
-            <div class="hidden md:visible md:flex">
-                <a href="{{ route('pages.customer.login') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-primarybase font-semibold hover:bg-primarybase hover:text-white">Masuk</a>
-                <a href="{{ route('pages.customer.register') }}" class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-white bg-primarybase font-semibold hover:bg-white hover:text-primarybase">Daftar</a>
-            </div>
+                <div class="hidden md:visible md:flex">
+                    <a href="{{ route('pages.customer.login') }}"
+                        class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-primarybase font-semibold hover:bg-primarybase hover:text-white">Masuk</a>
+                    <a href="{{ route('pages.customer.register') }}"
+                        class="px-7 mx-2 py-2 ring-1 rounded-md ring-primarybase text-sm text-white bg-primarybase font-semibold hover:bg-white hover:text-primarybase">Daftar</a>
+                </div>
             @endif
         </div>
 
@@ -178,30 +181,4 @@
             <i class="fas fa-bars text-gray-500 text-lg"></i>
         </button>
     </div>
-
-    {{-- <div id="navBar"
-        class="bg-white text-white border-b hidden border-gray-300 py-2 flex flex-wrap items-center justify-center md:flex md:items-center md:justify-center">
-        <div class="flex justify-center md:w-auto">
-            <div class="md:visible">
-                @php
-                    $categoryproduct = App\Models\CategoryProduct::all();
-                @endphp
-                @foreach ($categoryproduct as $category)
-                    <a href="{{ route('homepage.market.category', $category->slug_kategori_product) }}"
-                        class="text-sm
-                        px-1 font-medium text-textbase md:text-lg md:font-medium
-                        md:ml-6">{{ $category->nama_kategori_product }}</a>
-                @endforeach
-                @php
-                    $categorylivestock = App\Models\CategoryLivestock::all();
-                @endphp
-                @foreach ($categorylivestock as $categorylivestocks)
-                    <a href="{{ route('homepage.market.farm', $categorylivestocks->slug) }}"
-                        class="text-sm
-                        px-1 font-medium text-textbase md:text-lg md:font-medium
-                        md:ml-6">{{ $categorylivestocks->nama_kategori_hewan }}</a>
-                @endforeach
-            </div>
-        </div>
-    </div> --}}
 </nav>
