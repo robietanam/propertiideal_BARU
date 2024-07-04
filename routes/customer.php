@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\User\Auth\AuthUserController;
 use App\Http\Controllers\User\ProfileUserController;
 use App\Http\Controllers\User\WishlistUserController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
+Route::post('customer/login/store', [AuthUserController::class, 'login'])->name('pages.customer.login.store');
+Route::get('customer/register', [AuthUserController::class, 'register'])->name('pages.customer.register');
+Route::get('customer/logout', [AuthUserController::class, 'logout'])->name('pages.customer.logout');
 
 Route::middleware(['auth', 'role:Customer'])->group(function () {
     Route::get('/profile/user', [ProfileUserController::class,'index'])->name('profile.customer');

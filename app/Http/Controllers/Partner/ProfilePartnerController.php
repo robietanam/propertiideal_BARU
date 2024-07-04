@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SellPartnerController extends Controller
+class ProfilePartnerController extends Controller
 {
-    //
+    public function index(){
+
+    }
 }

@@ -41,18 +41,8 @@ Route::get('/layanan', [WebPagesController::class, 'services'])->name('pages.ser
 Route::get('/layanan/propertiideal', [WebPagesController::class, 'propertiideal'])->name('pages.services.propertiideal');
 Route::get('/layanan/propertisolution', [WebPagesController::class, 'propertisolution'])->name('pages.services.propertisolution');
 Route::get('/kontak', [WebPagesController::class, 'contact'])->name('pages.contact');
-Route::get('customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
-Route::post('customer/login/store', [AuthUserController::class, 'login'])->name('pages.customer.login.store');
-Route::get('customer/register', [AuthUserController::class, 'register'])->name('pages.customer.register');
-Route::get('customer/logout', [AuthUserController::class, 'logout'])->name('pages.customer.logout');
 
-Route::get('partner/login', [AuthPartnerController::class, 'index'])->name('pages.partner.login');
-Route::post('partner/login', [AuthPartnerController::class, 'store'])->name('pages.partner.login.store');
-
-
-Route::get('partner/daftar', [WebPagesController::class, 'submission'])->name('pages.submission');
-
-Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');
+Route::get('daftar-partner', [WebPagesController::class, 'submission'])->name('pages.submission');
 
 Route::get('/admin/login', [AuthAdminController::class, 'index'])->name('admin.login');
 Route::post('/admin/login', [AuthAdminController::class, 'store'])->name('admin.postlogin');
@@ -80,3 +70,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 require __DIR__.'/customer.php';
+require __DIR__.'/partner.php';

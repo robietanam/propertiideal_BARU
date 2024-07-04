@@ -11,10 +11,6 @@ class AuthPartnerController extends Controller
 {
     public function index()
     {
-        if (Auth::check() && Auth::user()->role == 'Admin') {
-            return redirect()->route('partner.dashboard');
-        }
-
         return view('partner.auth.login');
     }
 
@@ -31,7 +27,7 @@ class AuthPartnerController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->role == 'Partner') {
-                return redirect()->route('partner.dashboard');
+                return redirect()->route('pages.dashboard.partner');
             } else {
                 Auth::guard('web')->logout();
                 return redirect()->route('partner.login')->with('status', 'Anda bukan partner!');

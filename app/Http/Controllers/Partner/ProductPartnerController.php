@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardPartnerController extends Controller
+class ProductPartnerController extends Controller
 {
     public function index(){
-        return view('partner.dashboard.index');
+
     }
 }

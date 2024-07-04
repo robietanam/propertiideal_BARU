@@ -49,7 +49,7 @@ class AuthUserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->back();
+        return redirect('/');
     }
 
     public function registered(Request $requst){
