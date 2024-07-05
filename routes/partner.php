@@ -29,6 +29,18 @@ Route::middleware(['auth', 'role:Partner'])->group(function () {
     Route::get('/dashboard/properti/rumah', [RumahPartnerController::class, 'index'])->name('pages.dashboard.properti.rumah');
     Route::get('/dashboard/properti/tanah', [TanahPartnerController::class, 'index'])->name('pages.dashboard.properti.tanah');
 
+    Route::get('/dashboard/properti/apartement/create', [ApartementPartnerController::class, 'create'])->name('pages.dashboard.properti.apartement.create');
+    Route::get('/dashboard/properti/kos/create', [KosPartnerController::class, 'create'])->name('pages.dashboard.properti.kos.create');
+    Route::get('/dashboard/properti/ruko/create', [RukoPartnerController::class, 'create'])->name('pages.dashboard.properti.ruko.create');
+    Route::get('/dashboard/properti/rumah/create', [RumahPartnerController::class, 'create'])->name('pages.dashboard.properti.rumah.create');
+    Route::get('/dashboard/properti/tanah/create', [TanahPartnerController::class, 'create'])->name('pages.dashboard.properti.tanah.create');
+
+    Route::post('/dashboard/properti/apartement/store', [ApartementPartnerController::class, 'store'])->name('pages.dashboard.properti.apartement.store');
+    Route::post('/dashboard/properti/kos/store', [KosPartnerController::class, 'store'])->name('pages.dashboard.properti.kos.store');
+    Route::post('/dashboard/properti/ruko/store', [RukoPartnerController::class, 'store'])->name('pages.dashboard.properti.ruko.store');
+    Route::post('/dashboard/properti/rumah/store', [RumahPartnerController::class, 'store'])->name('pages.dashboard.properti.rumah.store');
+    Route::post('/dashboard/properti/tanah/store', [TanahPartnerController::class, 'store'])->name('pages.dashboard.properti.tanah.store');
+
     Route::get('/dashboard/properti/apartement/{slug}', [ApartementPartnerController::class, 'update'])->name('pages.dashboard.properti.apartement.update');
     Route::get('/dashboard/properti/kos/{slug}', [KosPartnerController::class, 'update'])->name('pages.dashboard.properti.kos.update');
     Route::get('/dashboard/properti/ruko/{slug}', [RukoPartnerController::class, 'update'])->name('pages.dashboard.properti.ruko.update');
@@ -40,12 +52,6 @@ Route::middleware(['auth', 'role:Partner'])->group(function () {
     Route::put('/dashboard/properti/ruko/edit/{slug}', [RukoPartnerController::class, 'edit'])->name('pages.dashboard.properti.ruko.edit');
     Route::put('/dashboard/properti/rumah/edit/{slug}', [RumahPartnerController::class, 'edit'])->name('pages.dashboard.properti.rumah.edit');
     Route::put('/dashboard/properti/tanah/edit/{slug}', [TanahPartnerController::class, 'edit'])->name('pages.dashboard.properti.tanah.edit');
-
-    Route::post('/dashboard/properti/apartement/store', [ApartementPartnerController::class, 'store'])->name('pages.dashboard.properti.apartement.store');
-    Route::post('/dashboard/properti/kos/store', [KosPartnerController::class, 'store'])->name('pages.dashboard.properti.kos.store');
-    Route::post('/dashboard/properti/ruko/store', [RukoPartnerController::class, 'store'])->name('pages.dashboard.properti.ruko.store');
-    Route::post('/dashboard/properti/rumah/store', [RumahPartnerController::class, 'store'])->name('pages.dashboard.properti.rumah.store');
-    Route::post('/dashboard/properti/tanah/store', [TanahPartnerController::class, 'store'])->name('pages.dashboard.properti.tanah.store');
 
     Route::delete('/dashboard/properti/apartement/{slug}', [ApartementPartnerController::class, 'destroy'])->name('pages.dashboard.properti.apartement.destroy');
     Route::delete('/dashboard/properti/kos/destroy/{slug}', [KosPartnerController::class, 'destory'])->name('pages.dashboard.properti.kos.destroy');
