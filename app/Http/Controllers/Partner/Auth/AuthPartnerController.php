@@ -38,4 +38,14 @@ class AuthPartnerController extends Controller
             'status' => 'Email atau password anda salah!',
         ]);
     }
+
+    public function logout(Request $request){
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('pages.partner.login');
+    }
 }

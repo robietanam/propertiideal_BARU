@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     */     
+     */
     public function run(): void
     {
         // Seeder User
@@ -85,39 +85,50 @@ class DatabaseSeeder extends Seeder
         // Seeder Kategori Properti
 
         DB::table('kategori_properti')->insert([
-            'nama_kategori' => 'Rumah', 
+            'nama_kategori' => 'Rumah',
             'slug' => 'rumah'
         ]);
         DB::table('kategori_properti')->insert([
-            'nama_kategori' => 'Kos', 
+            'nama_kategori' => 'Kos',
             'slug' => 'kos'
         ]);
         DB::table('kategori_properti')->insert([
-            'nama_kategori' => 'Tanah', 
+            'nama_kategori' => 'Tanah',
             'slug' => 'tanah'
         ]);
         DB::table('kategori_properti')->insert([
-            'nama_kategori' => 'Apartement', 
+            'nama_kategori' => 'Apartement',
             'slug' => 'apartement'
         ]);
         DB::table('kategori_properti')->insert([
-            'nama_kategori' => 'Ruko', 
+            'nama_kategori' => 'Ruko',
             'slug' => 'ruko'
         ]);
 
         // Seeder Kategori Penjualan
 
         DB::table('kategori_penjualan')->insert([
-            'nama_kategori' => 'Jual', 
+            'nama_kategori' => 'Jual',
             'slug' => 'jual'
         ]);
         DB::table('kategori_penjualan')->insert([
-            'nama_kategori' => 'Sewa', 
+            'nama_kategori' => 'Sewa',
             'slug' => 'sewa'
         ]);
 
-        // Seeder 
-
+        // Seeder jenis foto
+        DB::table('jenis_Foto')->insert([
+            'jenis_foto' => 'Depan'
+        ]);
+        DB::table('jenis_Foto')->insert([
+            'jenis_foto' => 'Samping Kiri'
+        ]);
+        DB::table('jenis_Foto')->insert([
+            'jenis_foto' => 'Samping Kanan'
+        ]);
+        DB::table('jenis_Foto')->insert([
+            'jenis_foto' => 'Belakang'
+        ]);
 
     }
 }
