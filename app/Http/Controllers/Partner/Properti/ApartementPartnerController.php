@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Partner\Properti;
 
 use App\Http\Controllers\Controller;
-use App\Models\FotoSolution;
+use App\Models\FotoProperti;
 use App\Models\KategoriPenjualan;
 use App\Models\Partner;
 use App\Models\Properti;
@@ -16,6 +16,8 @@ class ApartementPartnerController extends Controller
 {
     public function index()
     {
+        $properti = Properti::with('properti_apartement', 'foto_properti')->get();
+        // dd($properti);
         return view('partner.dashboard.properti.apartement.index');
     }
 
@@ -117,12 +119,9 @@ class ApartementPartnerController extends Controller
                 $inputPropertiApartment['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
                 $inputPropertiApartment['properti_id'] = $properti->id;
 
-                // dd($inputPropertiApartment);
-
                 $propertiApartmen = PropertiApartement::create($inputPropertiApartment);
 
                 if ($propertiApartmen) {
-                    // dd($propertiApartmen);
                     $photos = [
                         'foto_depan' => 'Depan',
                         'foto_samping_kiri' => 'Samping Kiri',
@@ -134,15 +133,15 @@ class ApartementPartnerController extends Controller
                         if ($request->hasFile($photoField)) {
                             $image = $request->file($photoField);
                             $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                            $destinationPath = public_path('/apartement');
+                            $destinationPath = public_path('/upload/apartement');
                             $image->move($destinationPath, $filename);
 
-                            $imagePath = 'public/apartement/' . $filename;
+                            $imagePath = 'public/upload/apartement/' . $filename;
 
                             $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
 
-                            FotoSolution::create([
-                                'foto_solution' => $imagePath,
+                            FotoProperti::create([
+                                'foto_properti' => $imagePath,
                                 'deskripsi_foto' => $photoType,
                                 'jenis_foto_id' => $jenisFoto->id_jenis_foto,
                                 'properti_id' => $properti->id,

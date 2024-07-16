@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('foto_properti', function (Blueprint $table) {
             $table->increments('id_foto_properti');
+            $table->string("foto_properti", 100);
             $table->text('deskripsi_foto')->nullable();
             $table->smallInteger('jenis_foto_id')->unsigned();
             $table->integer('properti_id')->unsigned();

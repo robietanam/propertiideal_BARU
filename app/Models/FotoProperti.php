@@ -12,6 +12,7 @@ class FotoProperti extends Model
     protected $table = 'foto_properti';
 
     protected $fillable = [
+        'foto_properti',
         'deskripsi_foto',
         'jenis_foto_id',
         'properti_id',

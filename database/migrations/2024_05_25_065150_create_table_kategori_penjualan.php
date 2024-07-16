@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kategori_penjualan', function (Blueprint $table) {
             $table->smallIncrements('id_kategori_penjualan');
-            $table->string('nama_kategori', 10);
+            $table->string('nama_kategori');
             $table->text('deskripsi_kategori')->nullable();
             $table->string('slug');
             $table->timestamp('created_at')->useCurrent();
