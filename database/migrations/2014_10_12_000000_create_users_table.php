@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['Customer', 'Admin', 'Partner'])->default('Customer');
-            $table->string('foto_profile', );
+            $table->string('foto_profile')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamp('created_at')->useCurrent();

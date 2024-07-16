@@ -117,16 +117,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seeder jenis foto
-        DB::table('jenis_Foto')->insert([
+        DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Depan'
         ]);
-        DB::table('jenis_Foto')->insert([
+        DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Samping Kiri'
         ]);
-        DB::table('jenis_Foto')->insert([
+        DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Samping Kanan'
         ]);
-        DB::table('jenis_Foto')->insert([
+        DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Belakang'
         ]);
 
