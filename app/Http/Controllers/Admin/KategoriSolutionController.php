@@ -15,7 +15,7 @@ class KategoriSolutionController extends Controller
     public function index()
     {
         $this->param['solusi'] = DB::table('kategori_solution')->get();
-        return view('admin.pages.solution.index', $this->param);
+        return view('admin.pages.kategori_solution.index', $this->param);
     }
 
     /**
@@ -23,7 +23,7 @@ class KategoriSolutionController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.solution.add');
+        return view('admin.pages.kategori_solution.add');
     }
 
     /**
@@ -31,7 +31,7 @@ class KategoriSolutionController extends Controller
      */
     public function store(Request $request)
     {
-        $slug = strtolower($request->nama_kategori);
+        $slug = strtolower($request->nama);
         $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
         $slug = preg_replace('/[\s-]+/', '-', $slug);
         $slug = trim($slug, '-');
@@ -61,7 +61,7 @@ class KategoriSolutionController extends Controller
         $this->param['solusi'] = DB::table('kategori_solution')
                                     ->where('id_kategori_solution', $id)
                                     ->first();
-        return view('admin.pages.solution.edit', $this->param);
+        return view('admin.pages.kategori_solution.edit', $this->param);
     }
 
     /**

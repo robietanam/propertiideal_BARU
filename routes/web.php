@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\KategoriSolutionController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PropertiController;
+use App\Http\Controllers\Admin\PropertiSolutionController;
 use App\Http\Controllers\Pages\WebPagesController;
 use App\Http\Controllers\Partner\Auth\AuthPartnerController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
@@ -63,6 +64,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/jual/{slug}', [PropertiController::class, 'index']);
 
     Route::resource('/kategori-solution', KategoriSolutionController::class);
+    Route::resource('/properti-solution', PropertiSolutionController::class);
+    Route::get('/properti-solution/tersedia/{id}', [PropertiSolutionController::class, 'tersedia']);
+    Route::get('/properti-solution/nonaktif/{id}', [PropertiSolutionController::class, 'nonaktif']);
+    Route::get('/properti-solution/tidaktersedia/{id}', [PropertiSolutionController::class, 'tidaktersedia']);
+
 });
 
 Route::middleware('auth')->group(function () {
