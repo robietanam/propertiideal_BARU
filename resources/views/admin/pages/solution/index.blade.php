@@ -2,6 +2,7 @@
 @section('page', 'Properti Solution')
 @section('menu', 'Kategori Solution')
 @push('style')
+<link id="pagestyle" href="{{ asset('/css') }}/dataTables.bootstrap5.css" rel="stylesheet" />
 <style>
     /* Style The Dropdown Button */
     .dropbtn {
@@ -64,7 +65,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Solution</th>
-                        <th>Deskripsi Solution</th>
                         <th>Harga Solution</th>
                         <th>Status</th>
                         <th>Kategori Solution</th>
@@ -80,7 +80,6 @@
                         <tr>
                             <td class="pt-3">{{ $no++ }}</td>
                             <td class="pt-3">{{ $item->nama_solution }}</td>
-                            <td class="pt-3">{{ $item->deskripsi_solution }}</td>
                             <td class="pt-3">{{ 'Rp ' . number_format($item->harga_solution, 2, ',', '.') }}</td>
                             <td class="pt-3">{{ $item->status }}</td>
                             <td class="pt-3">{{ $item->nama_kategori }}</td>
@@ -104,18 +103,12 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="/properti-solution/{{ $item->id_properti_solution }}/edit" id="verifikasi">
-                                            <button class="btn btn-warning">edit</button>
-                                        </a>
+                                <div class="dropdown">
+                                    <button class="btn btn-warning">Klik Disini</button>
+                                    <div class="dropdown-content">
+                                        <a href="/properti-solution/{{ $item->id_properti_solution }}/edit">Edit</a>
+                                        <a href="/properti-solution/{{ $item->id_properti_solution }}">Detail</a>
                                     </div>
-
-                                    {{-- <div class="col">
-                                        <a href="/admin/partner/nonaktif/{{ $item->id_partner }}" id="nonaktif">
-                                            <button class="btn btn-danger">Hapus</button>
-                                        </a>
-                                    </div> --}}
                                 </div>
                             </td>
                         </tr>

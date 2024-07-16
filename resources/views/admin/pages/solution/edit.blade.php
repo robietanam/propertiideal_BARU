@@ -1,6 +1,6 @@
 @extends('admin.layouts.master-dash')
 @section('page', 'Properti Solution')
-@section('menu', 'Tambah Properti Solution')
+@section('menu', 'Edit Properti Solution')
 @push('style')
 @endpush
 @section('content')
@@ -15,7 +15,7 @@
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Deskripsi Kategori</label>
-                    <textarea name="deskripsi" id="" cols="30" rows="5" class="form-control w-full">{{$solusi->deskripsi_solution}}</textarea>
+                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="ckeditor form-control w-full">{{$solusi->deskripsi_solution}}</textarea>
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Harga Properti Solution</label>
@@ -31,11 +31,14 @@
                     </select>
                 </div>
                 <button class="btn btn-success" type="submit">
-                    Tambah Data
+                    Edit Data
                 </button>
             </form>
         </div>
     </div>
 @endsection
 @push('script')
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
 @endpush

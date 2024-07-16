@@ -14,7 +14,7 @@
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Deskripsi Kategori</label>
-                    <textarea name="deskripsi" id="" cols="30" rows="5" class="form-control w-full"></textarea>
+                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="form-control w-full ckeditor"></textarea>
                 </div>
                 <button class="btn btn-success" type="submit">
                     Tambah Data
@@ -24,4 +24,5 @@
     </div>
 @endsection
 @push('script')
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
 @endpush

@@ -27,7 +27,7 @@
                         <tr>
                             <td class="pt-3">{{ $no++ }}</td>
                             <td class="pt-3">{{ $item->nama_kategori }}</td>
-                            <td class="pt-3">{{ $item->deskripsi_kategori }}</td>
+                            <td class="pt-3">{!! $item->deskripsi_kategori !!}</td>
                             <td>
                                 <div class="row">
                                     <div class="col">
