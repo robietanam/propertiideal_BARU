@@ -1,5 +1,5 @@
 @extends('admin.layouts.master-dash')
-@section('page', 'PropertiIdeal')
+@section('page', 'Properti Ideal')
 @section('menu', 'Partner Terdaftar')
 @section('content')
     <div class="card mx-3 py-3 mb-5" style="border-radius: .5rem;">

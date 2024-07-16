@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\KategoriSolutionController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PropertiController;
 use App\Http\Controllers\Pages\WebPagesController;
@@ -60,6 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/partner/detail/{id}', [PartnerController::class, 'show']);
 
     Route::get('/admin/jual/{slug}', [PropertiController::class, 'index']);
+
+    Route::resource('/kategori-solution', KategoriSolutionController::class);
 });
 
 Route::middleware('auth')->group(function () {

@@ -1,5 +1,5 @@
 @extends('admin.layouts.master-dash')
-@section('page', 'PropertiIdeal')
+@section('page', 'Properti Ideal')
 @section('menu', 'Partner Terdaftar')
 @push('style')
   <link id="pagestyle" href="{{ asset('/css') }}/dataTables.bootstrap5.css" rel="stylesheet" />
@@ -67,7 +67,7 @@
         </tbody>
       </table>
     </div>
-  </div> 
+  </div>
 @endsection
 @push('script')
   <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>

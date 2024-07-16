@@ -16,7 +16,7 @@ class PartnerController extends Controller
                                     ->join('partner', 'users.id', '=', 'partner.user_id')
                                     ->where('users.role', 'Partner')
                                     ->get();
-        return view('admin.pages.partner', $this->param);
+        return view('admin.pages.partner.index', $this->param);
     }
 
     public function show($id)
@@ -26,7 +26,7 @@ class PartnerController extends Controller
                                     ->where('users.role', 'Partner')
                                     ->where('id_partner', $id)
                                     ->first();
-        return view('admin.pages.partner-detail', $this->param);
+        return view('admin.pages.partner.detail', $this->param);
     }
 
     public function verifikasi($id){
