@@ -59,7 +59,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Properti Solution</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/kategori-solution">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'kategori-solution') active bg-gradient-primary @endif" href="/kategori-solution">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">view_list</i>
           </div>
@@ -67,7 +67,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/properti-solution">
+        <a class="nav-link text-dark @if(Request::segment(1) == 'properti-solution') active bg-gradient-primary @endif" href="/properti-solution">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">view_kanban</i>
           </div>

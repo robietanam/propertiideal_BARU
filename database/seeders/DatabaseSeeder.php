@@ -105,6 +105,29 @@ class DatabaseSeeder extends Seeder
             'slug' => 'ruko'
         ]);
 
+        // Seeder Kategori Solution
+
+        DB::table('kategori_solution')->insert([
+            'nama_kategori' => 'Solusi Pembangunan & Renovasi',
+            'deskripsi_kategori' => 'Pembangunan & Renovasi Semakin mudah',
+            'slug' => 'rumah'
+        ]);
+        DB::table('kategori_solution')->insert([
+            'nama_kategori' => 'Solusi Design Interior',
+            'deskripsi_kategori' => 'Percantik Interior anda dengan design yang memukau',
+            'slug' => 'kos'
+        ]);
+        DB::table('kategori_solution')->insert([
+            'nama_kategori' => 'Solusi Design Exterior',
+            'deskripsi_kategori' => 'Pemandangan exterior jadi lebih indah dan cepat',
+            'slug' => 'tanah'
+        ]);
+        DB::table('kategori_solution')->insert([
+            'nama_kategori' => 'Reparasi Hunian',
+            'deskripsi_kategori' => 'Lengkapi Rumah anda dengan barang-barang yang berkualitas',
+            'slug' => 'apartement'
+        ]);
+
         // Seeder Kategori Penjualan
 
         DB::table('kategori_penjualan')->insert([
