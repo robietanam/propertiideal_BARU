@@ -11,15 +11,15 @@
                 @csrf
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Nama Properti Solution</label>
-                    <input type="text" name="nama" class="form-control w-full" value="{{$solusi->nama_solution}}">
+                    <input type="text" name="nama" class="form-control w-full" value="{{$solusi->nama_solution}}" required>
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Deskripsi Kategori</label>
-                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="ckeditor form-control w-full">{{$solusi->deskripsi_solution}}</textarea>
+                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="ckeditor form-control w-full" required>{{$solusi->deskripsi_solution}}</textarea>
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Harga Properti Solution</label>
-                    <input type="text" name="harga" class="form-control w-full" value="{{$solusi->harga_solution}}">
+                    <input type="number" name="harga" class="form-control w-full" value="{{$solusi->harga_solution}}" required>
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Status Properti Solution</label>
@@ -39,6 +39,4 @@
 @endsection
 @push('script')
 <script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
-<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-<script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
 @endpush

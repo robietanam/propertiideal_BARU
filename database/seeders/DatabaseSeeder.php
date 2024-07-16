@@ -131,11 +131,13 @@ class DatabaseSeeder extends Seeder
         // Seeder Kategori Penjualan
 
         DB::table('kategori_penjualan')->insert([
-            'nama_kategori' => 'Jual',
+            'nama_kategori' => 'Jual Properti',
+            'deskripsi_kategori' => 'Jual Properti anda dengan cepat dan tepat',
             'slug' => 'jual'
         ]);
         DB::table('kategori_penjualan')->insert([
-            'nama_kategori' => 'Sewa',
+            'nama_kategori' => 'Sewa Properti',
+            'deskripsi_kategori' => 'Beli Properti tanpa harus ribet',
             'slug' => 'sewa'
         ]);
 

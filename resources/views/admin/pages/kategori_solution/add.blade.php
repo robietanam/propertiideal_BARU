@@ -10,11 +10,11 @@
                 @csrf
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Nama Kategori</label>
-                    <input type="text" name="nama" class="form-control w-full">
+                    <input type="text" name="nama" class="form-control w-full" required>
                 </div>
                 <div class="input-group d-flex flex-column input-group-outline my-3">
                     <label class="">Deskripsi Kategori</label>
-                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="form-control w-full ckeditor"></textarea>
+                    <textarea name="deskripsi" id="ckeditor" cols="30" rows="5" class="form-control w-full ckeditor" required></textarea>
                 </div>
                 <button class="btn btn-success" type="submit">
                     Tambah Data
