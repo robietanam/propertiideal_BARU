@@ -154,6 +154,5 @@ class DatabaseSeeder extends Seeder
         DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Belakang'
         ]);
-
     }
 }

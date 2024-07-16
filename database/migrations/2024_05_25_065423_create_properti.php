@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('harga', 20);
             $table->decimal('latitude',65,30)->nullable();
             $table->decimal('longitude',65,30)->nullable();
-            $table->smallInteger('prioritas')->nullable();
+            $table->smallInteger('prioritas')->default(0)->nullable();
             $table->enum('status', ['Tersedia', 'Tidak Tersedia', 'Nonaktif'])->default('Tersedia');
             $table->smallInteger('kategori_properti_id')->unsigned();
             $table->smallInteger('kategori_penjualan_id')->unsigned();

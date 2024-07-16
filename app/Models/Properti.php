@@ -23,5 +23,6 @@ class Properti extends Model
         'status',
         'kategori_properti_id',
         'kategori_penjualan_id',
+        'partner_id',
     ];
 }
