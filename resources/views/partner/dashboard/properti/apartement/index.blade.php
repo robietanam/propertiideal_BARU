@@ -103,10 +103,13 @@
                                         </td>
                                         <td class="px-4 py-4 text-sm whitespace-nowrap">
                                             <div class="flex items-center gap-x-6">
-                                                <button
-                                                    class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
-                                                    Edit
-                                                </button>
+                                                <a
+                                                    href="{{ route('pages.dashboard.properti.apartement.update', $data['slug']) }}">
+                                                    <button
+                                                        class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                        Edit
+                                                    </button>
+                                                </a>
 
                                                 <form
                                                     action="{{ route('pages.dashboard.properti.apartement.destroy', $data['slug']) }}"
