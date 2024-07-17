@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
             $table->string('harga', 20);
-            $table->decimal('latitude',65,30)->nullable();
-            $table->decimal('longitude',65,30)->nullable();
+            $table->string('latitude',65)->nullable();
+            $table->string('longitude',65)->nullable();
             $table->smallInteger('prioritas')->default(0)->nullable();
             $table->enum('status', ['Tersedia', 'Tidak Tersedia', 'Nonaktif'])->default('Tersedia');
             $table->smallInteger('kategori_properti_id')->unsigned();

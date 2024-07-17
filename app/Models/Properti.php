@@ -12,6 +12,8 @@ class Properti extends Model
 
     protected $table = 'properti';
 
+    protected $primaryKey = 'id_properti';
+
     protected $fillable = [
         'nama_properti',
         'slug',

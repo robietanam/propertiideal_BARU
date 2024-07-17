@@ -16,9 +16,45 @@ class ApartementPartnerController extends Controller
 {
     public function index()
     {
-        $properti = Properti::with('properti_apartement', 'foto_properti')->get();
-        // dd($properti);
-        return view('partner.dashboard.properti.apartement.index');
+        $propertiCollection = Properti::with('properti_apartement', 'foto_properti')->get();
+
+        $datas = [];
+
+        foreach ($propertiCollection as $properti) {
+            $propertiData = [
+                'id_properti' => $properti->id_properti,
+                'nama_properti' => $properti->nama_properti,
+                'slug' => $properti->slug,
+                'alamat' => $properti->alamat,
+                'deskripsi' => $properti->deskripsi,
+                'harga' => 'Rp ' . number_format($properti->harga, 0, ',', '.'),
+                'latitude' => $properti->latitude,
+                'longitude' => $properti->longitude,
+                'status' => $properti->status,
+                'apartements' => [],
+                'photos' => [],
+            ];
+
+            foreach ($properti->properti_apartement as $apartement) {
+                $propertiData['apartements'][] = [
+                    'slug' => $apartement->slug,
+                    'luas_apartement' => $apartement->luas_apartement,
+                    'jumlah_kamar_tidur' => $apartement->jumlah_kamar_tidur,
+                    'jumlah_kamar_mandi' => $apartement->jumlah_kamar_mandi,
+                ];
+            }
+
+            foreach ($properti->foto_properti as $photos) {
+                $propertiData['photos'][] = [
+                    'foto_properti' => asset($photos->foto_properti),
+                    'deskripsi_foto' => $photos->deskripsi_foto,
+                ];
+            }
+
+            $datas[] = $propertiData;
+        }
+
+        return view('partner.dashboard.properti.apartement.index', compact('datas'));
     }
 
     public function create()
@@ -28,10 +64,10 @@ class ApartementPartnerController extends Controller
         return view('partner.dashboard.properti.apartement.create', compact('salescategories'));
     }
 
-    public function generateSlug($kalimat)
+    public function generateSlug($unslug)
     {
-        $lower = strtolower($kalimat);
-        $slug = str(' ', '-', $lower);
+        $lower = strtolower($unslug);
+        $slug = str_replace(' ', '-', $lower);
         return $slug;
     }
 
@@ -96,7 +132,7 @@ class ApartementPartnerController extends Controller
 
             $inputProperti['nama_properti'] = $request->nama_properti;
             $inputProperti['partner_id'] = $partner->id_partner;
-            $inputProperti['slug'] = $this->generateSlug($inputProperti['nama_properti']);
+            $inputProperti['slug'] = $this->generateSlug($request->nama_properti);
             $inputProperti['alamat'] = $request->alamat;
             $inputProperti['deskripsi'] = $request->deskripsi;
             $inputProperti['harga'] = $request->harga;
@@ -106,22 +142,18 @@ class ApartementPartnerController extends Controller
             $inputProperti['kategori_penjualan_id'] = $request->kategori_penjualan_id;
             $inputProperti['kategori_properti_id'] = 4;
 
-            // dd($inputProperti);
-
             $properti = Properti::create($inputProperti);
-            // dd($properti->id);
 
             if ($properti) {
-                // dd('Masuk kesini dah');
                 $inputPropertiApartment['slug'] = $this->generateSlugApartment();
                 $inputPropertiApartment['luas_apartement'] = $request->luas_apartement;
                 $inputPropertiApartment['jumlah_kamar_tidur'] = $request->jumlah_kamar_tidur;
                 $inputPropertiApartment['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
                 $inputPropertiApartment['properti_id'] = $properti->id;
 
-                $propertiApartmen = PropertiApartement::create($inputPropertiApartment);
+                $propertiApartement = PropertiApartement::create($inputPropertiApartment);
 
-                if ($propertiApartmen) {
+                if ($propertiApartement) {
                     $photos = [
                         'foto_depan' => 'Depan',
                         'foto_samping_kiri' => 'Samping Kiri',
@@ -136,7 +168,7 @@ class ApartementPartnerController extends Controller
                             $destinationPath = public_path('/upload/apartement');
                             $image->move($destinationPath, $filename);
 
-                            $imagePath = 'public/upload/apartement/' . $filename;
+                            $imagePath = 'upload/apartement/' . $filename;
 
                             $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
 
@@ -170,6 +202,15 @@ class ApartementPartnerController extends Controller
 
     public function destroy(Request $request, $slug)
     {
-        // TODO
+        $properti = Properti::where('slug', $slug)->first();
+
+        if ($properti) {
+            FotoProperti::where('properti_id', $properti->id_properti)->delete();
+            $properti->delete();
+
+            return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dihapus!');
+        }
+
+        return redirect()->back()->with('error', 'Properti tidak ditemukan!');
     }
 }
