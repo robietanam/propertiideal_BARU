@@ -71,7 +71,7 @@
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200  ">
-                                @foreach ($datas as $data)
+                                @forelse ($datas as $data)
                                     <tr>
                                         <td class="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
                                             <div class="inline-flex items-center gap-x-3">
@@ -119,11 +119,16 @@
                                                         Hapus
                                                     </button>
                                                 </form>
-
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                        <td colspan="7" class="px-4 py-4 text-sm text-center text-gray-500">
+                                            Data masih kosong
+                                        </td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

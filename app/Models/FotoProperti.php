@@ -11,6 +11,8 @@ class FotoProperti extends Model
 
     protected $table = 'foto_properti';
 
+    protected $primaryKey = 'id_foto_properti';
+
     protected $fillable = [
         'foto_properti',
         'deskripsi_foto',

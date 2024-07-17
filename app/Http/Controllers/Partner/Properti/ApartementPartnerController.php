@@ -10,6 +10,7 @@ use App\Models\Properti;
 use App\Models\PropertiApartement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class ApartementPartnerController extends Controller
@@ -149,7 +150,7 @@ class ApartementPartnerController extends Controller
                 $inputPropertiApartment['luas_apartement'] = $request->luas_apartement;
                 $inputPropertiApartment['jumlah_kamar_tidur'] = $request->jumlah_kamar_tidur;
                 $inputPropertiApartment['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
-                $inputPropertiApartment['properti_id'] = $properti->id;
+                $inputPropertiApartment['properti_id'] = $properti->id_properti;
 
                 $propertiApartement = PropertiApartement::create($inputPropertiApartment);
 
@@ -176,7 +177,7 @@ class ApartementPartnerController extends Controller
                                 'foto_properti' => $imagePath,
                                 'deskripsi_foto' => $photoType,
                                 'jenis_foto_id' => $jenisFoto->id_jenis_foto,
-                                'properti_id' => $properti->id,
+                                'properti_id' => $properti->id_properti,
                             ]);
                         }
                     }
@@ -205,7 +206,12 @@ class ApartementPartnerController extends Controller
         $properti = Properti::where('slug', $slug)->first();
 
         if ($properti) {
-            FotoProperti::where('properti_id', $properti->id_properti)->delete();
+            $fotoProperti = FotoProperti::where('properti_id', $properti->id_properti)->get();
+
+            foreach ($fotoProperti as $foto) {
+                File::delete($foto->foto_properti);
+                $foto->delete();
+            }
             $properti->delete();
 
             return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dihapus!');
