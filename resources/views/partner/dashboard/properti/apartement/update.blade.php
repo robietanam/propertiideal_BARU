@@ -14,8 +14,9 @@
             <div class="rounded-lg">
                 <h1 class="text-3xl font-bold mb-4 text-textbase">Yuk, mulai listing properti Anda!</h1>
                 <p class="text-textbase text-xl  mb-6">Silahkan diisi sesuai keadaan asli properti Anda</p>
-                <form action="{{ route('pages.dashboard.properti.apartement.store') }}" method="POST"
+                <form action="{{ route('pages.dashboard.properti.apartement.edit', $properti->slug) }}" method="POST"
                     enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                         @foreach ([
@@ -57,12 +58,18 @@
                                 <div class="mb-5 rounded-md border border-[#e0e0e0] py-4 px-8">
                                     <div id="image-{{ $field }}-preview" class="flex items-center justify-between">
                                         <img id="preview-{{ $field }}" class="w-full h-auto mt-2 rounded-md"
-                                            src="{{ asset(optional($properti->foto_properti->where('jenis_foto_id', $loop->index + 1)->first())->foto_properti) }}"
+                                            src="{{ asset(optional($properti->foto_properti
+                                            ->where('jenis_foto_id', $loop->index + 1)
+                                            ->first())->foto_properti) }}"
                                             alt="{{ $label }} Preview" />
                                     </div>
                                     <span id="label-{{ $field }}"
                                         class="truncate pr-3 text-base font-medium text-textbase relative">
-                                        {{ optional($properti->foto_properti->where('jenis_foto_id', $loop->index + 1)->first())->foto_properti ? basename(optional($properti->foto_properti->where('jenis_foto_id', $loop->index + 1)->first())->foto_properti) : '' }}
+                                        {{ optional($properti->foto_properti
+                                        ->where('jenis_foto_id', $loop->index + 1)
+                                        ->first())->foto_properti ? basename(optional($properti->foto_properti->
+                                        where('jenis_foto_id', $loop->index + 1)
+                                        ->first())->foto_properti) : '' }}
                                     </span>
                                 </div>
                             </div>
