@@ -33,6 +33,22 @@ class Properti extends Model
         return $this->hasMany(PropertiApartement::class, 'properti_id', 'id_properti');
     }
 
+    public function properti_ruko() : HasMany {
+        return $this->hasMany(PropertiRuko::class, 'properti_id', 'id_properti');
+    }
+
+    public function properti_kos() : HasMany {
+        return $this->hasMany(PropertiKos::class, 'properti_id', 'id_properti');
+    }
+
+    public function properti_rumah() : HasMany {
+        return $this->hasMany(PropertiRumah::class, 'properti_id', 'id_properti');
+    }
+
+    public function properti_tanah() : HasMany {
+        return $this->hasMany(PropertiTanah::class, 'properti_id', 'id_properti');
+    }
+
     public function foto_properti() : hasMany {
         return $this->hasMany(FotoProperti::class, 'properti_id', 'id_properti');
     }
