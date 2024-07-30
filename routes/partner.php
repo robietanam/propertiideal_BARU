@@ -23,11 +23,29 @@ Route::middleware(['auth', 'role:Partner'])->group(function () {
     Route::get('/dashboard/partner/produk', [ProductPartnerController::class, 'index'])->name('pages.dashboard.partner.product');
 
     Route::get('/dashboard/properti', [ProductPartnerController::class, 'index'])->name('pages.dashboard.properti');
+
+    // $categories = [
+    //     'apartement' => ApartementPartnerController::class,
+    //     'kos' => KosPartnerController::class,
+    //     'ruko' => RukoPartnerController::class,
+    //     'rumah' => RumahPartnerController::class,
+    //     'tanah' => TanahPartnerController::class,
+    // ];
+    // foreach ($categories as $slug_kategori => $controller) {
+    //     Route::get('/dashboard/properti/' . $slug_kategori, [$controller, 'index'])->name('pages.dashboard.properti.' . $slug_kategori);
+    // }
+
+    // In your routes file (web.php)
+    // In your routes file (web.php)
+    // In your routes file (web.php)
+
     Route::get('/dashboard/properti/apartement', [ApartementPartnerController::class, 'index'])->name('pages.dashboard.properti.apartement');
     Route::get('/dashboard/properti/kos', [KosPartnerController::class, 'index'])->name('pages.dashboard.properti.kos');
     Route::get('/dashboard/properti/ruko', [RukoPartnerController::class, 'index'])->name('pages.dashboard.properti.ruko');
     Route::get('/dashboard/properti/rumah', [RumahPartnerController::class, 'index'])->name('pages.dashboard.properti.rumah');
     Route::get('/dashboard/properti/tanah', [TanahPartnerController::class, 'index'])->name('pages.dashboard.properti.tanah');
+
+
 
     Route::get('/dashboard/properti/apartement/create', [ApartementPartnerController::class, 'create'])->name('pages.dashboard.properti.apartement.create');
     Route::get('/dashboard/properti/kos/create', [KosPartnerController::class, 'create'])->name('pages.dashboard.properti.kos.create');

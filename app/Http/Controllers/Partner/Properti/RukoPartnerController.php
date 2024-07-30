@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Partner\Properti;
 use App\Http\Controllers\Controller;
 use App\Models\FotoProperti;
 use App\Models\KategoriPenjualan;
+use App\Models\KategoriProperti;
 use App\Models\Partner;
 use App\Models\Properti;
 use App\Models\PropertiRuko;
@@ -15,8 +16,23 @@ use Illuminate\Support\Facades\File;
 
 class RukoPartnerController extends Controller
 {
-    public function index(){
-        $propertiCollection = Properti::with('properti_ruko', 'foto_properti')->get();
+    public function index(Request $request){
+        $urlPath = $request->path();
+        $segments = explode('/', $urlPath);
+        $slug_kategori = end($segments);
+
+        $kategoriProperti = KategoriProperti::where('slug', $slug_kategori)->first();
+
+        $kategoriId = $kategoriProperti->id_kategori_properti;
+
+        $user = auth()->user();
+        $partner = Partner::where('user_id', $user->id)->first();
+        $partnerId = $partner->id_partner;
+
+        $propertiCollection = Properti::with('properti_ruko', 'foto_properti')
+        ->where('kategori_properti_id', $kategoriId)
+        ->where('partner_id', $partnerId)
+        ->get();
 
         $datas = [];
 

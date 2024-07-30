@@ -16,8 +16,10 @@
             </p>
         </a>
         <ul class="flex items-center space-x-4 text-sm font-semibold">
-            <li><a href="{{ route('pages.dashboard.partner.profile') }}" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Akun Anda</a></li>
-            <li><a href="{{ route('pages.dashboard.partner.information') }}" class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Informasi Anda</a></li>
+            <li><a href="{{ route('pages.dashboard.partner.profile') }}"
+                    class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Akun Anda</a></li>
+            <li><a href="{{ route('pages.dashboard.partner.information') }}"
+                    class="px-2 xl:px-4 py-2 text-gray-800 rounded-md hover:bg-gray-200">Informasi Anda</a></li>
             <li class="relative" x-data="{ open: false }">
                 <a x-on:click="open = !open" x-on:click.outside="open = false" href="#"
                     class="px-2 xl:px-4 py-2 text-gray-600 rounded-md hover:bg-gray-200 flex gap-2 items-center">
@@ -29,61 +31,22 @@
                     </svg> </a>
                 <ul x-cloak x-show="open" x-transition
                     class="absolute top-10 left-0 bg-white p-4 rounded-md shadow overflow-hidden w-64">
+                    @php
+                        $kategoriProperti = App\Models\KategoriProperti::all();
+                    @endphp
+                    @foreach($kategoriProperti as $kategori)
                     <li>
-                        <a href="{{ route('pages.dashboard.properti.apartement') }}"
+                        <a href="{{ route('pages.dashboard.properti.' . $kategori->slug) }}"
                             class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 5l7 7-7 7" />
                             </svg>
-                            Apartement
+                            {{ $kategori->nama_kategori }}
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('pages.dashboard.properti.kos') }}"
-                            class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            Kos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.dashboard.properti.ruko') }}"
-                            class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            Ruko
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.dashboard.properti.rumah') }}"
-                            class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            Rumah
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('pages.dashboard.properti.tanah') }}"
-                            class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
-                            </svg>
-                            Tanah
-                        </a>
-                    </li>
+                    @endforeach
                     <li>
                         <a href="{{ route('pages.dashboard.properti') }}"
                             class="p-4 block text-sm text-gray-600 rounded flex items-center gap-2 hover:bg-gray-100">
@@ -101,7 +64,8 @@
 
         <ul class="flex items-center gap-6">
             <li>
-                <a href="{{ route('pages.dashboard.partner.profile') }}" class="text-sm font-sans text-gray-800 font-semibold tracking-wider">
+                <a href="{{ route('pages.dashboard.partner.profile') }}"
+                    class="text-sm font-sans text-gray-800 font-semibold tracking-wider">
                     Derol Hakim
                 </a>
             </li>
@@ -135,12 +99,12 @@
             </p>
         </a>
         <button x-on:click="open = !open" type="button" class="bg-gray-200 p-3 rounded-md">
-            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
             </svg>
-            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
