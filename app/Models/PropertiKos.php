@@ -11,6 +11,8 @@ class PropertiKos extends Model
 
     protected $table = 'properti_kos';
 
+    protected $primaryKey = 'id_properti_kos';
+
     protected $fillable = [
         'slug',
         'luas_kamar',

@@ -11,6 +11,8 @@ class PropertiRumah extends Model
 
     protected $table = 'properti_rumah';
 
+    protected $primaryKey = 'id_properti_rumah';
+
     protected $fillable = [
         'slug',
         'luas_tanah',

@@ -11,6 +11,8 @@ class PropertiApartement extends Model
 
     protected $table = 'properti_apartement';
 
+    protected $primaryKey = 'id_properti_apartement';
+
     protected $fillable = [
         'slug',
         'luas_apartement',

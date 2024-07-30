@@ -34,8 +34,6 @@ class RumahPartnerController extends Controller
         ->where('partner_id', $partnerId)
         ->get();
 
-        // dd($propertiCollection);
-
         $datas = [];
 
         foreach ($propertiCollection as $properti) {
@@ -83,10 +81,20 @@ class RumahPartnerController extends Controller
         return view('partner.dashboard.properti.rumah.create', compact('salescategories'));
     }
 
-    public function generateSlug($unslug)
+    public function generateSlug($unslug, $length = 10)
     {
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
         $lower = strtolower($unslug);
-        $slug = str_replace(' ', '-', $lower);
+        $unslug = str_replace(' ', '-', $lower);
+
+        $unslug_random = '';
+        for ($i = 0; $i < $length; $i++) {
+            $unslug_random .= $characters[random_int(0, $charactersLength - 1)];
+        }
+
+        $slug = "{$unslug}-{$unslug_random}";
+
         return $slug;
     }
 
@@ -224,10 +232,11 @@ class RumahPartnerController extends Controller
 
     public function edit(Request $request, $slug){
         try {
+            // dd($request->all());
             $user = auth()->user();
-            $partner = Partner::where('user_id', $user->id)->first();
             $properti = Properti::where('slug', $slug)->firstOrFail();
             $propertiRumah = PropertiRumah::where('properti_id', $properti->id_properti)->firstOrFail();
+            // dd($propertiRumah);
 
             $validator = Validator::make($request->all(), [
                 'nama_properti' => 'required',

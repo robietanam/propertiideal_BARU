@@ -181,10 +181,20 @@ class RukoPartnerController extends Controller
         }
     }
 
-    public function generateSlug($unslug)
+    public function generateSlug($unslug, $length = 10)
     {
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
         $lower = strtolower($unslug);
-        $slug = str_replace(' ', '-', $lower);
+        $unslug = str_replace(' ', '-', $lower);
+
+        $unslug_random = '';
+        for ($i = 0; $i < $length; $i++) {
+            $unslug_random .= $characters[random_int(0, $charactersLength - 1)];
+        }
+
+        $slug = "{$unslug}-{$unslug_random}";
+
         return $slug;
     }
 
