@@ -13,6 +13,7 @@ use DB;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Log;
 
 class KosPartnerController extends Controller
 {
@@ -102,6 +103,8 @@ class KosPartnerController extends Controller
             $user = auth()->user();
             $partner = Partner::where('user_id', $user->id)->first();
 
+            // dd($request->all());
+
             $validator = Validator::make($request->all(), [
                 'nama_properti' => 'required',
                 'alamat' => 'required',
@@ -150,15 +153,14 @@ class KosPartnerController extends Controller
             $inputProperti['harga'] = $request->harga;
             $inputProperti['latitude'] = $request->latitude;
             $inputProperti['longitude'] = $request->longitude;
-            $inputProperti['prioritas'] = $request->prioritas;
             $inputProperti['kategori_penjualan_id'] = $request->kategori_penjualan_id;
-            $inputProperti['kategori_properti_id'] = 4;
+            $inputProperti['kategori_properti_id'] = 2;
 
             $properti = Properti::create($inputProperti);
 
             if ($properti) {
                 $inputPropertiKos['slug'] = $this->generateSlugKos();
-                $inputPropertiKos['luas_kos'] = $request->luas_kos;
+                $inputPropertiKos['luas_kamar'] = $request->luas_kamar;
                 $inputPropertiKos['jenis_kamar_mandi'] = $request->jenis_kamar_mandi;
                 $inputPropertiKos['properti_id'] = $properti->id_properti;
 
@@ -197,6 +199,11 @@ class KosPartnerController extends Controller
                 return redirect()->back()->with('error', 'Terjadi kesalahan');
             }
         } catch (\Exception $e) {
+            Log::error('Error in store method: ' . $e->getMessage(), [
+                'request' => $request->all(),
+                'exception' => $e,
+            ]);
+
             return redirect()->back()->with('error', $e->getMessage());
         }
     }
@@ -264,7 +271,7 @@ class KosPartnerController extends Controller
             ]);
 
             $propertiKos->update([
-                'luas_kos' => $request->luas_kos,
+                'luas_kamar' => $request->luas_kamar,
                 'jenis_kamar_mandi' => $request->jenis_kamar_mandi,
             ]);
 

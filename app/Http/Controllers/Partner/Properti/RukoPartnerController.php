@@ -91,6 +91,7 @@ class RukoPartnerController extends Controller
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
                 'luas_tanah' => 'required',
+                'luas_bangunan' => 'required',
                 'foto_depan' => 'required|image',
                 'foto_samping_kiri' => 'required|image',
                 'foto_samping_kanan' => 'required|image',
@@ -106,6 +107,7 @@ class RukoPartnerController extends Controller
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
                 'luas_tanah.required' => 'Tidak boleh kosong!',
+                'luas_bangunan.required' => 'Tidak boleh kosong!',
                 'foto_depan.required' => 'Tidak boleh kosong!',
                 'foto_samping_kiri.required' => 'Tidak boleh kosong!',
                 'foto_samping_kanan.required' => 'Tidak boleh kosong!',
@@ -137,6 +139,7 @@ class RukoPartnerController extends Controller
             if ($properti) {
                 $inputPropertiRuko['slug'] = $this->generateSlugRuko();
                 $inputPropertiRuko['luas_tanah'] = $request->luas_tanah;
+                $inputPropertiRuko['luas_bangunan'] = $request->luas_bangunan;
                 $inputPropertiRuko['properti_id'] = $properti->id_properti;
 
                 $propertiRuko = PropertiRuko::create($inputPropertiRuko);
@@ -219,6 +222,7 @@ class RukoPartnerController extends Controller
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
                 'luas_tanah' => 'required',
+                'luas_bangunan' => 'required',
                 'foto_depan' => 'sometimes|image',
                 'foto_samping_kiri' => 'sometimes|image',
                 'foto_samping_kanan' => 'sometimes|image',
@@ -234,6 +238,7 @@ class RukoPartnerController extends Controller
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
                 'luas_tanah.required' => 'Tidak boleh kosong!',
+                'luas_bangunan.required' => 'Tidak boleh kosong!',
                 'foto_depan.image' => 'File harus berupa gambar!',
                 'foto_samping_kiri.image' => 'File harus berupa gambar!',
                 'foto_samping_kanan.image' => 'File harus berupa gambar!',
@@ -257,6 +262,7 @@ class RukoPartnerController extends Controller
 
             $propertiRuko->update([
                 'luas_tanah' => $request->luas_tanah,
+                'luas_bangunan' => $request->luas_bangunan,
             ]);
 
             $photos = [

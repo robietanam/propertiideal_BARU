@@ -12,7 +12,7 @@
     @endif
     <div>
         <h1 class="text-2xl font-bold">Properti Rumah</h1>
-        <p class="text-lg text-slate-500">Manajemen dan kelola produk properti apartement Anda sekarang juga!</p>
+        <p class="text-lg text-slate-500">Manajemen dan kelola produk properti rumah Anda sekarang juga!</p>
     </div>
     <div>
         <a href="{{ route('pages.dashboard.properti.rumah.create') }}">
@@ -104,7 +104,7 @@
                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
                                         <div class="flex items-center gap-x-6">
                                             <a
-                                                href="{{ route('pages.dashboard.properti.apartement.update', $data['slug']) }}">
+                                                href="{{ route('pages.dashboard.properti.rumah.update', $data['slug']) }}">
                                                 <button
                                                     class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
                                                     Edit
@@ -112,7 +112,7 @@
                                             </a>
 
                                             <form
-                                                action="{{ route('pages.dashboard.properti.apartement.destroy', $data['slug']) }}"
+                                                action="{{ route('pages.dashboard.properti.rumah.destroy', $data['slug']) }}"
                                                 method="POST"
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus?');">
                                                 @csrf

@@ -14,6 +14,7 @@ class PropertiRuko extends Model
     protected $fillable = [
         'slug',
         'luas_tanah',
+        'luas_bangunan',
         'properti_id',
     ];
 }

@@ -104,7 +104,7 @@
                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
                                         <div class="flex items-center gap-x-6">
                                             <a
-                                                href="{{ route('pages.dashboard.properti.apartement.update', $data['slug']) }}">
+                                                href="{{ route('pages.dashboard.properti.tanah.update', $data['slug']) }}">
                                                 <button
                                                     class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
                                                     Edit
@@ -112,7 +112,7 @@
                                             </a>
 
                                             <form
-                                                action="{{ route('pages.dashboard.properti.apartement.destroy', $data['slug']) }}"
+                                                action="{{ route('pages.dashboard.properti.tanah.destroy', $data['slug']) }}"
                                                 method="POST"
                                                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus?');">
                                                 @csrf

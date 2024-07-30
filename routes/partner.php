@@ -35,17 +35,11 @@ Route::middleware(['auth', 'role:Partner'])->group(function () {
     //     Route::get('/dashboard/properti/' . $slug_kategori, [$controller, 'index'])->name('pages.dashboard.properti.' . $slug_kategori);
     // }
 
-    // In your routes file (web.php)
-    // In your routes file (web.php)
-    // In your routes file (web.php)
-
     Route::get('/dashboard/properti/apartement', [ApartementPartnerController::class, 'index'])->name('pages.dashboard.properti.apartement');
     Route::get('/dashboard/properti/kos', [KosPartnerController::class, 'index'])->name('pages.dashboard.properti.kos');
     Route::get('/dashboard/properti/ruko', [RukoPartnerController::class, 'index'])->name('pages.dashboard.properti.ruko');
     Route::get('/dashboard/properti/rumah', [RumahPartnerController::class, 'index'])->name('pages.dashboard.properti.rumah');
     Route::get('/dashboard/properti/tanah', [TanahPartnerController::class, 'index'])->name('pages.dashboard.properti.tanah');
-
-
 
     Route::get('/dashboard/properti/apartement/create', [ApartementPartnerController::class, 'create'])->name('pages.dashboard.properti.apartement.create');
     Route::get('/dashboard/properti/kos/create', [KosPartnerController::class, 'create'])->name('pages.dashboard.properti.kos.create');
@@ -72,8 +66,8 @@ Route::middleware(['auth', 'role:Partner'])->group(function () {
     Route::put('/dashboard/properti/tanah/edit/{slug}', [TanahPartnerController::class, 'edit'])->name('pages.dashboard.properti.tanah.edit');
 
     Route::delete('/dashboard/properti/apartement/destroy/{slug}', [ApartementPartnerController::class, 'destroy'])->name('pages.dashboard.properti.apartement.destroy');
-    Route::delete('/dashboard/properti/kos/destroy/{slug}', [KosPartnerController::class, 'destory'])->name('pages.dashboard.properti.kos.destroy');
-    Route::delete('/dashboard/properti/ruko/destroy/{slug}', [RukoPartnerController::class, 'destory'])->name('pages.dashboard.properti.ruko.destroy');
-    Route::delete('/dashboard/properti/rumah/destroy/{slug}', [RumahPartnerController::class, 'destory'])->name('pages.dashboard.properti.rumah.destroy');
-    Route::delete('/dashboard/properti/tanah/destroy/{slug}', [TanahPartnerController::class, 'destory'])->name('pages.dashboard.properti.tanah.destroy');
+    Route::delete('/dashboard/properti/kos/destroy/{slug}', [KosPartnerController::class, 'destroy'])->name('pages.dashboard.properti.kos.destroy');
+    Route::delete('/dashboard/properti/ruko/destroy/{slug}', [RukoPartnerController::class, 'destroy'])->name('pages.dashboard.properti.ruko.destroy');
+    Route::delete('/dashboard/properti/rumah/destroy/{slug}', [RumahPartnerController::class, 'destroy'])->name('pages.dashboard.properti.rumah.destroy');
+    Route::delete('/dashboard/properti/tanah/destroy/{slug}', [TanahPartnerController::class, 'destroy'])->name('pages.dashboard.properti.tanah.destroy');
 });

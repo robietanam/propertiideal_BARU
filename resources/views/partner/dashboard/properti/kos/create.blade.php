@@ -14,7 +14,7 @@
             <div class="rounded-lg">
                 <h1 class="text-3xl font-bold mb-4 text-textbase">Yuk, mulai listing properti Anda!</h1>
                 <p class="text-textbase text-xl  mb-6">Silahkan diisi sesuai keadaan asli properti Anda</p>
-                <form action="{{ route('pages.dashboard.properti.rumah.store') }}" method="POST"
+                <form action="{{ route('pages.dashboard.properti.kos.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -41,7 +41,7 @@
                                 </label>
                             </div>
                             <description class="mb-5 block text-lg font-medium text-textbase">
-                                Foto tampak depan properti rumah anda
+                                Foto tampak depan properti kos anda
                             </description>
                             @error('foto_depan')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -72,7 +72,7 @@
                                 </label>
                             </div>
                             <description class="mb-5 block text-lg font-medium text-textbase">
-                                Foto tampak samping kiri properti rumah anda
+                                Foto tampak samping kiri properti kos anda
                             </description>
                             @error('foto_samping_kiri')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -103,7 +103,7 @@
                                 </label>
                             </div>
                             <description class="mb-5 block text-lg font-medium text-textbase">
-                                Foto tampak samping kanan properti rumah anda
+                                Foto tampak samping kanan properti kos anda
                             </description>
                             @error('foto_samping_kanan')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -134,7 +134,7 @@
                                 </label>
                             </div>
                             <description class="mb-5 block text-lg font-medium text-textbase">
-                                Foto tampak belakang properti rumah anda
+                                Foto tampak belakang properti kos anda
                             </description>
                             @error('foto_belakang')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -180,10 +180,10 @@
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="luas_tanah">Luas tanah *</label>
-                            <input name="luas_tanah" id="luas_tanah" type="text" placeholder="Masukkan luas tanah"
+                            <label class="text-lg font-medium text-textbase" for="luas_kamar">Luas kamar *</label>
+                            <input name="luas_kamar" id="luas_kamar" type="text" placeholder="Masukkan luas kamar"
                                 class="border p-2 rounded w-full">
-                            @error('luas_tanah')
+                            @error('luas_kamar')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
@@ -199,15 +199,15 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="latitude">Latitude rumah *</label>
-                            <input name="latitude" id="latitude" type="text" placeholder="Latitude rumah"
+                            <label class="text-lg font-medium text-textbase" for="latitude">Latitude kos *</label>
+                            <input name="latitude" id="latitude" type="text" placeholder="Latitude kos"
                                 class="border p-2 rounded w-full">
                             @error('latitude')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="longitude">Longitude rumah
+                            <label class="text-lg font-medium text-textbase" for="longitude">Longitude kos
                                 *</label>
                             <input name="longitude" id="longitude" type="text" placeholder="Masukkan longitude"
                                 class="border p-2 rounded w-full">
