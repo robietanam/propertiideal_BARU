@@ -11,6 +11,8 @@ class PropertiRuko extends Model
 
     protected $table = 'properti_ruko';
 
+    protected $primaryKey = 'id_properti_ruko';
+
     protected $fillable = [
         'slug',
         'luas_tanah',

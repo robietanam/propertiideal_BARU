@@ -11,6 +11,8 @@ class PropertiTanah extends Model
 
     protected $table = 'properti_tanah';
 
+    protected $primaryKey = 'id_properti_tanah';
+
     protected $fillable = [
         'slug',
         'luas_tanah',

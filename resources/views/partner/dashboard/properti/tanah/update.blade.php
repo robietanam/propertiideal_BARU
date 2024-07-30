@@ -113,12 +113,12 @@
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="luas_apartement">Luas Apartment
+                            <label class="text-lg font-medium text-textbase" for="luas_tanah">Luas Apartment
                                 *</label>
-                            <input value="{{ optional($properti->properti_apartement->first())->luas_apartement }}"
-                                name="luas_apartement" id="luas_apartement" type="text"
+                            <input value="{{ optional($properti->properti_tanah->first())->luas_tanah }}"
+                                name="luas_tanah" id="luas_tanah" type="text"
                                 placeholder="Masukkan luas apartement" class="border p-2 rounded w-full">
-                            @error('luas_apartement')
+                            @error('luas_tanah')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
@@ -138,29 +138,6 @@
                             <input value="{{ $properti->longitude }}" name="longitude" id="longitude" type="text"
                                 placeholder="Masukkan longitude" class="border p-2 rounded w-full">
                             @error('longitude')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="text-lg font-medium text-textbase" for="jumlah_kamar_tidur">Jumlah kamar tidur
-                                apartment *</label>
-                            <input value="{{ optional($properti->properti_apartement->first())->jumlah_kamar_tidur }}"
-                                name="jumlah_kamar_tidur" id="jumlah_kamar_tidur" type="text"
-                                placeholder="Jumlah kamar tidur apartment" class="border p-2 rounded w-full">
-                            @error('jumlah_kamar_tidur')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div>
-                            <label class="text-lg font-medium text-textbase" for="jumlah_kamar_mandi">Jumlah kamar
-                                mandi
-                                *</label>
-                            <input value="{{ optional($properti->properti_apartement->first())->jumlah_kamar_mandi }}"
-                                name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" type="text"
-                                placeholder="Masukkan jumlah kamar mandi" class="border p-2 rounded w-full">
-                            @error('jumlah_kamar_mandi')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>

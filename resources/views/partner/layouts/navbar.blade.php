@@ -66,7 +66,11 @@
             <li>
                 <a href="{{ route('pages.dashboard.partner.profile') }}"
                     class="text-sm font-sans text-gray-800 font-semibold tracking-wider">
-                    Derol Hakim
+                    @php
+                        $userAuth = auth()->user()->nama;
+                    @endphp
+
+                    {{ $userAuth }}
                 </a>
             </li>
             <li>
