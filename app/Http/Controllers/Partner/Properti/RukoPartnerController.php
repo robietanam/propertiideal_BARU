@@ -130,13 +130,13 @@ class RukoPartnerController extends Controller
             $inputProperti['longitude'] = $request->longitude;
             $inputProperti['prioritas'] = $request->prioritas;
             $inputProperti['kategori_penjualan_id'] = $request->kategori_penjualan_id;
-            $inputProperti['kategori_properti_id'] = 4;
+            $inputProperti['kategori_properti_id'] = 5;
 
             $properti = Properti::create($inputProperti);
 
             if ($properti) {
                 $inputPropertiRuko['slug'] = $this->generateSlugRuko();
-                $inputPropertiRuko['luas_ruko'] = $request->luas_ruko;
+                $inputPropertiRuko['luas_tanah'] = $request->luas_tanah;
                 $inputPropertiRuko['properti_id'] = $properti->id_properti;
 
                 $propertiRuko = PropertiRuko::create($inputPropertiRuko);

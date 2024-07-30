@@ -177,6 +177,4 @@
     </section>
     @push('js')
     @endpush
-    @push('js')
-    @endpush
 @endsection
