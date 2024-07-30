@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\Partner\Properti;
 
 use App\Http\Controllers\Controller;
+use App\Models\FotoProperti;
+use App\Models\KategoriPenjualan;
+use App\Models\Partner;
+use App\Models\Properti;
+use App\Models\PropertiRumah;
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class RumahPartnerController extends Controller
 {
     public function index(){
-        $propertiCollection = Properti::with('properti_apartement', 'foto_properti')->get();
+        $propertiCollection = Properti::with('properti_rumah', 'foto_properti')->get();
 
         $datas = [];
 
@@ -23,16 +31,18 @@ class RumahPartnerController extends Controller
                 'latitude' => $properti->latitude,
                 'longitude' => $properti->longitude,
                 'status' => $properti->status,
-                'apartements' => [],
+                'rumah' => [],
                 'photos' => [],
             ];
 
-            foreach ($properti->properti_apartement as $apartement) {
-                $propertiData['apartements'][] = [
-                    'slug' => $apartement->slug,
-                    'luas_apartement' => $apartement->luas_apartement,
-                    'jumlah_kamar_tidur' => $apartement->jumlah_kamar_tidur,
-                    'jumlah_kamar_mandi' => $apartement->jumlah_kamar_mandi,
+            foreach ($properti->properti_rumah as $rumah) {
+                $propertiData['rumah'][] = [
+                    'slug' => $rumah->slug,
+                    'luas_tanah' => $rumah->luas_tanah,
+                    'luas_bangunan' => $rumah->luas_bangunan,
+                    'jumlah_garasi' => $rumah->jumlah_garasi,
+                    'jumlah_kamar_tidur' => $rumah->jumlah_kamar_tidur,
+                    'jumlah_kamar_mandi' => $rumah->jumlah_kamar_mandi,
                 ];
             }
 
@@ -86,7 +96,9 @@ class RumahPartnerController extends Controller
                 'latitude' => 'required',
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
-                'luas_apartement' => 'required',
+                'luas_tanah' => 'required',
+                'luas_bangunan' => 'required',
+                'jumlah_garasi' => 'required',
                 'jumlah_kamar_tidur' => 'required',
                 'jumlah_kamar_mandi' => 'required',
                 'foto_depan' => 'required|image',
@@ -103,7 +115,9 @@ class RumahPartnerController extends Controller
                 'latitude.required' => 'Tidak boleh kosong!',
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
-                'luas_apartement.required' => 'Tidak boleh kosong!',
+                'luas_tanah.required' => 'Tidak boleh kosong!',
+                'luas_bangunan.required' => 'Tidak boleh kosong!',
+                'jumlah_garasi.required' => 'Tidak boleh kosong!',
                 'jumlah_kamar_tidur.required' => 'Tidak boleh kosong!',
                 'jumlah_kamar_mandi.required' => 'Tidak boleh kosong!',
                 'foto_depan.required' => 'Tidak boleh kosong!',
@@ -135,15 +149,17 @@ class RumahPartnerController extends Controller
             $properti = Properti::create($inputProperti);
 
             if ($properti) {
-                $inputPropertiApartment['slug'] = $this->generateSlugApartment();
-                $inputPropertiApartment['luas_apartement'] = $request->luas_apartement;
-                $inputPropertiApartment['jumlah_kamar_tidur'] = $request->jumlah_kamar_tidur;
-                $inputPropertiApartment['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
-                $inputPropertiApartment['properti_id'] = $properti->id_properti;
+                $inputPropertiRumah['slug'] = $this->generateSlugRumah();
+                $inputPropertiRumah['luas_tanah'] = $request->luas_tanah;
+                $inputPropertiRumah['luas_bangunan'] = $request->luas_bangunan;
+                $inputPropertiRumah['jumlah_garasi'] = $request->jumlah_garasi;
+                $inputPropertiRumah['jumlah_kamar_tidur'] = $request->jumlah_kamar_tidur;
+                $inputPropertiRumah['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
+                $inputPropertiRumah['properti_id'] = $properti->id_properti;
 
-                $propertiApartement = PropertiApartement::create($inputPropertiApartment);
+                $propertiRumah = PropertiRumah::create($inputPropertiRumah);
 
-                if ($propertiApartement) {
+                if ($propertiRumah) {
                     $photos = [
                         'foto_depan' => 'Depan',
                         'foto_samping_kiri' => 'Samping Kiri',
@@ -155,10 +171,10 @@ class RumahPartnerController extends Controller
                         if ($request->hasFile($photoField)) {
                             $image = $request->file($photoField);
                             $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                            $destinationPath = public_path('/upload/apartement');
+                            $destinationPath = public_path('/upload/rumah');
                             $image->move($destinationPath, $filename);
 
-                            $imagePath = 'upload/apartement/' . $filename;
+                            $imagePath = 'upload/rumah/' . $filename;
 
                             $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
 
@@ -171,7 +187,7 @@ class RumahPartnerController extends Controller
                         }
                     }
                 }
-                return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dibuat!');
+                return redirect()->route('pages.dashboard.properti.rumah')->with('success', 'Properti berhasil dibuat!');
             } else {
                 return redirect()->back()->with('error', 'Terjadi kesalahan');
             }
@@ -182,7 +198,7 @@ class RumahPartnerController extends Controller
 
     public function update($slug){
         $salescategories = KategoriPenjualan::all();
-        $properti = Properti::with('properti_apartement', 'foto_properti')->where('slug', $slug)->first();
+        $properti = Properti::with('properti_rumah', 'foto_properti')->where('slug', $slug)->first();
 
         return view('partner.dashboard.properti.rumah.update', compact('properti', 'salescategories'));
     }
@@ -192,7 +208,7 @@ class RumahPartnerController extends Controller
             $user = auth()->user();
             $partner = Partner::where('user_id', $user->id)->first();
             $properti = Properti::where('slug', $slug)->firstOrFail();
-            $propertiApartement = PropertiApartement::where('properti_id', $properti->id_properti)->firstOrFail();
+            $propertiRumah = PropertiRumah::where('properti_id', $properti->id_properti)->firstOrFail();
 
             $validator = Validator::make($request->all(), [
                 'nama_properti' => 'required',
@@ -202,7 +218,9 @@ class RumahPartnerController extends Controller
                 'latitude' => 'required',
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
-                'luas_apartement' => 'required',
+                'luas_tanah' => 'required',
+                'luas_bangunan' => 'required',
+                'jumlah_garasi' => 'required',
                 'jumlah_kamar_tidur' => 'required',
                 'jumlah_kamar_mandi' => 'required',
                 'foto_depan' => 'sometimes|image',
@@ -219,7 +237,9 @@ class RumahPartnerController extends Controller
                 'latitude.required' => 'Tidak boleh kosong!',
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
-                'luas_apartement.required' => 'Tidak boleh kosong!',
+                'luas_tanah.required' => 'Tidak boleh kosong!',
+                'luas_bangunan.required' => 'Tidak boleh kosong!',
+                'jumlah_garasi.required' => 'Tidak boleh kosong!',
                 'jumlah_kamar_tidur.required' => 'Tidak boleh kosong!',
                 'jumlah_kamar_mandi.required' => 'Tidak boleh kosong!',
                 'foto_depan.image' => 'File harus berupa gambar!',
@@ -243,8 +263,10 @@ class RumahPartnerController extends Controller
                 'kategori_penjualan_id' => $request->kategori_penjualan_id,
             ]);
 
-            $propertiApartement->update([
-                'luas_apartement' => $request->luas_apartement,
+            $propertiRumah->update([
+                'luas_tanah' => $request->luas_tanah,
+                'luas_bangunan' => $request->luas_bangunan,
+                'jumlah_garasi' => $request->jumlah_garasi,
                 'jumlah_kamar_tidur' => $request->jumlah_kamar_tidur,
                 'jumlah_kamar_mandi' => $request->jumlah_kamar_mandi,
             ]);
@@ -260,10 +282,10 @@ class RumahPartnerController extends Controller
                 if ($request->hasFile($photoField)) {
                     $image = $request->file($photoField);
                     $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                    $destinationPath = public_path('/upload/apartement');
+                    $destinationPath = public_path('/upload/rumah');
                     $image->move($destinationPath, $filename);
 
-                    $imagePath = 'upload/apartement/' . $filename;
+                    $imagePath = 'upload/rumah/' . $filename;
 
                     $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
                     FotoProperti::where('properti_id', $properti->id_properti)
@@ -275,7 +297,7 @@ class RumahPartnerController extends Controller
                 }
             }
 
-            return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil diperbarui!');
+            return redirect()->route('pages.dashboard.properti.rumah')->with('success', 'Properti berhasil diperbarui!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -293,7 +315,7 @@ class RumahPartnerController extends Controller
             }
             $properti->delete();
 
-            return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dihapus!');
+            return redirect()->route('pages.dashboard.properti.rumah')->with('success', 'Properti berhasil dihapus!');
         }
 
         return redirect()->back()->with('error', 'Properti tidak ditemukan!');

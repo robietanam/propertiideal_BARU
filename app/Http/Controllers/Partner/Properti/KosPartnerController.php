@@ -3,14 +3,22 @@
 namespace App\Http\Controllers\Partner\Properti;
 
 use App\Http\Controllers\Controller;
+use App\Models\FotoProperti;
+use App\Models\KategoriPenjualan;
+use App\Models\Partner;
+use App\Models\Properti;
+use App\Models\PropertiKos;
+use DB;
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class KosPartnerController extends Controller
 {
     // 'luas_kamar',
     //  'jenis_kamar_mandi',
     public function index(){
-        $propertiCollection = Properti::with('properti_apartement', 'foto_properti')->get();
+        $propertiCollection = Properti::with('properti_kos', 'foto_properti')->get();
 
         $datas = [];
 
@@ -25,16 +33,15 @@ class KosPartnerController extends Controller
                 'latitude' => $properti->latitude,
                 'longitude' => $properti->longitude,
                 'status' => $properti->status,
-                'apartements' => [],
+                'kos' => [],
                 'photos' => [],
             ];
 
-            foreach ($properti->properti_apartement as $apartement) {
-                $propertiData['apartements'][] = [
-                    'slug' => $apartement->slug,
-                    'luas_apartement' => $apartement->luas_apartement,
-                    'jumlah_kamar_tidur' => $apartement->jumlah_kamar_tidur,
-                    'jumlah_kamar_mandi' => $apartement->jumlah_kamar_mandi,
+            foreach ($properti->properti_kos as $kos) {
+                $propertiData['kos'][] = [
+                    'slug' => $kos->slug,
+                    'luas_kos' => $kos->luas_kos,
+                    'jenis_kamar_mandi' => $kos->jenis_kamar_mandi,
                 ];
             }
 
@@ -87,9 +94,8 @@ class KosPartnerController extends Controller
                 'latitude' => 'required',
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
-                'luas_apartement' => 'required',
-                'jumlah_kamar_tidur' => 'required',
-                'jumlah_kamar_mandi' => 'required',
+                'luas_kamar' => 'required',
+                'jenis_kamar_mandi' => 'required',
                 'foto_depan' => 'required|image',
                 'foto_samping_kiri' => 'required|image',
                 'foto_samping_kanan' => 'required|image',
@@ -104,9 +110,8 @@ class KosPartnerController extends Controller
                 'latitude.required' => 'Tidak boleh kosong!',
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
-                'luas_apartement.required' => 'Tidak boleh kosong!',
-                'jumlah_kamar_tidur.required' => 'Tidak boleh kosong!',
-                'jumlah_kamar_mandi.required' => 'Tidak boleh kosong!',
+                'luas_kamar.required' => 'Tidak boleh kosong!',
+                'jenis_kamar_mandi.required' => 'Tidak boleh kosong!',
                 'foto_depan.required' => 'Tidak boleh kosong!',
                 'foto_samping_kiri.required' => 'Tidak boleh kosong!',
                 'foto_samping_kanan.required' => 'Tidak boleh kosong!',
@@ -136,15 +141,14 @@ class KosPartnerController extends Controller
             $properti = Properti::create($inputProperti);
 
             if ($properti) {
-                $inputPropertiApartment['slug'] = $this->generateSlugApartment();
-                $inputPropertiApartment['luas_apartement'] = $request->luas_apartement;
-                $inputPropertiApartment['jumlah_kamar_tidur'] = $request->jumlah_kamar_tidur;
-                $inputPropertiApartment['jumlah_kamar_mandi'] = $request->jumlah_kamar_mandi;
-                $inputPropertiApartment['properti_id'] = $properti->id_properti;
+                $inputPropertiKos['slug'] = $this->generateSlugKos();
+                $inputPropertiKos['luas_kos'] = $request->luas_kos;
+                $inputPropertiKos['jenis_kamar_mandi'] = $request->jenis_kamar_mandi;
+                $inputPropertiKos['properti_id'] = $properti->id_properti;
 
-                $propertiApartement = PropertiApartement::create($inputPropertiApartment);
+                $propertiKos = PropertiKos::create($inputPropertiKos);
 
-                if ($propertiApartement) {
+                if ($propertiKos) {
                     $photos = [
                         'foto_depan' => 'Depan',
                         'foto_samping_kiri' => 'Samping Kiri',
@@ -156,10 +160,10 @@ class KosPartnerController extends Controller
                         if ($request->hasFile($photoField)) {
                             $image = $request->file($photoField);
                             $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                            $destinationPath = public_path('/upload/apartement');
+                            $destinationPath = public_path('/upload/kos');
                             $image->move($destinationPath, $filename);
 
-                            $imagePath = 'upload/apartement/' . $filename;
+                            $imagePath = 'upload/kos/' . $filename;
 
                             $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
 
@@ -172,7 +176,7 @@ class KosPartnerController extends Controller
                         }
                     }
                 }
-                return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dibuat!');
+                return redirect()->route('pages.dashboard.properti.kos')->with('success', 'Properti berhasil dibuat!');
             } else {
                 return redirect()->back()->with('error', 'Terjadi kesalahan');
             }
@@ -183,7 +187,8 @@ class KosPartnerController extends Controller
 
     public function update($slug){
         $salescategories = KategoriPenjualan::all();
-        $properti = Properti::with('properti_apartement', 'foto_properti')->where('slug', $slug)->first();
+        $properti = Properti::with('properti_kos', 'foto_properti')->where('slug', $slug)->first();
+
         return view('partner.dashboard.properti.kos.update', compact('properti', 'salescategories'));
     }
 
@@ -192,7 +197,8 @@ class KosPartnerController extends Controller
             $user = auth()->user();
             $partner = Partner::where('user_id', $user->id)->first();
             $properti = Properti::where('slug', $slug)->firstOrFail();
-            $propertiApartement = PropertiApartement::where('properti_id', $properti->id_properti)->firstOrFail();
+
+            $propertiKos = PropertiKos::where('properti_id', $properti->id_properti)->firstOrFail();
 
             $validator = Validator::make($request->all(), [
                 'nama_properti' => 'required',
@@ -202,9 +208,8 @@ class KosPartnerController extends Controller
                 'latitude' => 'required',
                 'longitude' => 'required',
                 'kategori_penjualan_id' => 'required',
-                'luas_apartement' => 'required',
-                'jumlah_kamar_tidur' => 'required',
-                'jumlah_kamar_mandi' => 'required',
+                'luas_kamar' => 'required',
+                'jenis_kamar_mandi' => 'required',
                 'foto_depan' => 'sometimes|image',
                 'foto_samping_kiri' => 'sometimes|image',
                 'foto_samping_kanan' => 'sometimes|image',
@@ -219,9 +224,8 @@ class KosPartnerController extends Controller
                 'latitude.required' => 'Tidak boleh kosong!',
                 'longitude.required' => 'Tidak boleh kosong!',
                 'kategori_penjualan_id.required' => 'Tidak boleh kosong!',
-                'luas_apartement.required' => 'Tidak boleh kosong!',
-                'jumlah_kamar_tidur.required' => 'Tidak boleh kosong!',
-                'jumlah_kamar_mandi.required' => 'Tidak boleh kosong!',
+                'luas_kamar.required' => 'Tidak boleh kosong!',
+                'jenis_kamar_mandi.required' => 'Tidak boleh kosong!',
                 'foto_depan.image' => 'File harus berupa gambar!',
                 'foto_samping_kiri.image' => 'File harus berupa gambar!',
                 'foto_samping_kanan.image' => 'File harus berupa gambar!',
@@ -243,10 +247,9 @@ class KosPartnerController extends Controller
                 'kategori_penjualan_id' => $request->kategori_penjualan_id,
             ]);
 
-            $propertiApartement->update([
-                'luas_apartement' => $request->luas_apartement,
-                'jumlah_kamar_tidur' => $request->jumlah_kamar_tidur,
-                'jumlah_kamar_mandi' => $request->jumlah_kamar_mandi,
+            $propertiKos->update([
+                'luas_kos' => $request->luas_kos,
+                'jenis_kamar_mandi' => $request->jenis_kamar_mandi,
             ]);
 
             $photos = [
@@ -260,10 +263,10 @@ class KosPartnerController extends Controller
                 if ($request->hasFile($photoField)) {
                     $image = $request->file($photoField);
                     $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-                    $destinationPath = public_path('/upload/apartement');
+                    $destinationPath = public_path('/upload/kos');
                     $image->move($destinationPath, $filename);
 
-                    $imagePath = 'upload/apartement/' . $filename;
+                    $imagePath = 'upload/kos/' . $filename;
 
                     $jenisFoto = DB::table('jenis_foto')->where('jenis_foto', $photoType)->first();
                     FotoProperti::where('properti_id', $properti->id_properti)
@@ -275,7 +278,7 @@ class KosPartnerController extends Controller
                 }
             }
 
-            return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil diperbarui!');
+            return redirect()->route('pages.dashboard.properti.kos')->with('success', 'Properti berhasil diperbarui!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -293,7 +296,7 @@ class KosPartnerController extends Controller
             }
             $properti->delete();
 
-            return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dihapus!');
+            return redirect()->route('pages.dashboard.properti.kos')->with('success', 'Properti berhasil dihapus!');
         }
 
         return redirect()->back()->with('error', 'Properti tidak ditemukan!');

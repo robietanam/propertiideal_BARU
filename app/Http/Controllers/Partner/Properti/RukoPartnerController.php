@@ -153,7 +153,7 @@ class RukoPartnerController extends Controller
                         }
                     }
                 }
-                return redirect()->route('pages.dashboard.properti.apartement')->with('success', 'Properti berhasil dibuat!');
+                return redirect()->route('pages.dashboard.properti.ruko')->with('success', 'Properti berhasil dibuat!');
             } else {
                 return redirect()->back()->with('error', 'Terjadi kesalahan');
             }
