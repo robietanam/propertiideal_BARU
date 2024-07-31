@@ -61,7 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/partner/aktif/{id}', [PartnerController::class, 'aktif']);
     Route::get('/admin/partner/detail/{id}', [PartnerController::class, 'show']);
 
-    Route::get('/admin/jual/{slug}', [PropertiController::class, 'index']);
+    Route::get('/admin/jual/{slug}', [PropertiController::class, 'jual']);
+    Route::get('/admin/sewa/{slug}', [PropertiController::class, 'sewa']);
 
     Route::resource('/kategori-solution', KategoriSolutionController::class);
     Route::resource('/properti-solution', PropertiSolutionController::class);
