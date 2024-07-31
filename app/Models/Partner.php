@@ -11,6 +11,8 @@ class Partner extends Model
 
     protected $table = 'partner';
 
+    protected $primaryKey = 'id_partner';
+
     protected $fillable = [
         'no_telepon',
         'detail_alamat',

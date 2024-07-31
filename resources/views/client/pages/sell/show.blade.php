@@ -1,6 +1,6 @@
 @extends('includes.app')
 
-@section('title', 'eFarm | Partner')
+@section('title', 'Properti Ideal | Partner')
 
 @section('content')
     <div>
@@ -40,7 +40,7 @@
             </div>
         @endif
 
-        {{-- @if (session('errors'))
+        @if (session('errors'))
             <div id="successMessage"
                 class="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur-md bg-white/30 bg-opacity-50 z-50">
                 <div class="relative w-full max-w-screen-md rounded-lg bg-red-500 px-4 py-4 text-base text-white"
@@ -71,13 +71,13 @@
                     </div>
                 </div>
             </div>
-        @endif --}}
+        @endif
         <div class="flex
         flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-10 my-10">
             <p rel="noreferrer"
                 class="border cursor-pointer rounded-2xl py-1 px-4 text-slate-500 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out">
                 Jadi partner
-                <span class="font-semibold">eFarm</span> sekarang
+                <span class="font-semibold">Properti Ideal</span> sekarang
             </p>
             <h1 class="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-textbase sm:text-7xl">
                 Ajukan menjadi
@@ -96,7 +96,7 @@
             <div class="rounded-lg">
                 <h1 class="text-2xl font-bold mb-4 text-textbase">Bagian 1 ・ Formulir untuk akun partner</h1>
                 <p class="text-textbase text-xl  mb-6">Silahkan diisi sesuai akun yang anda inginkan</p>
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('pages.submission.partner.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
@@ -108,10 +108,10 @@
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="username">Username *</label>
-                            <input name="username" id="username" type="text" placeholder="Masukkan username"
+                            <label class="text-lg font-medium text-textbase" for="name">Username *</label>
+                            <input name="name" id="name" type="text" placeholder="Masukkan name"
                                 class="border p-2 rounded w-full">
-                            @error('username')
+                            @error('name')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
@@ -153,25 +153,24 @@
                 <p class="text-textbase text-xl  mb-6"><span class="font-bold">Penting! </span>Silahkan diisi dengan
                     kesesuaian data yang ada
                     dilapangan dikarenakan akan ada pengecekan dari admin ke lokasi</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                        <label class="text-lg font-medium text-textbase" for="nama_partner">Nama Partner *</label>
-                        <input name="nama_partner" id="nama_partner" type="text" placeholder="Nama Partner"
-                            class="border p-2 rounded w-full">
-                        @error('nama_partner')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="text-lg font-medium text-textbase" for="link_instagram">Link instagram (opsional)</label>
+                            <input name="link_instagram" id="link_instagram" type="text" placeholder="Masukkan link instagram"
+                                class="border p-2 rounded w-full">
+                            @error('link_instagram')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div>
+                            <label class="text-lg font-medium text-textbase" for="link_website">Link website (opsional)</label>
+                            <input name="link_website" id="link_website" type="text" placeholder="Masukkan link website"
+                                class="border p-2 rounded w-full">
+                            @error('link_website')
+                                <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
-                    <div>
-                        <label class="text-lg font-medium text-textbase" for="nama_perusahaan_partner">Nama peternakan
-                            *</label>
-                        <input name="nama_perusahaan_partner" id="nama_perusahaan_partner" type="text"
-                            placeholder="Masukkan nama peternakan" class="border p-2 rounded w-full">
-                        @error('nama_perusahaan_partner')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="provinsi_partner">Provinsi *</label>
@@ -216,29 +215,7 @@
                         @enderror
                     </div>
                 </div>
-                {{-- <div class="grid-cols-2 md:grid-cols-2 gap-4 mb-4 hidden">
-                    <div class="pb-4">
-                        <label>Latitude *</label>
-                        <input readonly disabled type="text" value="{{ $latitude }}" name="latitude"
-                            id="latitude" placeholder="Masih belum terdeteksi" class="border p-2 rounded w-full">
-                        @error('latitude')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div>
-                        <label>Longitude *</label>
-                        <input readonly disabled type="text" value="{{ $longitude }}" name="longitude"
-                            id="longitude" placeholder="Masih belum terdeteksi" class="border p-2 rounded w-full">
-                        @error('longitude')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div> --}}
-                <div class="mb-4 hidden">
-                    <label for="status">Status *</label>
-                    <input value="Belum terverifikasi" name="status" id="status" type="text"
-                        placeholder="Detail alamat" class="border p-2 rounded w-full">
-                </div>
+                
                 <div class="mb-4">
                     <label for="alamat_partner">Detail alamat *</label>
                     <input name="alamat_partner" id="alamat_partner" type="text" placeholder="Detail alamat"
@@ -248,37 +225,14 @@
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <div>
-                        <label class="text-lg font-medium text-textbase" for="tanggal_lahir">Tanggal lahir *</label>
-                        <input type="date" name="tanggal_lahir" id="tanggal_lahir"
-                            placeholder="Masukkan Tanggal lahir" class="border p-2 rounded w-full">
-                        @error('tanggal_lahir')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div>
-                        <label class="text-lg font-medium text-textbase" for="jenis_kelamin">Jenis kelamin *</label>
-                        <select name="jenis_kelamin" id="jenis_kelamin" class="border p-2 rounded w-full">
-                            <option value="">Pilih jenis kelamin</option>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                        @error('jenis_kelamin')
-                            <span class="text-red-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label class="text-lg font-medium text-textbase" for="lama_peternakan_berdiri">Berdiri sejak
-                        *</label>
-                    <input name="lama_peternakan_berdiri" id="lama_peternakan_berdiri" type="number"
-                        placeholder="Berdiri sejak" class="border p-2 rounded w-full">
-                    @error('lama_peternakan_berdiri')
+                    <label for="no_telepon">Nomor telepon *</label>
+                    <input name="no_telepon" id="no_telepon" type="text" placeholder="Detail alamat"
+                        class="border p-2 rounded w-full">
+                    @error('no_telepon')
                         <span class="text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
+
                 <div class="mb-6 pt-4">
                     <label class="mb-5 block text-xl font-medium text-textbase">
                         Foto diri *
@@ -314,8 +268,8 @@
                     </label>
 
                     <div class="mb-8">
-                        <input type="file" name="foto_peternakan" id="foto_peternakan" class="sr-only" />
-                        <label for="foto_peternakan"
+                        <input type="file" name="foto_ktp" id="foto_ktp" class="sr-only" />
+                        <label for="foto_ktp"
                             class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
                             <div>
                                 <span class="mb-2 block text-xl font-semibold text-textbase">
@@ -331,7 +285,7 @@
                             </div>
                         </label>
                     </div>
-                    @error('foto_peternakan')
+                    @error('foto_ktp')
                         <span class="text-red-500">{{ $message }}</span>
                     @enderror
                     <div id="image-preview2" class="mt-4"></div>
@@ -610,7 +564,7 @@
             });
         });
         $(document).ready(function() {
-            $('#foto_peternakan').change(function(e) {
+            $('#foto_ktp').change(function(e) {
                 var fileName = e.target.files[0].name;
                 var fileExt = fileName.split('.').pop();
                 var reader = new FileReader();
@@ -659,7 +613,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             var successMessage = document.getElementById('successMessage');
 
-            // Sembunyikan pesan sukses saat diklik
             successMessage.addEventListener('click', function() {
                 successMessage.style.display = 'none';
             });
