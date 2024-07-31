@@ -10,11 +10,13 @@ use App\Http\Controllers\Partner\Properti\KosPartnerController;
 use App\Http\Controllers\Partner\Properti\RukoPartnerController;
 use App\Http\Controllers\Partner\Properti\RumahPartnerController;
 use App\Http\Controllers\Partner\Properti\TanahPartnerController;
+use App\Http\Controllers\Partner\SubmissionPartnerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('partner/login', [AuthPartnerController::class, 'index'])->name('pages.partner.login');
 Route::post('partner/login', [AuthPartnerController::class, 'store'])->name('pages.partner.login.store');
 Route::get('partner/logout', [AuthPartnerController::class, 'logout'])->name('pages.partner.logout');
+Route::post('daftar-partner/store', [SubmissionPartnerController::class, 'store'])->name('pages.submission.partner.store');
 
 Route::middleware(['auth', 'role:Partner'])->group(function () {
     Route::get('/dashboard/partner', [DashboardPartnerController::class, 'index'])->name('pages.dashboard.partner');

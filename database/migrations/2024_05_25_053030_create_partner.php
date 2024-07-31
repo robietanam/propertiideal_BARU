@@ -15,8 +15,8 @@ return new class extends Migration
             $table->smallIncrements('id_partner');
             $table->string('no_telepon', 15);
             $table->text('detail_alamat')->nullable();
-            $table->text('link_instagram');
-            $table->text('link_website');
+            $table->text('link_instagram')->nullable();
+            $table->text('link_website')->nullable();
             $table->string('foto_ktp');
             $table->bigInteger('user_id')->unsigned();
             $table->enum('status', ['Belum Verifikasi', 'Sudah Verifikasi', 'Nonaktif'])->default('Belum Verifikasi');

@@ -63,10 +63,12 @@ class WebPagesController extends Controller
     }
 
     public function submission(){
+        
         return view('client.pages.sell.show');
     }
 
     public function propertiideal(){
+
         return view('client.pages.services.ideal.index');
     }
 
