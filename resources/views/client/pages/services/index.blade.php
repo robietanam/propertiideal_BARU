@@ -16,8 +16,8 @@
                         </div>
 
                         <div class="mt-5 max-w-3xl">
-                            <p class="text-lg text-textbase">Kelola peternakan, jual hewan ternak, beli hewan ternak
-                                dengan berbagai layanan yang tersedia di eFarm.</p>
+                            <p class="text-lg text-textbase">Jual properti, beli properti
+                                dengan berbagai layanan yang tersedia di Properti Ideal.</p>
                         </div>
                     </div>
                 </div>

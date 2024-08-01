@@ -4,58 +4,43 @@
 
 @section('content')
     <section class="py-20 bg-white">
-        <div class="flex flex-col px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
-            <div class="relative">
-                <h2 class="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl"> Level Up Your Designs</h2>
-                <p class="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">Add some nice
-                    touches to your interface with our latest designs, components, and templates. We've crafted a beautiful
-                    user experience that your visitors will love. </p>
+        <div class="flex flex-col px-8 mx-auto space-y-12 max-w-full lg:px-20 md:px-20 sm:px-0 xl:px-12">
+            <div class="relative max-w-full lg:px-20 mx-auto">
+                <h2 class="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">Wujudkan Propeti Idealmu Bersama
+                    Properti Ideal! 🤩</h2>
+                <p class="py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">Dengan layanan terintegrasi dan berbagai pilihan, kami siap membantu Anda menjual atau membeli properti dengan proses yang mudah dan menyenangkan.</p>
             </div>
             <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
                 <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
-                    <img class="rounded-lg shadow-xl" src="https://cdn.devdojo.com/images/december2020/dashboard-011.png"
-                        alt="">
+                    <img class="rounded-lg shadow-xl"
+                        src="https://www.bsdcity.com/app/uploads/2022/07/savia-park-cluster-1.jpg" alt="">
                 </div>
                 <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Drag-n-drop
-                        design</p>
-                    <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Design Made Easy</h3>
-                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Crafting your user experience has never been
-                        easier, with our intuitive drag'n drop interface you will be creating beatiful designs in no time.
+                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600">Properti Solution</p>
+                    <h3 class="mt-2 text-2xl font-semibold sm:text-left md:text-4xl">Menyediakan layanan sesuai kebutuhan
+                        Anda</h3>
+                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Kami di Properti Ideal berkomitmen untuk menyediakan layanan yang sesuai dengan kebutuhan spesifik Anda. Baik itu untuk pembangunan rumah baru, renovasi ruang yang ada, atau desain interior yang menawan, tim ahli kami siap memberikan solusi menyeluruh untuk memenuhi semua keinginan Anda. 🤩
                     </p>
                 </div>
             </div>
             <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
                 <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12">
-                    <img class="rounded-lg shadow-xl" src="https://cdn.devdojo.com/images/december2020/dashboard-04.png"
+                    <img class="rounded-lg shadow-xl"
+                        src="https://events.rumah123.com/wp-content/uploads/sites/38/2024/01/04171043/klasika.jpg"
                         alt="">
                 </div>
                 <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
-                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">know your data
+                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600">Properti Ideal
                     </p>
-                    <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Optimized For Conversions</h3>
-                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Backed by data, these templates have been
-                        crafted for ultimate optimization. Now, converting your visitors into customers is easier than ever
-                        before.</p>
-                </div>
-            </div>
-            <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
-                <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
-                    <img class="rounded-lg shadow-xl" src="https://cdn.devdojo.com/images/december2020/dashboard-03.png"
-                        alt="">
-                </div>
-                <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Easy to customize
-                    </p>
-                    <h3 class="mt-2 text-2xl sm:text-left md:text-4xl">Make It Your Own</h3>
-                    <p class="mt-5 text-lg text-gray-700 text md:text-left">All templates and components are fully
-                        customizable. You can use these templates to tell your personal story and convey your message.</p>
+                    <h3 class="mt-2 font-semibold text-2xl sm:text-left md:text-4xl">Lift-up Properti Anda, Beli hunian impian anda dengan Properti Ideal! 🤩</h3>
+                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Dari pilihan hunian yang luas hingga layanan yang mempermudah setiap langkah pembelian, Properti Ideal memastikan bahwa Anda mendapatkan pengalaman yang memuaskan dan hasil yang sesuai dengan harapan Anda. Bergabunglah dengan kami dan temukan hunian impian Anda hari ini!</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- component -->
-    <div class="px-3 md:lg:xl:px-40   border-t border-b py-20 bg-opacity-10"
+
+
+    {{-- <div class="px-3 md:lg:xl:px-40   border-t border-b py-20 bg-opacity-10"
         style="background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png') ;">
         <div class="grid grid-cols-1 md:lg:xl:grid-cols-3 group bg-white shadow-xl shadow-neutral-100 border ">
 
@@ -141,10 +126,6 @@
                 <p class="mt-2 text-sm text-slate-500">Visa process by helping you create the necessary documentation
                 </p>
             </div>
-
-
-
-
         </div>
 
         <div class="w-full   bg-indigo-600 shadow-xl shadow-indigo-200 py-10 px-20 flex justify-between items-center">
@@ -154,88 +135,15 @@
                 class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400">BOOK AN
                 APPOINTMENT </button>
         </div>
-
-    </div>
-    <div class="text-white mt-24 container mx-auto p-8 overflow-hidden md:rounded-lg md:p-10 lg:p-12">
-
-
-        <div class="grid gap-8 md:grid-cols-2 ">
-            <div class="flex flex-col  justify-center">
-                <p class="self-start inline text-xl font-semibold text-textbase">
-                    Tentang eFarm 🐑
-                </p>
-                <h2 class="text-4xl font-bold text-textbase">eFarm, Teman peternakanmu</h2>
-                <div class="h-6"></div>
-                <p class="font-serif text-xl text-textbase md:pr-10">
-                    Dengan eFarm, kebutuhan peternakan Anda akan terpenuhi dengan mudah dan efisien. Kami menyediakan
-                    solusi terbaik untuk mendukung peternakan Anda dalam mencapai hasil yang optimal.
-                </p>
-                <div class="h-8"></div>
-                <div class="grid grid-cols-2 gap-4 pt-4 ">
-                    <div>
-                        <p class="font-semibold text-textbase">Partner</p>
-                        <div class="h-4"></div>
-                        <p class="font-serif text-textbase">
-                            Kami bekerja sama dengan berbagai mitra terpercaya untuk memastikan Anda mendapatkan produk
-                            dan layanan terbaik
-                        </p>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-textbase">Market</p>
-                        <div class="h-4"></div>
-                        <p class="font-serif text-textbase">
-                            Temukan berbagai produk berkualitas tinggi yang tersedia di pasar kami
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex rounded-lg">
-                    <img class="rounded-xl"
-                        src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2022/03/14/3062481748.jpg"
-                        alt="about">
-                </div>
-            </div>
-        </div>
-
-        <div class="h-32 md:h-40"></div>
-
-        <p class="text-4xl">
-            <span class="text-textbase font-semibold text-6xl">Dibangun oleh kelompok PPL E08 dengan Mitranya adalah
-                Ternak Express</span>
-        </p>
-        <section
-            class="flex flex-col mt-20 w-full h-[500px] bg-blur bg-cover bg-fixed bg-center flex justify-center items-center rounded-3xl"
-            style="
-                background-image: url({{ asset('images/herofixed.png') }});
-            ">
-            <h1 class="text-primarybase text-7xl font-bold mt-20 mb-10">
-                eFarm
-            </h1>
-
-            <span class="text-center font-bold my-20 text-white/90">
-                <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank"
-                    class="text-primarybase hover:text-white">
-                    Jadi Partner
-                </a>
-
-                <a href="https://unsplash.com/photos/8Pm_A-OHJGg" target="_blank"
-                    class="text-primarybase hover:text-white">
-                    Jual Beli Hewan Ruminansia
-                </a>
-
-            </span>
-        </section>
-    </div>
-
+    </div> --}}
 
     <div class="text-white mt-24 container mx-auto p-8 overflow-hidden md:rounded-lg md:p-10 lg:p-12">
         <div class="mx-auto px-4 md:px-8">
             <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12 flex-col">
                 <div class="flex items-center flex-col">
-                    <h2 class="text-6xl font-bold text-gray-800 lg:text-6xl ">Dokumentasi eFarm</h2>
+                    <h2 class="text-6xl font-bold text-gray-800 lg:text-6xl ">Dokumentasi Properti Ideal</h2>
                     <p class="max-w-screen text-xl mt-3 text-gray-500 ">
-                        Ini adalah aktivitas, kemitraan, produk, penjalanan, dan sejarah dari eFarm
+                        Ini adalah aktivitas, kemitraan, produk, penjalanan, dan sejarah dari Properti Ideal
                     </p>
                 </div>
 
@@ -245,7 +153,7 @@
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                    <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2023/03/16/Screenshot-138-2778996270.png"
+                    <img src="https://infobanknews.com/wp-content/uploads/2022/08/IMG-20220822-WA0005.jpg"
                         loading="lazy" alt="Photo by Minh Pham"
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
@@ -253,14 +161,14 @@
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
                     </div>
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Kambing</span>
+                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Ruko</span>
                 </a>
                 <!-- image - end -->
 
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                    <img src="https://awsimages.detik.net.id/community/media/visual/2023/08/23/kandang-kambing-mewah-di-tuban-2_169.jpeg?w=650"
+                    <img src="https://cdn1.katadata.co.id/media/images/thumb/2019/10/17/2019_10_17-11_04_43_b9ae64f66fbf0ac902ffbb274781d73c_960x640_thumb.jpg"
                         loading="lazy" alt="Photo by Magicle"
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
@@ -268,14 +176,14 @@
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
                     </div>
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Kandang</span>
+                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Kos</span>
                 </a>
                 <!-- image - end -->
 
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                    <img src="https://kominfo.jatimprov.go.id/uploads/images/IMG-20240311-WA0050.jpg" loading="lazy"
+                    <img src="https://www.bonafide.co.id/wp-content/uploads/2021/05/Apartemen.jpg" loading="lazy"
                         alt="Photo by Martin Sanchez"
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
@@ -283,14 +191,14 @@
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
                     </div>
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Mitra</span>
+                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Apartement</span>
                 </a>
                 <!-- image - end -->
 
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                    <img src="https://cdn.rri.co.id/berita/48/images/1677338816561-Bupati_Banyuwangi_Ipuk_Fiestiandani_(Kanan)_Saat_Meninjau_Peternakan_Kambing/1677338816561-Bupati_Banyuwangi_Ipuk_Fiestiandani_(Kanan)_Saat_Meninjau_Peternakan_Kambing.jpg"
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZnqLF2g3YXCuMvnojsy16b-h-PhDUf2Vtrg&s"
                         loading="lazy" alt="Photo by Lorenzo Herrera"
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
@@ -298,7 +206,7 @@
                         class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
                     </div>
 
-                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Aktivitas</span>
+                    <span class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Rumah</span>
                 </a>
                 <!-- image - end -->
             </div>
@@ -314,7 +222,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Bagaimana cara mendaftar sebagai mitra penjual di platform ini?                        </span>
+                        <span class="flex-1 text-textbase text-base-content">Bagaimana cara mendaftar sebagai mitra penjual
+                            di platform ini? </span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -327,7 +236,9 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Anda dapat mendaftar sebagai mitra penjual melalui halaman pendaftaran di website kami. Isi formulir pendaftaran dan tim kami akan menghubungi Anda untuk proses verifikasi dan onboarding</div>
+                            <div class="space-y-2 leading-relaxed">Anda dapat mendaftar sebagai mitra penjual melalui
+                                halaman pendaftaran di website kami. Isi formulir pendaftaran dan tim kami akan menghubungi
+                                Anda untuk proses verifikasi dan onboarding</div>
                         </div>
                     </div>
                 </li>
@@ -335,7 +246,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Apa saja syarat untuk menjadi mitra penjual di platform ini?
+                        <span class="flex-1 text-textbase text-base-content">Apa saja syarat untuk menjadi mitra penjual di
+                            platform ini?
                         </span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
@@ -349,7 +261,9 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Kami memerlukan mitra penjual untuk memiliki izin usaha yang sah dan mematuhi standar kualitas serta kebersihan yang ditetapkan. Dokumen pendukung akan diperiksa selama proses pendaftaran.
+                            <div class="space-y-2 leading-relaxed">Kami memerlukan mitra penjual untuk memiliki izin usaha
+                                yang sah dan mematuhi standar kualitas serta kebersihan yang ditetapkan. Dokumen pendukung
+                                akan diperiksa selama proses pendaftaran.
                             </div>
                         </div>
                     </div>
@@ -358,7 +272,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Bagaimana cara saya mengelola daftar properti yang saya jual?</span>
+                        <span class="flex-1 text-textbase text-base-content">Bagaimana cara saya mengelola daftar properti
+                            yang saya jual?</span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -371,7 +286,10 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Setelah menjadi mitra penjual, Anda akan mendapatkan akses ke dashboard khusus di platform kami. Di dashboard tersebut, Anda dapat menambah, mengedit, atau menghapus daftar properti Anda, serta mengelola informasi terkait harga dan deskripsi</div>
+                            <div class="space-y-2 leading-relaxed">Setelah menjadi mitra penjual, Anda akan mendapatkan
+                                akses ke dashboard khusus di platform kami. Di dashboard tersebut, Anda dapat menambah,
+                                mengedit, atau menghapus daftar properti Anda, serta mengelola informasi terkait harga dan
+                                deskripsi</div>
                         </div>
                     </div>
                 </li>
@@ -379,7 +297,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Apakah ada biaya pendaftaran atau biaya bulanan untuk menjadi mitra penjual?
+                        <span class="flex-1 text-textbase text-base-content">Apakah ada biaya pendaftaran atau biaya
+                            bulanan untuk menjadi mitra penjual?
                         </span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
@@ -393,7 +312,9 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Kami tidak mengenakan biaya pendaftaran atau biaya bulanan. Namun, kami akan mengambil komisi dari setiap transaksi yang berhasil dilakukan melalui platform kami.
+                            <div class="space-y-2 leading-relaxed">Kami tidak mengenakan biaya pendaftaran atau biaya
+                                bulanan. Namun, kami akan mengambil komisi dari setiap transaksi yang berhasil dilakukan
+                                melalui platform kami.
                             </div>
                         </div>
                     </div>
@@ -402,7 +323,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Bagaimana proses pembayaran dilakukan untuk transaksi yang berhasil?</span>
+                        <span class="flex-1 text-textbase text-base-content">Bagaimana proses pembayaran dilakukan untuk
+                            transaksi yang berhasil?</span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -415,7 +337,8 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Pembayaran untuk transaksi akan dilakukan diluar sistem sesuai kesepakatan antara penjual dan pembeli</div>
+                            <div class="space-y-2 leading-relaxed">Pembayaran untuk transaksi akan dilakukan diluar sistem
+                                sesuai kesepakatan antara penjual dan pembeli</div>
                         </div>
                     </div>
                 </li>
@@ -423,7 +346,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Apakah saya bisa menentukan harga jual untuk properti yang saya tawarkan?                        </span>
+                        <span class="flex-1 text-textbase text-base-content">Apakah saya bisa menentukan harga jual untuk
+                            properti yang saya tawarkan? </span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -436,7 +360,9 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Ya, sebagai mitra penjual, Anda memiliki kebebasan penuh untuk menentukan harga jual properti yang Anda tawarkan. Kami mendorong Anda untuk menetapkan harga yang kompetitif sesuai dengan nilai pasar</div>
+                            <div class="space-y-2 leading-relaxed">Ya, sebagai mitra penjual, Anda memiliki kebebasan penuh
+                                untuk menentukan harga jual properti yang Anda tawarkan. Kami mendorong Anda untuk
+                                menetapkan harga yang kompetitif sesuai dengan nilai pasar</div>
                         </div>
                     </div>
                 </li>
@@ -444,7 +370,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Apakah platform ini menyediakan dukungan pemasaran untuk mitra penjual?                        </span>
+                        <span class="flex-1 text-textbase text-base-content">Apakah platform ini menyediakan dukungan
+                            pemasaran untuk mitra penjual? </span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -457,7 +384,9 @@
                     <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
-                            <div class="space-y-2 leading-relaxed">Ya, kami menyediakan dukungan pemasaran dan promosi untuk mitra penjual, termasuk fitur-fitur promosi di platform kami dan bantuan dalam strategi pemasaran untuk meningkatkan visibilitas dan penjualan properti Anda</div>
+                            <div class="space-y-2 leading-relaxed">Ya, kami menyediakan dukungan pemasaran dan promosi
+                                untuk mitra penjual, termasuk fitur-fitur promosi di platform kami dan bantuan dalam
+                                strategi pemasaran untuk meningkatkan visibilitas dan penjualan properti Anda</div>
                         </div>
                     </div>
                 </li>
@@ -465,7 +394,8 @@
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
                         aria-expanded="false" onclick="toggleFAQ(this)">
-                        <span class="flex-1 text-textbase text-base-content">Apakah mitra penjual dapat menjual properti yang berada di luar wilayah operasional saat ini?</span>
+                        <span class="flex-1 text-textbase text-base-content">Apakah mitra penjual dapat menjual properti
+                            yang berada di luar wilayah operasional saat ini?</span>
                         <svg class="flex-shrink-0 w-4 h-4 ml-auto fill-current" viewBox="0 0 16 16"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"
@@ -479,7 +409,9 @@
                         style="transition: max-height 0.3s ease-in-out 0s;">
                         <div class="pb-5 leading-relaxed">
                             <div class="space-y-2 leading-relaxed">
-                                Kami terbuka untuk bekerja sama dengan mitra penjual dari berbagai wilayah. Jika properti Anda berada di luar wilayah operasional saat ini, silakan hubungi tim kami untuk mendiskusikan kemungkinan kerja sama dan pengaturan logistik.</div>
+                                Kami terbuka untuk bekerja sama dengan mitra penjual dari berbagai wilayah. Jika properti
+                                Anda berada di luar wilayah operasional saat ini, silakan hubungi tim kami untuk
+                                mendiskusikan kemungkinan kerja sama dan pengaturan logistik.</div>
                         </div>
                     </div>
                 </li>

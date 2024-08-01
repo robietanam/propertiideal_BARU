@@ -75,7 +75,7 @@
                 </div>
         </section>
 
-        <section class="bg-gray-50 py-12 pb-32 sm:py-10 lg:py-10 xl:py-10">
+        <section class="bg-white py-12 pb-32 sm:py-10 lg:py-10 xl:py-10">
             <div class="mx-auto max-w-full lg:px-20">
                 <div class="text-center">
                     <p class="text-lg font-semibold text-textbase">Cara menjadi Partner Properti Ideal?</p>
