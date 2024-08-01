@@ -27,7 +27,7 @@ class WebPagesController extends Controller
         $query = Properti::query();
 
         if ($request->has('category')) {
-            $kategoriParams = KategoriProperti::where('slug', $request->category)->first();
+            $kategoriParams = KategoriProperti::where('slug', $request->category)->where('kategori_penjualan_id', 1)->first();
             $kategoriId = $kategoriParams->id_kategori_properti;
 
             $query->where('kategori_properti_id', $kategoriId);
