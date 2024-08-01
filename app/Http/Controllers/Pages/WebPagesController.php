@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\KategoriProperti;
+use App\Models\Properti;
 use Illuminate\Http\Request;
 
 class WebPagesController extends Controller
@@ -18,8 +20,31 @@ class WebPagesController extends Controller
         return view('client.pages.sell.index');
     }
 
-    public function buy(){
-        return view('client.pages.buy.index');
+    public function buy(Request $request){
+
+        $categories = KategoriProperti::all();
+
+        $query = Properti::query();
+
+        if ($request->has('category')) {
+            $kategoriParams = KategoriProperti::where('slug', $request->category)->first();
+            $kategoriId = $kategoriParams->id_kategori_properti;
+
+            $query->where('kategori_properti_id', $kategoriId);
+        }
+
+        if ($request->has('minimal') && $request->minimal !== null) {
+            $query->where('harga', '>=', $request->minimal);
+        }
+
+        if ($request->has('maksimal') && $request->maksimal !== null) {
+            $query->where('harga', '<=', $request->maksimal);
+        }
+
+
+        $properties = $query->get();
+
+        return view('client.pages.buy.index', compact('categories', 'properties'));
     }
 
     public function rental(){
@@ -63,7 +88,7 @@ class WebPagesController extends Controller
     }
 
     public function submission(){
-        
+
         return view('client.pages.sell.show');
     }
 

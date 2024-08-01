@@ -11,6 +11,8 @@ class KategoriProperti extends Model
 
     protected $table = 'kategori_properti';
 
+    protected $primaryKey = 'id_kategori_properti';
+
     protected $fillable = [
         'nama_kategori',
         'deskripsi_kategori',
