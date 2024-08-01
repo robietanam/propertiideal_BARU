@@ -17,11 +17,11 @@
             <div class="max-w-md w-full">
                 <div class="flex mt-20 items-center justify-center gap-y-10 sm:py-16 lg:py-20 my-10">
                     <a href="{{ route('login') }}" class="flex items-center gap-x-4">
-                        <img class="h-12 w-12" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt=""
-                            class="my-3">
+                        <img class="h-12 w-12 my-3 mr-4" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt=""
+                            >
                         <div class="flex flex-col">
-                            <div class="text-xl font-bold text-gray-800 ">Properti Ideal</div>
-                            <div class="text-lg font-semibold text-gray-800 ">Jual properti Anda bersama kami</div>
+                            <div class="text-xl font-bold text-primarybase ">Properti Ideal</div>
+                            <div class="text-lg font-semibold text-primarybase ">Jual properti Anda bersama kami</div>
                         </div>
                     </a>
                 </div>

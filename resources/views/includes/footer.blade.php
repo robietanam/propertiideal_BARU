@@ -6,7 +6,7 @@
 
 
 <footer class="bg-primarybase pt-10" aria-labelledby="footer-heading">
-    <div class="mx-auto max-w-7xl px-6 pb-8 lg:px-8 py-5">
+    <div class="mx-auto max-w-full px-6 pb-8 lg:px-20 py-5">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
                 <a href="/" class="flex flex-wrap gap-x-2 items-center">
