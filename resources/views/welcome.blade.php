@@ -19,16 +19,23 @@
                                     <h1
                                         class="overflow-hidden whitespace-nowrap-textbase pr-3 text-2xl font-bold tracking-tight text-textbase sm:text-5xl">
                                         Beli properti dari rumah</h1>
-                                    <p class="mt-3 text-xl leading-8 text-textbase">Kami menyediakan berbagai pilihan properti yang cocok untuk berbagai kebutuhan, mulai dari hunian pribadi hingga bisnis komersil.</p>
+                                    <p class="mt-3 text-xl leading-8 text-textbase">Kami menyediakan berbagai pilihan
+                                        properti yang cocok untuk berbagai kebutuhan, mulai dari hunian pribadi hingga
+                                        bisnis komersil.</p>
                                     <div class="mt-3 flex items-center gap-x-6">
                                         <a href="{{ route('pages.buy') }}"
                                             class="rounded-md items-center gap-x-3 flex flex-wrap cursor-pointer bg-primarybase px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
                                             Beli properti <span aria-hidden="true">
-                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                                    viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                                                    <path
+                                                        d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
+                                                </svg>
                                             </span>
                                         </a>
                                         <a href="{{ route('pages.buy') }}"
-                                            class="rounded-md bg-white cursor-pointer ring-1 ring-primarybase px-5 py-2.5 text-sm font-semibold leading-6 text-primarybase hover:bg-primarybase hover:text-white">Sewa properti</a>
+                                            class="rounded-md bg-white cursor-pointer ring-1 ring-primarybase px-5 py-2.5 text-sm font-semibold leading-6 text-primarybase hover:bg-primarybase hover:text-white">Sewa
+                                            properti</a>
                                     </div>
                                 </div>
                             </div>
@@ -39,72 +46,88 @@
         </div>
     </div>
 
-    {{-- Card --}}
     <section class="pb-10 -mt-[5rem]">
         <div class="container px-9 mx-auto">
             <div class="flex flex-wrap">
-                <div class="w-full md:w-4/12 px-4">
+
+                <div class="w-full md:w-4/12 px-4 mt-10">
                     <div class="relative flex flex-col min-w-0 bg-white w-full mb-8 shadow-lg rounded-lg">
-                        <div class="w-full flex justify-center">
+                        {{-- <div class="w-full flex justify-center">
                             <div class="relative">
                                 <div class="max-w-[100px]">
-                                    <img src="{{ asset('shield.svg') }}"
+                                    <img src="{{ asset('icons/connect.svg') }}"
                                         class="rounded-lg bg-white p-4 ring-1 ring-primarybase absolute -m-20 -ml-36 lg:-ml-36 -mt-12 max-w-[60px]" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg">
-                            <div>
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full" />
-                            </div>
-                            <div class="p-4 space-y-3">
-                                <p class="text-xl text-textbase leading-sm">
-                                    Kami siap membantu anda menjual properti dengan cepat dan efisien. 🤝
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-4/12 px-4">
-                    <div class="relative flex flex-col min-w-0 bg-white w-full mb-8 shadow-lg rounded-lg">
-                        <div class="w-full flex justify-center">
-                            <div class="relative">
-                                <div class="max-w-[100px]">
-                                    <img src="{{ asset('shield.svg') }}"
-                                        class="rounded-lg bg-white p-4 ring-1 ring-primarybase absolute -m-20 -ml-36 lg:-ml-36 -mt-12 max-w-[60px]" />
+                        </div> --}}
+                        <div class="bg-gray-50 rounded-lg ring-1 ring-primarybase">
+                            <div class="">
+                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                    class="w-full bg-cover rounded-lg" />
+                                <div class="absolute inset-0 flex items-start pt-4 justify-center">
+                                    <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
+                                        class="w-20" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg">
-                            <div>
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full" />
-                            </div>
                             <div class="p-4 space-y-3">
                                 <p class="text-xl text-textbase leading-sm">
-                                    Telusuri berbagai pilihan properti yang sesuai dengan keinginan dan anggaran Anda. 🤝
+                                    Kami siap membantu anda menjual properti dengan cepat dan efisien 🤝
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full md:w-4/12 px-4">
+                <div class="w-full md:w-4/12 px-4 mt-10">
                     <div class="relative flex flex-col min-w-0 bg-white w-full mb-8 shadow-lg rounded-lg">
-                        <div class="w-full flex justify-center">
+                        {{-- <div class="w-full flex justify-center">
                             <div class="relative">
                                 <div class="max-w-[100px]">
-                                    <img src="{{ asset('shield.svg') }}"
+                                    <img src="{{ asset('icons/real_estate.svg') }}"
                                         class="rounded-lg bg-white p-4 ring-1 ring-primarybase absolute -m-20 -ml-36 lg:-ml-36 -mt-12 max-w-[60px]" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg">
-                            <div>
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full" />
+                        </div> --}}
+                        <div class="bg-gray-50 rounded-lg ring-1 ring-primarybase">
+                            <div class="">
+                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                    class="w-full bg-cover rounded-lg" />
+                                <div class="absolute inset-0 flex items-start pt-4 justify-center">
+                                    <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
+                                        class="w-20" />
+                                </div>
                             </div>
                             <div class="p-4 space-y-3">
                                 <p class="text-xl text-textbase leading-sm">
-                                    Kami memiliki daftar properti sewa terbaik dalam berbagai pilihan lokasi. 🤝
+                                    Telusuri berbagai pilihan properti yang sesuai dengan keinginan dan anggaran Anda 🤝
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-4/12 px-4 mt-10">
+                    <div class="relative flex flex-col min-w-0 bg-white w-full mb-8 shadow-lg rounded-lg">
+                        {{-- <div class="w-full flex justify-center">
+                            <div class="relative">
+                                <div class="max-w-[100px]">
+                                    <img src="{{ asset('icons/map.svg') }}"
+                                        class="rounded-lg bg-white p-4 ring-1 ring-primarybase absolute -m-20 -ml-36 lg:-ml-36 -mt-12 max-w-[60px]" />
+                                </div>
+                            </div>
+                        </div> --}}
+                        <div class="bg-gray-50 rounded-lg ring-1 ring-primarybase">
+                            <div class="">
+                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                    class="w-full bg-cover rounded-lg" />
+                                <div class="absolute inset-0 flex items-start pt-4 justify-center">
+                                    <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
+                                        class="w-20" />
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <p class="text-xl text-textbase leading-sm">
+                                    Kami memiliki daftar properti sewa terbaik dalam berbagai pilihan lokasi 🤝
                                 </p>
                             </div>
                         </div>
@@ -113,254 +136,44 @@
             </div>
     </section>
 
-    <div x-data="{ openTab: 1 }" class="container px-6 py-10 h-screen mx-auto md:py-5">
-        <div class="flex flex-col space-y-6 md:flex-row md:space-x-3">
-            <div class="w-full">
-                <div class="max-w-2xl">
-                    <h1 class="text-5xl font-bold tracking-wide text-textbase">
-                        Layanan yang kami sediakan untuk Anda!
-                    </h1>
-                    <p class="mt-2 font-medium text-xl text-textbase">
-                        Pilih dan raih properti ideal bersama kami!
-                    </p>
-                    <div class="grid gap-4 mt-8 sm:grid-cols-3">
-                        <div class="flex items-center justify-center text-gray-800">
-                            <button x-on:click="openTab = 1"
-                                class="flex w-full bg-primarybase py-3 px-2 rounded-lg ring-1 ring-primarybase">
-                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.77778 11.1111C2.01389 11.1111 1.35995 10.8391 0.815972 10.2951C0.271991 9.75116 0 9.09722 0 8.33333V2.77778C0 2.01389 0.271991 1.35995 0.815972 0.815972C1.35995 0.271991 2.01389 0 2.77778 0H8.33333C9.09722 0 9.75116 0.271991 10.2951 0.815972C10.8391 1.35995 11.1111 2.01389 11.1111 2.77778V8.33333C11.1111 9.09722 10.8391 9.75116 10.2951 10.2951C9.75116 10.8391 9.09722 11.1111 8.33333 11.1111H2.77778ZM2.77778 25C2.01389 25 1.35995 24.728 0.815972 24.184C0.271991 23.64 0 22.9861 0 22.2222V16.6667C0 15.9028 0.271991 15.2488 0.815972 14.7049C1.35995 14.1609 2.01389 13.8889 2.77778 13.8889H8.33333C9.09722 13.8889 9.75116 14.1609 10.2951 14.7049C10.8391 15.2488 11.1111 15.9028 11.1111 16.6667V22.2222C11.1111 22.9861 10.8391 23.64 10.2951 24.184C9.75116 24.728 9.09722 25 8.33333 25H2.77778ZM16.6667 11.1111C15.9028 11.1111 15.2488 10.8391 14.7049 10.2951C14.1609 9.75116 13.8889 9.09722 13.8889 8.33333V2.77778C13.8889 2.01389 14.1609 1.35995 14.7049 0.815972C15.2488 0.271991 15.9028 0 16.6667 0H22.2222C22.9861 0 23.64 0.271991 24.184 0.815972C24.728 1.35995 25 2.01389 25 2.77778V8.33333C25 9.09722 24.728 9.75116 24.184 10.2951C23.64 10.8391 22.9861 11.1111 22.2222 11.1111H16.6667ZM16.6667 25C15.9028 25 15.2488 24.728 14.7049 24.184C14.1609 23.64 13.8889 22.9861 13.8889 22.2222V16.6667C13.8889 15.9028 14.1609 15.2488 14.7049 14.7049C15.2488 14.1609 15.9028 13.8889 16.6667 13.8889H22.2222C22.9861 13.8889 23.64 14.1609 24.184 14.7049C24.728 15.2488 25 15.9028 25 16.6667V22.2222C25 22.9861 24.728 23.64 24.184 24.184C23.64 24.728 22.9861 25 22.2222 25H16.6667ZM2.77778 8.33333H8.33333V2.77778H2.77778V8.33333ZM16.6667 8.33333H22.2222V2.77778H16.6667V8.33333ZM16.6667 22.2222H22.2222V16.6667H16.6667V22.2222ZM2.77778 22.2222H8.33333V16.6667H2.77778V22.2222Z"
-                                        fill="white" />
-                                </svg>
-                                <p class="text-white ml-2 font-semibold text-md">Properti Service</p>
-                            </button>
-                        </div>
-                        <div class="flex items-center justify-center text-gray-800">
-                            <button x-on:click="openTab = 2"
-                                class="flex  w-full bg-white py-3 px-2 rounded-lg ring-1 ring-primarybase">
-                                <svg width="35" height="25" viewBox="0 0 31 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M8.02337 19.2775V23.5694C8.02337 23.9747 7.88627 24.3145 7.61206 24.5887C7.33786 24.8629 6.99809 25 6.59275 25C6.18741 25 5.84764 24.8629 5.57344 24.5887C5.29924 24.3145 5.16214 23.9747 5.16214 23.5694V19.2775H3.73152C3.32618 19.2775 2.98641 19.1404 2.71221 18.8662C2.43801 18.592 2.30091 18.2523 2.30091 17.8469C2.30091 17.4416 2.43801 17.1018 2.71221 16.8276C2.98641 16.5534 3.32618 16.4163 3.73152 16.4163H5.16214V10.4793L2.30091 12.6609C1.9671 12.8994 1.60944 13.0007 1.22794 12.965C0.846447 12.9292 0.536481 12.7444 0.298045 12.4106C0.059609 12.0768 -0.0357654 11.7191 0.0119218 11.3376C0.059609 10.9561 0.250358 10.6462 0.584168 10.4077L13.4239 0.572246C13.6862 0.381497 13.9664 0.238436 14.2644 0.143062C14.5625 0.0476872 14.8665 0 15.1764 0C15.4864 0 15.7904 0.0476872 16.0885 0.143062C16.3865 0.238436 16.6667 0.381497 16.9289 0.572246L29.7687 10.4077C30.0787 10.6462 30.2635 10.9561 30.3231 11.3376C30.3827 11.7191 30.2933 12.0768 30.0548 12.4106C29.8164 12.7444 29.5064 12.9292 29.1249 12.965C28.7434 13.0007 28.3858 12.8994 28.052 12.6609L25.1907 10.4793V16.4163H26.6214C27.0267 16.4163 27.3665 16.5534 27.6407 16.8276C27.9149 17.1018 28.052 17.4416 28.052 17.8469C28.052 18.2523 27.9149 18.592 27.6407 18.8662C27.3665 19.1404 27.0267 19.2775 26.6214 19.2775H25.1907V23.5694C25.1907 23.9747 25.0536 24.3145 24.7794 24.5887C24.5052 24.8629 24.1655 25 23.7601 25C23.3548 25 23.015 24.8629 22.7408 24.5887C22.4666 24.3145 22.3295 23.9747 22.3295 23.5694V19.2775H16.6071V23.5694C16.6071 23.9747 16.47 24.3145 16.1958 24.5887C15.9216 24.8629 15.5818 25 15.1764 25C14.7711 25 14.4313 24.8629 14.1571 24.5887C13.8829 24.3145 13.7458 23.9747 13.7458 23.5694V19.2775H8.02337ZM8.02337 16.4163H13.7458V3.93419L8.02337 8.29757V16.4163ZM16.6071 16.4163H22.3295V8.29757L16.6071 3.93419V16.4163Z"
-                                        fill="#AAC14C" />
-                                </svg>
-                                <p class="text-primarybase ml-2 font-semibold text-md">Properti
-                                    Ideal</p>
-                            </button>
-                        </div>
-                        <div class="flex items-center justify-center text-gray-800">
-                            <button x-on:click="openTab = 3"
-                                class="flex  w-full bg-white py-3 px-2 rounded-lg ring-1 ring-primarybase">
-                                <svg width="35" height="25" viewBox="0 0 51 25" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M2.42415 25C1.83388 25 1.33908 24.8003 0.939779 24.401C0.540473 24.0017 0.34082 23.5069 0.34082 22.9167V21.7188C0.34082 20.2257 1.10471 19.0104 2.63249 18.0729C4.16026 17.1354 6.17415 16.6667 8.67415 16.6667C9.12554 16.6667 9.55957 16.6753 9.97624 16.6927C10.3929 16.7101 10.7922 16.7535 11.1742 16.8229C10.688 17.5521 10.3235 18.316 10.0804 19.1146C9.83735 19.9132 9.71582 20.7465 9.71582 21.6146V25H2.42415ZM14.9242 25C14.3339 25 13.8391 24.8003 13.4398 24.401C13.0405 24.0017 12.8408 23.5069 12.8408 22.9167V21.6146C12.8408 20.5035 13.1446 19.4878 13.7523 18.5677C14.3599 17.6476 15.2193 16.8403 16.3304 16.1458C17.4415 15.4514 18.7696 14.9306 20.3148 14.5833C21.8599 14.2361 23.5353 14.0625 25.3408 14.0625C27.1811 14.0625 28.8738 14.2361 30.4189 14.5833C31.9641 14.9306 33.2922 15.4514 34.4033 16.1458C35.5144 16.8403 36.3651 17.6476 36.9554 18.5677C37.5457 19.4878 37.8408 20.5035 37.8408 21.6146V22.9167C37.8408 23.5069 37.6412 24.0017 37.2419 24.401C36.8426 24.8003 36.3478 25 35.7575 25H14.9242ZM40.9658 25V21.6146C40.9658 20.7118 40.853 19.8611 40.6273 19.0625C40.4016 18.2639 40.063 17.5174 39.6117 16.8229C39.9936 16.7535 40.3842 16.7101 40.7835 16.6927C41.1828 16.6753 41.5908 16.6667 42.0075 16.6667C44.5075 16.6667 46.5214 17.1267 48.0492 18.0469C49.5769 18.967 50.3408 20.191 50.3408 21.7188V22.9167C50.3408 23.5069 50.1412 24.0017 49.7419 24.401C49.3426 24.8003 48.8478 25 48.2575 25H40.9658ZM17.2679 20.8333H33.4658C33.1186 20.1389 32.1551 19.5312 30.5752 19.0104C28.9953 18.4896 27.2505 18.2292 25.3408 18.2292C23.4311 18.2292 21.6863 18.4896 20.1064 19.0104C18.5266 19.5312 17.5804 20.1389 17.2679 20.8333ZM8.67415 14.5833C7.52832 14.5833 6.54742 14.1753 5.73145 13.3594C4.91547 12.5434 4.50749 11.5625 4.50749 10.4167C4.50749 9.23611 4.91547 8.24653 5.73145 7.44792C6.54742 6.64931 7.52832 6.25 8.67415 6.25C9.85471 6.25 10.8443 6.64931 11.6429 7.44792C12.4415 8.24653 12.8408 9.23611 12.8408 10.4167C12.8408 11.5625 12.4415 12.5434 11.6429 13.3594C10.8443 14.1753 9.85471 14.5833 8.67415 14.5833ZM42.0075 14.5833C40.8617 14.5833 39.8807 14.1753 39.0648 13.3594C38.2488 12.5434 37.8408 11.5625 37.8408 10.4167C37.8408 9.23611 38.2488 8.24653 39.0648 7.44792C39.8807 6.64931 40.8617 6.25 42.0075 6.25C43.188 6.25 44.1776 6.64931 44.9762 7.44792C45.7748 8.24653 46.1742 9.23611 46.1742 10.4167C46.1742 11.5625 45.7748 12.5434 44.9762 13.3594C44.1776 14.1753 43.188 14.5833 42.0075 14.5833ZM25.3408 12.5C23.6047 12.5 22.129 11.8924 20.9137 10.6771C19.6985 9.46181 19.0908 7.98611 19.0908 6.25C19.0908 4.47917 19.6985 2.99479 20.9137 1.79688C22.129 0.598958 23.6047 0 25.3408 0C27.1117 0 28.596 0.598958 29.7939 1.79688C30.9919 2.99479 31.5908 4.47917 31.5908 6.25C31.5908 7.98611 30.9919 9.46181 29.7939 10.6771C28.596 11.8924 27.1117 12.5 25.3408 12.5ZM25.3408 8.33333C25.9311 8.33333 26.4259 8.13368 26.8252 7.73438C27.2245 7.33507 27.4242 6.84028 27.4242 6.25C27.4242 5.65972 27.2245 5.16493 26.8252 4.76562C26.4259 4.36632 25.9311 4.16667 25.3408 4.16667C24.7505 4.16667 24.2558 4.36632 23.8564 4.76562C23.4571 5.16493 23.2575 5.65972 23.2575 6.25C23.2575 6.84028 23.4571 7.33507 23.8564 7.73438C24.2558 8.13368 24.7505 8.33333 25.3408 8.33333Z"
-                                        fill="#AAC14C" />
-                                </svg>
-                                <p class="text-primarybase ml-2 font-semibold text-md">Properti Solution</p>
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        class="relative flex mt-10 flex-col bg-sekunderbase ring-1 ring-primarybase w-full mb-4 rounded-lg">
-                        <div class="bg-sekunderbase rounded-lg">
-                            <div class="py-8 px-10">
-                                <div class="flex flex-wrap items-center">
-                                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M2.77778 11.1111C2.01389 11.1111 1.35995 10.8391 0.815972 10.2951C0.271991 9.75116 0 9.09722 0 8.33333V2.77778C0 2.01389 0.271991 1.35995 0.815972 0.815972C1.35995 0.271991 2.01389 0 2.77778 0H8.33333C9.09722 0 9.75116 0.271991 10.2951 0.815972C10.8391 1.35995 11.1111 2.01389 11.1111 2.77778V8.33333C11.1111 9.09722 10.8391 9.75116 10.2951 10.2951C9.75116 10.8391 9.09722 11.1111 8.33333 11.1111H2.77778ZM2.77778 25C2.01389 25 1.35995 24.728 0.815972 24.184C0.271991 23.64 0 22.9861 0 22.2222V16.6667C0 15.9028 0.271991 15.2488 0.815972 14.7049C1.35995 14.1609 2.01389 13.8889 2.77778 13.8889H8.33333C9.09722 13.8889 9.75116 14.1609 10.2951 14.7049C10.8391 15.2488 11.1111 15.9028 11.1111 16.6667V22.2222C11.1111 22.9861 10.8391 23.64 10.2951 24.184C9.75116 24.728 9.09722 25 8.33333 25H2.77778ZM16.6667 11.1111C15.9028 11.1111 15.2488 10.8391 14.7049 10.2951C14.1609 9.75116 13.8889 9.09722 13.8889 8.33333V2.77778C13.8889 2.01389 14.1609 1.35995 14.7049 0.815972C15.2488 0.271991 15.9028 0 16.6667 0H22.2222C22.9861 0 23.64 0.271991 24.184 0.815972C24.728 1.35995 25 2.01389 25 2.77778V8.33333C25 9.09722 24.728 9.75116 24.184 10.2951C23.64 10.8391 22.9861 11.1111 22.2222 11.1111H16.6667ZM16.6667 25C15.9028 25 15.2488 24.728 14.7049 24.184C14.1609 23.64 13.8889 22.9861 13.8889 22.2222V16.6667C13.8889 15.9028 14.1609 15.2488 14.7049 14.7049C15.2488 14.1609 15.9028 13.8889 16.6667 13.8889H22.2222C22.9861 13.8889 23.64 14.1609 24.184 14.7049C24.728 15.2488 25 15.9028 25 16.6667V22.2222C25 22.9861 24.728 23.64 24.184 24.184C23.64 24.728 22.9861 25 22.2222 25H16.6667ZM2.77778 8.33333H8.33333V2.77778H2.77778V8.33333ZM16.6667 8.33333H22.2222V2.77778H16.6667V8.33333ZM16.6667 22.2222H22.2222V16.6667H16.6667V22.2222ZM2.77778 22.2222H8.33333V16.6667H2.77778V22.2222Z"
-                                            fill="#444444" />
-                                    </svg>
-                                    <p class="text-3xl ml-2 font-semibold text-textbase leading-sm">
-                                        Semua layanan PropertiIdeal
-                                    </p>
-                                </div>
-                                <p class="text-xl text-textbase leading-sm mt-2">
-                                    Pelajari lebih lanjut semua layanan PropertiIdeal untuk melakukan penjualan properti
-                                </p>
+    <div class="overflow-hidden bg-white py-24 sm:py-32">
+        <div class="mx-auto lg:max-w-full px-6 lg:px-20">
+            <div class="mx-auto grid w-full grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:grid-cols-2 lg:px-10">
+                <div class="lg:pr-8">
+                    <div class="lg:px-10">
+                        <p rel="noreferrer"
+                            class="w-48 border border-primarybase cursor-pointer rounded-2xl py-1 px-4 text-primarybase text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out flex">
+                            <span class="font-semibold text-center mx-auto justify-center flex items-center">Properti Ideal</span>
+                        </p>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Temukan Properti Impian Anda</p>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">Kami siap membantu Anda menemukan properti terbaik sesuai dengan keinginan dan anggaran Anda. Proses jual beli yang cepat dan efisien adalah prioritas kami</p>
+                        <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-gray-900">
+                                    🏡 Proses Cepat
+                                </dt>
+                                <dd class="inline">Kami memastikan proses jual beli properti berjalan cepat dan tanpa hambatan, memberikan Anda pengalaman yang menyenangkan</dd>
                             </div>
-                        </div>
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-gray-900">
+                                    🚎 Kemudahan menemukan properti
+                                </dt>
+                                <dd class="inline">Kami menyediakan beberapa kategori properti yang dapat Anda pilih sesuai kebutuhan Anda</dd>
+                            </div>
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-gray-900">👷🏻 Solusi Properti
+                                </dt>
+                                <dd class="inline">TIdak hanya menjual properti, kami juga memberikan layanan solusi untuk kebutuhan properti anda!</dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
-            </div>
-
-            <div class="w-4/6 px-4">
-                <div x-show="openTab === 1">
-                    <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-10 rounded-lg">
-                        <div class="bg-gray-50 rounded-lg">
-                            <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover" />
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña" class="w-20" />
-                                </div>
-                            </div>
-                            <div class="py-8 px-10">
-                                <p class="text-3xl font-semibold text-textbase leading-sm">
-                                    Properti Ideal
-                                </p>
-                                <p class="text-xl text-textbase leading-sm mt-2">
-                                    Lift-up properti Anda, beli hunian impian Anda dengan PropertiIdeal! 🤩
-                                </p>
-                                <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                    <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                        Pelajari selengkapnya
-                                    </a>
-                                    <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                            fill="#AAC14C" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-10 rounded-lg">
-                        <div class="bg-gray-50 rounded-lg">
-                            <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover" />
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="{{ asset('icons/properti-solution.png') }}" alt="montaña" class="w-20" />
-                                </div>
-                            </div>
-                            <div class="py-8 px-10">
-                                <p class="text-3xl font-semibold text-textbase leading-sm">
-                                    Properti Solution
-                                </p>
-                                <p class="text-xl text-textbase leading-sm mt-2">
-                                    Solusi menyeluruh untuk Pembangunan, Renovasi, dan Desain Interior.🤩
-                                </p>
-                                <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                    <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                        Pelajari selengkapnya
-                                    </a>
-                                    <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                            fill="#AAC14C" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="openTab === 2"
-                    class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-10 rounded-lg">
-                    <div class="bg-gray-50 rounded-lg">
-                        <div class="relative flex">
-                            <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover" />
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="{{ asset('icons/properti-service.png') }}" alt="montaña" class="w-5" />
-                            </div>
-                        </div>
-                        <div class="py-8 px-10">
-                            <p class="text-3xl font-semibold text-textbase leading-sm">
-                                Partner
-                            </p>
-                            <p class="text-xl text-textbase leading-sm mt-2">
-                                Memberikan pengalaman yang baik dalam hal belanja! 🤩
-                            </p>
-                            <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                    Pelajari selengkapnya
-                                </a>
-                                <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                        fill="#AAC14C" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="openTab === 3"
-                    class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-10 rounded-lg">
-                    <div class="bg-gray-50 rounded-lg">
-                        <div class="relative flex">
-                            <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover" />
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña" class="" />
-                            </div>
-                        </div>
-                        <div class="py-8 px-10">
-                            <p class="text-3xl font-semibold text-textbase leading-sm">
-                                Market
-                            </p>
-                            <p class="text-xl text-textbase leading-sm mt-2">
-                                Memberikan pengalaman yang baik dalam hal belanja! 🤩
-                            </p>
-                            <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                    Pelajari selengkapnya
-                                </a>
-                                <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                        fill="#AAC14C" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="https://panangianschool.com/wp-content/uploads/2022/12/Macam-Macam-Contoh-Investasi-Properti-1200px-x-675px-1200x675.jpg"
+                    alt="properti"
+                    class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+                    width="2432" height="1442">
             </div>
         </div>
-    </div>
-    <div class="relative flex my-44 flex-col justify-center sm:py-5">
-        <div class="w-full items-center mx-auto max-w-screen-lg">
-            <div class="group grid w-full grid-cols-2">
-                <div class="">
-                    <h class="text-4xl font-bold tracking-wide text-textbase">
-                        Jadi partner kami untuk melakukan <span class="text-primarybase">penjualan</span> properti!
-                    </h>
-                    <div class="flex my-3 items-center text-gray-800">
-                        <a href="{{ route('pages.buy') }}"
-                            class="flex items-center bg-primarybase py-3 px-4 rounded-lg ring-1 ring-primarybase">
-                            <p class="text-white mr-4 font-semibold text-lg">Jadi partner</p>
-                            <svg width="25" height="20" viewBox="0 0 28 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill="white"
-                                    d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                    fill="#AAC14C" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <div class="pl-12">
-                        <h3 class="text-2xl text-textbase font-medium mb-6">Hingga dalam satu tahun, Ternak Express
-                            berhasil memiliki 1000 lebih partner yang tersebar diseluruh wilayah Indonesia</h3>
-                        <div class="grid grid-cols-2 gap-6 justify-between mb-3">
-                            <div>
-                                <div
-                                    class="flex items-center py-2 px-2 justify-center gap-3 w-full bg-sekunderbase rounded-lg">
-                                    <p class="font-semibold justify-center text-textbase flex items-center">Service
-                                    </p>
-                                </div>
-                                <p class="flex my-2 text-textbase font-bold text-6xl justify-center items-center gap-3">
-                                    1023+
-                                </p>
-                            </div>
-                            <div>
-                                <div
-                                    class="flex items-center py-2 px-2 justify-center gap-3 w-full bg-sekunderbase rounded-lg">
-                                    <p class="font-semibold justify-center text-textbase flex items-center">
-                                        Penjualan 2023</p>
-                                </div>
-                                <p class="flex my-2 text-textbase font-bold text-6xl justify-center items-center gap-3">
-                                    40232+
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -371,7 +184,6 @@
                     var scrollPosition = $(window).scrollTop();
                     var blurTriggerPosition = 200;
 
-                    // Menambahkan atau menghapus kelas blur sesuai dengan posisi scroll
                     if (scrollPosition > blurTriggerPosition) {
                         $('.sticky').addClass('blurred-background');
                     } else {
