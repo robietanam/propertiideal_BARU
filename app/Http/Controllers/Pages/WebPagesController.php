@@ -41,7 +41,6 @@ class WebPagesController extends Controller
             $query->where('harga', '<=', $request->maksimal);
         }
 
-
         $properties = $query->get();
 
         return view('client.pages.buy.index', compact('categories', 'properties'));

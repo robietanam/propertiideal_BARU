@@ -1,8 +1,7 @@
 <nav class="sticky top-0 z-50">
     <div class="w-full bg-primarybase h-6 flex justify-center items-center">
         <div class="">
-            <p class="text-white font-medium text-sm">Dipercaya oleh 412 mitra yang tersebar diseluruh
-                Indonesia</p>
+            <p class="text-white font-medium text-sm">Wujudukan properti idealmu bersama properti ideal! 🏠</p>
         </div>
     </div>
     <div
@@ -40,11 +39,11 @@
                                 <a href="{{ route('pages.services.propertiideal') }}"
                                     class="flex items-start px-4 py-2 space-x-2 rounded-md ">
                                     <div class="items-center flex">
-                                        <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
+                                        <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
                                             class="h-5 mr-4" />
                                         <span class="flex flex-col ">
                                             <span class="text-textbase text-lg font-semibold ">Properti Ideal</span>
-                                            <span class="text-textbase text-sm ">Jual hewan ternak</span>
+                                            <span class="text-textbase text-sm ">Jual beli properti</span>
                                         </span>
                                     </div>
                                 </a>
@@ -53,10 +52,10 @@
                                 <a href="{{ route('pages.services.propertisolution') }}"
                                     class="flex items-start px-4 py-2 space-x-2 ">
                                     <div class="items-center flex ">
-                                        <img src="{{ asset('efarm-market.png') }}" alt="montaña" class="h-5 mr-4" />
+                                        <img src="{{ asset('icons/properti-solution.png') }}" alt="montaña" class="h-5 mr-4" />
                                         <span class="flex flex-col">
                                             <span class="text-textbase text-lg font-semibold ">Properti Solution</span>
-                                            <span class="text-textbase text-sm ">Beli hewan ternak</span>
+                                            <span class="text-textbase text-sm ">Solusi properti Anda</span>
                                         </span>
                                     </div>
                                 </a>
@@ -66,7 +65,7 @@
                             <div
                                 class="p-4 text-lg font-medium border-t  rounded-b-md cursor-pointer hover:ring-1 hover:ring-primarybase">
                                 <div class="items-center flex">
-                                    <img src="{{ asset('efarm-layanan.png') }}" alt="montaña" class="h-5 mr-4" />
+                                    <img src="{{ asset('icons/properti-service.png') }}" alt="montaña" class="h-5 mr-4" />
                                     <span class="flex flex-col">
                                         <span class="text-textbase text-lg font-semibold ">Semua
                                             layanan</span>
