@@ -6,14 +6,13 @@
     <div class="flex flex-col">
         <h2 class="mb-4 text-2xl font-bold">Dashboard</h2>
         <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5">
-            @foreach ($partials as $partial)
                 <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
                     <div class="flex h-12 w-12 items-center justify-center rounded-full border border-blue-100 bg-blue-50">
                         <img src="{{ asset('icons/house.svg') }}" alt="" class="h-7 w-7">
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countRumah'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countProperti'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Properti Rumah</p>
                     </div>
                 </div>
@@ -25,7 +24,7 @@
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countApartement'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countApartement'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Properti Apartement</p>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countTanah'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countTanah'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Properti Tanah</p>
                     </div>
                 </div>
@@ -48,7 +47,7 @@
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countKos'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countKos'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Properti Kos</p>
                     </div>
                 </div>
@@ -60,7 +59,7 @@
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countRuko'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countRuko'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Properti Ruko</p>
                     </div>
                 </div>
@@ -73,11 +72,10 @@
                     </div>
 
                     <div class="ml-4">
-                        <h2 class="font-semibold">{{ $partial['countProperti'] }} Properti</h2>
+                        <h2 class="font-semibold">{{ $partials['countProperti'] }} Properti</h2>
                         <p class="mt-2 text-sm text-gray-500">Semua Properti</p>
                     </div>
                 </div>
-            @endforeach
 
             <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2">
                 <div class="flex h-12 w-12 items-center justify-center rounded-full border border-indigo-100 bg-indigo-50">
@@ -132,11 +130,6 @@
 
                                             <th scope="col"
                                                 class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                                Deskripsi
-                                            </th>
-
-                                            <th scope="col"
-                                                class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 Harga
                                             </th>
 
@@ -159,8 +152,6 @@
                                                 <td class="px-4 py-4 text-sm text-gray-500">
                                                     {{ $data['alamat'] }}, {{ $data['latitude'] }}, {{ $data['longitude'] }}
                                                 </td>
-                                                <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                                                    {{ $data['deskripsi'] }}</td>
                                                 <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                                     <div
                                                         class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 ">
