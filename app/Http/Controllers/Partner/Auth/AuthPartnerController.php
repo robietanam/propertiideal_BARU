@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Partner\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Partner;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -27,10 +28,14 @@ class AuthPartnerController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             if (Auth::user()->role == 'Partner') {
+                $userId = Auth::user()->id;
+                $partner = Partner::where('user_id', $userId)->first();
+                if ($partner->status == 'Belum Verifikasi') return redirect()->route('pages.partner.login')->with('status', 'Anda belum diverifikasi oleh Admin!');
+                if ($partner->status == 'Nonaktif') return redirect()->route('pages.partner.login')->with('status', 'Anda dinonaktifkan oleh Admin!');
                 return redirect()->route('pages.dashboard.partner');
             } else {
                 Auth::guard('web')->logout();
-                return redirect()->route('partner.login')->with('status', 'Anda bukan partner!');
+                return redirect()->route('pages.partner.login')->with('status', 'Anda bukan partner!');
             }
         }
 
