@@ -56,4 +56,8 @@ class Properti extends Model
     public function foto_solution() : hasMany {
         return $this->hasMany(FotoSolution::class, 'properti_id', 'id_properti');
     }
+
+    public function partner() : hasMany {
+        return $this->hasMany(Partner::class, 'id_partner', 'partner_id');
+    }
 }

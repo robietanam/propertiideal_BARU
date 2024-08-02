@@ -68,19 +68,27 @@
             <div class="lg:col-span-2 p-4 bg-white mt-3" id="posted">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     @foreach ($properties as $property)
-                        <a href="{{ route('pages.buy') }}">
+                        <a href="{{ route('pages.detail.properties', $property->slug) }}">
                             <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                                @php
+                                    $displayImage = '';
+                                    if (in_array($property->kategori_properti_id, [1, 2, 3, 4])) {
+                                        $displayImage = $property->foto_properti[0]['foto_properti'];
+                                    }
+                                @endphp
                                 <div class="flex items-end justify-end h-52 w-full bg-cover relative"
-                                    style="background-image: url('/uploads/{{ $property->image }}')">
+                                    style="background-image: url('{{ asset($displayImage) }}')">
                                 </div>
                                 <div class="px-5 py-3">
-                                    <h3 class="text-gray-700 text-lg font-semibold">{{ $property->nama_properti }}</h3>
+                                    <h3 class="text-gray-700 text-lg font-semibold">
+                                        {{ $property->nama_properti }}
+                                    </h3>
                                     <div>
                                         <h2 class="text-primarybase text-lg font-semibold">Rp
-                                            {{ number_format($property->price, 0, ',', '.') }}</h2>
+                                            {{ number_format($property->harga, 0, ',', '.') }}</h2>
                                         <div class="flex gap-2">
                                         </div>
-                                        <p class="text-gray-700 text-md font-medium mt-4">{{ $property->harga }}</p>
+                                        <p class="text-gray-700 text-md font-medium mt-4">{{ $property->deskripsi }}</p>
                                         <p class="text-gray-700 text-sm font-medium mb-4">{{ $property->alamat }} Terjual
                                         </p>
                                     </div>

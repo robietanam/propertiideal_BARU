@@ -23,4 +23,8 @@ class Partner extends Model
         'status',
         'verified_at',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

@@ -41,7 +41,10 @@ class WebPagesController extends Controller
             $query->where('harga', '<=', $request->maksimal);
         }
 
-        $properties = $query->where('kategori_penjualan_id', 1)->get();
+        $properties = $query->with('foto_properti')->where('kategori_penjualan_id', 1)->get();
+        // foreach($properties as $foto){
+        //     dd($foto->foto_properti);
+        // }
 
         return view('client.pages.buy.index', compact('categories', 'properties'));
     }
@@ -66,12 +69,16 @@ class WebPagesController extends Controller
             $query->where('harga', '<=', $request->maksimal);
         }
 
-        $properties = $query->where('kategori_penjualan_id', 2)->get();
+        $properties = $query->with('foto_properti')->where('kategori_penjualan_id', 2)->get();
         return view('client.pages.rental.index', compact('categories', 'properties'));
     }
 
-    public function detail_properties(){
-        return view('client.pages.buy.show');
+    public function detail_properties($slug){
+        $propertiCollection = Properti::with('foto_properti', 'partner.user')->where('slug', $slug)->first();
+        // dd($propertiCollection);
+
+        // dd($propertiCollection->foto_properti);
+        return view('client.pages.buy.show', compact('propertiCollection'));
     }
 
     public function by_properties(){
