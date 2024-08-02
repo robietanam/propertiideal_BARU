@@ -41,13 +41,33 @@ class WebPagesController extends Controller
             $query->where('harga', '<=', $request->maksimal);
         }
 
-        $properties = $query->get();
+        $properties = $query->where('kategori_penjualan_id', 1)->get();
 
         return view('client.pages.buy.index', compact('categories', 'properties'));
     }
 
-    public function rental(){
-        return view('client.pages.rental.index');
+    public function rental(Request $request){
+        $categories = KategoriProperti::all();
+
+        $query = Properti::query();
+
+        if ($request->has('category')) {
+            $kategoriParams = KategoriProperti::where('slug', $request->category)->where('kategori_penjualan_id', 1)->first();
+            $kategoriId = $kategoriParams->id_kategori_properti;
+
+            $query->where('kategori_properti_id', $kategoriId);
+        }
+
+        if ($request->has('minimal') && $request->minimal !== null) {
+            $query->where('harga', '>=', $request->minimal);
+        }
+
+        if ($request->has('maksimal') && $request->maksimal !== null) {
+            $query->where('harga', '<=', $request->maksimal);
+        }
+
+        $properties = $query->where('kategori_penjualan_id', 2)->get();
+        return view('client.pages.rental.index', compact('categories', 'properties'));
     }
 
     public function detail_properties(){
