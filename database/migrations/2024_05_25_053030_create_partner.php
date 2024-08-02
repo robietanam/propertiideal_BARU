@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('foto_ktp');
             $table->bigInteger('user_id')->unsigned();
             $table->enum('status', ['Belum Verifikasi', 'Sudah Verifikasi', 'Nonaktif'])->default('Belum Verifikasi');
+            $table->dateTime('verified_at')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

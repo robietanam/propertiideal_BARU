@@ -61,6 +61,7 @@ class DatabaseSeeder extends Seeder
             'foto_ktp' => 'ktp.png',
             'status' => 'Belum Verifikasi',
             'user_id' => 3,
+            'verified_at' => '2024-08-02 19:33:09',
         ]);
         DB::table('partner')->insert([
             'no_telepon' => '081xxxxxx',

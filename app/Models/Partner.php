@@ -21,5 +21,6 @@ class Partner extends Model
         'foto_ktp',
         'user_id',
         'status',
+        'verified_at',
     ];
 }

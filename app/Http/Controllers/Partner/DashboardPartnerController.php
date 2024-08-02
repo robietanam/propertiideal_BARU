@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use App\Models\Partner;
 use App\Models\Properti;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardPartnerController extends Controller
@@ -59,6 +60,38 @@ class DashboardPartnerController extends Controller
         $partner = Partner::where('user_id', $user->id)->first();
         $partnerId = $partner->id_partner;
 
-        return view('partner.dashboard.index', compact('datas'));
+
+        $partialCollections = Properti::with('properti_apartement', 'properti_ruko', 'properti_kos', 'properti_rumah', 'properti_tanah')
+        ->where('partner_id', $partnerId)
+        ->get();
+
+        $partials = [];
+
+        // dd($partialCollections);
+
+        if($user){
+            foreach ($partialCollections as $partial) {
+                $partialData = [
+                    'countProperti' => count($partialCollections),
+                    // 'bergabungSejak' => $user->created_at,
+                    // 'diverifikasiSejak' => $partner->verified_at,
+                    'countRumah' => count($partial->properti_rumah),
+                    'countApartement' => count($partial->properti_apartement),
+                    'countTanah' => count($partial->properti_tanah),
+                    'countKos' => count($partial->properti_kos),
+                    'countRuko' => count($partial->properti_ruko)
+                ];
+
+                $partials[] = $partialData;
+            }
+        }
+
+        $bergabungSejak = Carbon::parse($user->created_at)->format('d, F Y');
+        $diverifikasiSejak = Carbon::parse($partner->verified_at)->format('d, F Y');
+        // dd($bergabungSejak);
+
+        // dd($partials);
+
+        return view('partner.dashboard.index', compact('datas', 'partials', 'bergabungSejak', 'diverifikasiSejak'));
     }
 }

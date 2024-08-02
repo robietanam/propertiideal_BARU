@@ -30,7 +30,7 @@
 
 <body class="bg-white relative antialiased">
     @include('partner.layouts.navbar')
-    <main class="container mx-w-6xl mx-auto py-4">
+    <main class="lg:px-20 mx-auto py-4">
         @yield('content')
     </main>
     @include('partner.layouts.script')
