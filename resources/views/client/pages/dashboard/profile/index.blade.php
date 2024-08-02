@@ -89,8 +89,13 @@
                             <div class="mr-4">
                                 <label for="foto_profile" class="block text-lg font-semibold text-textbase mb-2">Foto
                                     profil</label>
-                                <img class="w-52 h-52 rounded" src="/uploads/{{ $user->foto_profile }}"
-                                    alt="Default avatar">
+                                @if ($user->foto_profile == 'user.png')
+                                    <img class="w-52 h-52 rounded" src="{{ asset('img/person_1.jpg') }}"
+                                        alt="Default avatar">
+                                @else
+                                    <img class="w-52 h-52 rounded" src="/uploads/{{ $user->foto_profile }}"
+                                        alt="User avatar">
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <div class="cursor-pointer">

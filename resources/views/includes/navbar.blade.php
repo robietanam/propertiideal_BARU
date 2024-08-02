@@ -10,16 +10,16 @@
             <a href="/" class="flex flex-wrap gap-x-2 items-center">
                 <img class="rounded-lg w-7 md:w-7" src="{{ asset('img/icons/properti-ideal-icon.png') }}"
                     alt="efarm logo" />
-                <p class="text-primarybase font-bold text-xl">Properti Ideal</p>
+                <p class="text-primarybase font-bold text-xl hidden lg:visible lg:flex">Properti Ideal</p>
             </a>
         </div>
 
         <div class="flex justify-center md:justify-start md:w-auto items-center md:items-center">
-            <div class="hidden md:visible sm:visible md:flex md:mr-0">
+            <div class="md:visible sm:visible md:flex md:mr-0">
                 <div x-data="{ isOpen: false }">
                     <button @click="isOpen = !isOpen"
                         class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 hover:ring-1 hover:ring-primarybase">
-                        <div class="relative">
+                        <div class="relative hidden sm:visible md:visible lg:visible md:flex">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                                 width="24px" fill="#444444">
                                 <path
@@ -93,13 +93,18 @@
         </div>
         <div class="flex flex-wrap">
             @if (Auth::check() && Auth::user()->role == 'Customer')
-                <div class="hidden md:visible sm:visible md:flex ">
+                <div class="md:visible sm:visible md:flex pl-10">
                     <div x-data="{ isOpen: false }">
                         <button @click="isOpen = !isOpen"
                             class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 ring-1 ring-primarybase">
                             <div class="relative">
+                                @if (auth()->user()->foto_profile == 'user.png')
                                 <img class="relative inline-block h-6 w-6 rounded-full object-cover object-center"
-                                    alt="Image placeholder" src="/uploads/{{ auth()->user() }}" />
+                                    alt="Image placeholder" src="{{ asset('img/person_1.jpg') }}" />
+                                @else
+                                <img class="relative inline-block h-6 w-6 rounded-full object-cover object-center"
+                                    alt="Image placeholder" src="/uploads/{{ auth()->user()->foto_profile }}" />
+                                @endif
                             </div>
                             <span class="font-semibold whitespace-nowrap text-textbase">
                                 {{ auth()->user()->nama }}
@@ -114,7 +119,7 @@
                                     <a href="{{ route('profile.customer') }}"
                                         class="flex items-start px-4 py-2 space-x-2 rounded-md ">
                                         <div class="items-center flex">
-                                            <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
+                                            <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
                                                 class="h-5 mr-4" />
                                             <span class="flex flex-col ">
                                                 <span class="text-textbase text-lg font-semibold ">Akun</span>
@@ -123,11 +128,11 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
+                                {{-- <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
                                     <a href="{{ route('profile.customer.wishlist') }}"
                                         class="flex items-start px-4 py-2 space-x-2 rounded-md ">
                                         <div class="items-center flex">
-                                            <img src="{{ asset('efarm-partner-logo.png') }}" alt="montaña"
+                                            <img src="{{ asset('icons/properti-ideal-services.png') }}" alt="montaña"
                                                 class="h-5 mr-4" />
                                             <span class="flex flex-col ">
                                                 <span class="text-textbase text-lg font-semibold ">Wishlist</span>
@@ -135,7 +140,7 @@
                                             </span>
                                         </div>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                             <a href="{{ route('pages.customer.logout') }}" class="">
                                 <div
@@ -155,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('pages.customer.logout') }}"
+                {{-- <a href="{{ route('pages.customer.logout') }}"
                     class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-3 ml-4 hover:bg-gray-100 md:flex-wrap md:flex">
                     <div class="relative flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
@@ -165,7 +170,7 @@
                         </svg>
                         <span class="font-semibold text-textbase ml-2 hidden md:flex md:visible">Logout</span>
                     </div>
-                </a>
+                </a> --}}
             @else
                 <div class="hidden md:visible md:flex">
                     <a href="{{ route('pages.customer.login') }}"

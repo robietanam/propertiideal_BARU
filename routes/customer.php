@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('customer/login', [AuthUserController::class, 'index'])->name('pages.customer.login');
 Route::post('customer/login/store', [AuthUserController::class, 'login'])->name('pages.customer.login.store');
 Route::get('customer/register', [AuthUserController::class, 'register'])->name('pages.customer.register');
+Route::post('customer/register/store', [AuthUserController::class, 'store'])->name('pages.customer.register.store');
 Route::get('customer/logout', [AuthUserController::class, 'logout'])->name('pages.customer.logout');
 
 Route::middleware(['auth', 'role:Customer'])->group(function () {

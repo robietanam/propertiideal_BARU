@@ -101,7 +101,7 @@
                         <h1 class="text-textbase max-w-2xl mb-4 text-6xl font-bold leading-none md:text-5xl xl:text-6xl">
                             Berbagai produk yang tersedia di Properti Ideal</h1>
                         <p class="text-textbase max-w-2xl mb-6 font-semibold lg:mb-8 md:text-xl lg:text-2xl">
-                            Temukan segala jenis properti dengan proses mudah di PropertiIdeal</p>
+                            Temukan segala jenis properti dengan proses mudah di Properti Ideal</p>
                     </div>
                     <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
                         <img src="https://kfmap.asia/storage/uploads/shares/Monicha-Article/thumbnail/28%20Jun/1649073890477_74_11062021-zam-bisnis-18-perumahan-1_8670.jpg" alt="mockup">
@@ -180,7 +180,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
     <script

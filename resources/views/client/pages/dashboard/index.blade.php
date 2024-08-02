@@ -10,7 +10,6 @@
                     var scrollPosition = $(window).scrollTop();
                     var blurTriggerPosition = 200;
 
-                    // Menambahkan atau menghapus kelas blur sesuai dengan posisi scroll
                     if (scrollPosition > blurTriggerPosition) {
                         $('.sticky').addClass('blurred-background');
                     } else {
