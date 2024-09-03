@@ -143,35 +143,95 @@
                     <div class="lg:px-10">
                         <p rel="noreferrer"
                             class="w-48 border border-primarybase cursor-pointer rounded-2xl py-1 px-4 text-primarybase text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out flex">
-                            <span class="font-semibold text-center mx-auto justify-center flex items-center">Properti Ideal</span>
+                            <span class="font-semibold text-center mx-auto justify-center flex items-center">Properti
+                                Ideal</span>
                         </p>
-                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Temukan Properti Impian Anda</p>
-                        <p class="mt-6 text-lg leading-8 text-gray-600">Kami siap membantu Anda menemukan properti terbaik sesuai dengan keinginan dan anggaran Anda. Proses jual beli yang cepat dan efisien adalah prioritas kami</p>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Temukan Properti Impian
+                            Anda</p>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">Kami siap membantu Anda menemukan properti terbaik
+                            sesuai dengan keinginan dan anggaran Anda. Proses jual beli yang cepat dan efisien adalah
+                            prioritas kami</p>
                         <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">
                                     🏡 Proses Cepat
                                 </dt>
-                                <dd class="inline">Kami memastikan proses jual beli properti berjalan cepat dan tanpa hambatan, memberikan Anda pengalaman yang menyenangkan</dd>
+                                <dd class="inline">Kami memastikan proses jual beli properti berjalan cepat dan tanpa
+                                    hambatan, memberikan Anda pengalaman yang menyenangkan</dd>
                             </div>
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">
                                     🚎 Kemudahan menemukan properti
                                 </dt>
-                                <dd class="inline">Kami menyediakan beberapa kategori properti yang dapat Anda pilih sesuai kebutuhan Anda</dd>
+                                <dd class="inline">Kami menyediakan beberapa kategori properti yang dapat Anda pilih sesuai
+                                    kebutuhan Anda</dd>
                             </div>
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">👷🏻 Solusi Properti
                                 </dt>
-                                <dd class="inline">TIdak hanya menjual properti, kami juga memberikan layanan solusi untuk kebutuhan properti anda!</dd>
+                                <dd class="inline">TIdak hanya menjual properti, kami juga memberikan layanan solusi untuk
+                                    kebutuhan properti anda!</dd>
                             </div>
                         </dl>
                     </div>
                 </div>
-                <img src="https://panangianschool.com/wp-content/uploads/2022/12/Macam-Macam-Contoh-Investasi-Properti-1200px-x-675px-1200x675.jpg"
+                {{-- <img src="https://panangianschool.com/wp-content/uploads/2022/12/Macam-Macam-Contoh-Investasi-Properti-1200px-x-675px-1200x675.jpg"
                     alt="properti"
                     class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-                    width="2432" height="1442">
+                    width="2432" height="1442"> --}}
+                <div class="flex justify-center">
+
+                    <!-- Modal video component -->
+                    <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
+
+                        <!-- Video thumbnail -->
+                        <button
+                            class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
+                            @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video">
+                            <img class="rounded-3xl shadow-2xl transition-shadow duration-300 ease-in-out"
+                                src="https://i.ytimg.com/sb/DOH--oIZkMk/storyboard3_L2/M1.jpg?sqp=-oaymwENSDfyq4qpAwVwAcABBqLzl_8DBgj-qpS1Bg==&sigh=rs%24AOn4CLAzAbK_hFTtZ3F-nikU-jZeS4h_YQ"
+                                width="768" height="432" alt="Modal video thumbnail" />
+                            <!-- Play icon -->
+                            <svg class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
+                                xmlns="http://www.w3.org/2000/svg" width="72" height="72">
+                                <circle class="fill-white" cx="36" cy="36" r="36" fill-opacity=".8" />
+                                <path class="fill-indigo-500 drop-shadow-2xl"
+                                    d="M44 36a.999.999 0 0 0-.427-.82l-10-7A1 1 0 0 0 32 29V43a.999.999 0 0 0 1.573.82l10-7A.995.995 0 0 0 44 36V36c0 .001 0 .001 0 0Z" />
+                            </svg>
+                        </button>
+                        <!-- End: Video thumbnail -->
+
+                        <!-- Modal backdrop -->
+                        <div class="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity" x-show="modalOpen"
+                            x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-100"
+                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true"
+                            x-cloak></div>
+                        <!-- End: Modal backdrop -->
+
+                        <!-- Modal dialog -->
+                        <div id="modal" class="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6" role="dialog"
+                            aria-modal="true" x-show="modalOpen" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-out duration-200"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75"
+                            x-cloak>
+                            <div class="max-w-5xl mx-auto h-full flex items-center">
+                                <div class="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-primarybase overflow-hidden"
+                                    @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                                    <video x-init="$watch('modalOpen', value => value ? $el.play() : $el.pause())" width="1920" height="1080" loop controls>
+                                        <source src="https://www.youtube.com/watch?v=DOH--oIZkMk" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End: Modal dialog -->
+
+                    </div>
+                    <!-- End: Modal video component -->
+
+                </div>
             </div>
         </div>
     </div>
