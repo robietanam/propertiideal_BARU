@@ -37,7 +37,7 @@ class PropertiController extends Controller
                                         ->where('kategori_properti.nama_kategori', $slug)
                                         ->get();
         }
-        dd($this->param['jual']);
+        // dd($this->param['jual']);
         return view('admin.pages.properti.jual', $this->param);
 
     }
@@ -66,7 +66,7 @@ class PropertiController extends Controller
                                         ->where('kategori_properti.nama_kategori', $slug)
                                         ->get();
         }
-        dd($this->param['sewa']);
+        // dd($this->param['sewa']);
         return view('admin.pages.properti.sewa');
     }
 

@@ -40,7 +40,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/jual-properti">
+        <a class="nav-link text-dark" href="admin/jual/all">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">shopping_cart_checkout</i>
           </div>
@@ -48,7 +48,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/sewa-properti">
+        <a class="nav-link text-dark" href="admin/sewa/all">
           <div class="text-dark text-center me-2 d-flex align-items-center justify-content-center">
             <i class="material-icons opacity-10">sell</i>
           </div>
