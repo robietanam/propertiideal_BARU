@@ -62,7 +62,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/partner/detail/{id}', [PartnerController::class, 'show']);
 
     Route::get('/admin/jual/{slug}', [PropertiController::class, 'jual']);
+    Route::get('/admin/jual/detail/{id}', [PropertiController::class, 'detailjual']);
     Route::get('/admin/sewa/{slug}', [PropertiController::class, 'sewa']);
+    Route::get('/admin/sewa/detail/{id}', [PropertiController::class, 'detailsewa']);
+    Route::get('/admin/setproperti/{status}/{id}', [PropertiController::class, 'setproperti']);
 
     Route::resource('/kategori-solution', KategoriSolutionController::class);
     Route::resource('/properti-solution', PropertiSolutionController::class);
