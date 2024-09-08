@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Properti;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -59,7 +61,7 @@ class DatabaseSeeder extends Seeder
             'link_instagram' => 'https://instagram.com',
             'link_website' => 'https://github.com',
             'foto_ktp' => 'ktp.png',
-            'status' => 'Belum Verifikasi',
+            'status' => 'Sudah Verifikasi',
             'user_id' => 3,
             'verified_at' => '2024-08-02 19:33:09',
         ]);
@@ -154,6 +156,56 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('jenis_foto')->insert([
             'jenis_foto' => 'Belakang'
+        ]);
+
+        DB::table('properti')->insert([
+            'nama_properti' => 'Rumah A3',
+            'slug' => 'rumah-a3',
+            'alamat' => 'Jl Sumatra no 3 Sumbersari',
+            'deskripsi' => 'Rumah dengan tipe A3',
+            'harga' => 200000000,
+            'latitude' => 12.000000000000000000000000000000,
+            'longitude' => 12.000000000000000000000000000000,
+            'prioritas' => NULL,
+            'status' => 'Tersedia',
+            'kategori_properti_id' => 1,
+            'kategori_penjualan_id' => 1,
+            'partner_id' => 1
+        ]);
+
+        DB::table('properti_rumah')->insert([
+            'slug' => 'rumah-a3',
+            'luas_tanah' => '200 m2',
+            'luas_bangunan' => '150 m2',
+            'jumlah_garasi' => 1,
+            'jumlah_kamar_tidur' => 2,
+            'jumlah_kamar_mandi' => 2,
+            'Properti_id' => 1,
+        ]);
+
+        DB::table('properti')->insert([
+            'nama_properti' => 'Rumah A4',
+            'slug' => 'rumah-a4',
+            'alamat' => 'Jl Sumatra no 4 Sumbersari',
+            'deskripsi' => 'Rumah dengan tipe A4',
+            'harga' => 20000000,
+            'latitude' => 12.000000000000000000000000000000,
+            'longitude' => 12.000000000000000000000000000000,
+            'prioritas' => NULL,
+            'status' => 'Tersedia',
+            'kategori_properti_id' => 1,
+            'kategori_penjualan_id' => 2,
+            'partner_id' => 2
+        ]);
+
+        DB::table('properti_rumah')->insert([
+            'slug' => 'rumah-a4',
+            'luas_tanah' => '200 m2',
+            'luas_bangunan' => '150 m2',
+            'jumlah_garasi' => 1,
+            'jumlah_kamar_tidur' => 2,
+            'jumlah_kamar_mandi' => 2,
+            'Properti_id' => 2,
         ]);
     }
 }

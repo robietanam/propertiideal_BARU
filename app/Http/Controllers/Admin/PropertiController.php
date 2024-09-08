@@ -41,15 +41,48 @@ class PropertiController extends Controller
 
     public function detailjual($id)
     {
-        $this->param['jual'] = DB::table('properti')
+        $this->param['detail'] = DB::table('properti')
             ->join('kategori_properti', 'properti.kategori_properti_id', '=', 'kategori_properti.id_kategori_properti')
             ->join('kategori_penjualan', 'properti.kategori_penjualan_id', '=', 'kategori_penjualan.id_kategori_penjualan')
             ->join('partner', 'properti.partner_id', '=', 'partner.id_partner')
             ->join('users', 'partner.user_id', '=', 'users.id')
+            ->select('id_properti', 'nama_properti', 'properti.slug', 'alamat', 'deskripsi', 'harga', 'latitude', 'longitude', 'prioritas', 'properti.status', 'kategori_properti_id', 'kategori_penjualan_id', 'partner_id', 'nama', 'kategori_properti.nama_kategori as kategori_properti',  'kategori_penjualan.nama_kategori as kategori_penjualan')
             ->where('id_properti', $id)
             ->first();
 
-        return view('admin.pages.properti.detailjual', $this->param);
+        // dd($this->param['detail']);
+        if ($this->param['detail']->kategori_properti == 'Rumah') {
+            $this->param['detail_kategori'] = DB::table('properti_rumah')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Kos') {
+            $this->param['detail_kategori'] = DB::table('properti_kos')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Tanah') {
+            $this->param['detail_kategori'] = DB::table('properti_tanah')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Apartement') {
+            $this->param['detail_kategori'] = DB::table('properti_apartement')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Ruko') {
+            $this->param['detail_kategori'] = DB::table('properti_ruko')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+
+        $this->param['foto'] = DB::table('foto_properti')
+                                    ->join('jenis_foto', 'jenis_foto.id_jenis_foto', '=', 'foto_properti.jenis_foto_id')
+                                    ->where('properti_id', $id)
+                                    ->get();
+        // dd($this->param);
+        return view('admin.pages.properti.detail', $this->param);
     }
 
     public function sewa($slug)
@@ -80,15 +113,47 @@ class PropertiController extends Controller
 
     public function detailsewa($id)
     {
-        $this->param['sewa'] = DB::table('properti')
+        $this->param['detail'] = DB::table('properti')
             ->join('kategori_properti', 'properti.kategori_properti_id', '=', 'kategori_properti.id_kategori_properti')
             ->join('kategori_penjualan', 'properti.kategori_penjualan_id', '=', 'kategori_penjualan.id_kategori_penjualan')
             ->join('partner', 'properti.partner_id', '=', 'partner.id_partner')
             ->join('users', 'partner.user_id', '=', 'users.id')
+            ->select('id_properti', 'nama_properti', 'properti.slug', 'alamat', 'deskripsi', 'harga', 'latitude', 'longitude', 'prioritas', 'properti.status', 'kategori_properti_id', 'kategori_penjualan_id', 'partner_id', 'nama', 'kategori_properti.nama_kategori as kategori_properti',  'kategori_penjualan.nama_kategori as kategori_penjualan')
             ->where('id_properti', $id)
             ->first();
 
-        return view('admin.pages.properti.detailjual', $this->param);
+        if ($this->param['detail']->kategori_properti == 'Rumah') {
+            $this->param['detail_kategori'] = DB::table('properti_rumah')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Kos') {
+            $this->param['detail_kategori'] = DB::table('properti_kos')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Tanah') {
+            $this->param['detail_kategori'] = DB::table('properti_tanah')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Apartement') {
+            $this->param['detail_kategori'] = DB::table('properti_apartement')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+        elseif ($this->param['detail']->kategori_properti == 'Ruko') {
+            $this->param['detail_kategori'] = DB::table('properti_ruko')
+                                                    ->where('properti_id', $this->param['detail']->id_properti)
+                                                    ->first();
+        }
+
+        $this->param['foto'] = DB::table('foto_properti')
+                                    ->join('jenis_foto', 'jenis_foto.id_jenis_foto', '=', 'foto_properti.jenis_foto_id')
+                                    ->where('properti_id', $id)
+                                    ->get();
+
+        return view('admin.pages.properti.detail', $this->param);
     }
 
     public function setproperti($status, $id)

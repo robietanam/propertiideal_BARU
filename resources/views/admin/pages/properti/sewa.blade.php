@@ -84,7 +84,7 @@
                             <td class="pt-3">{{ $item->alamat }}</td>
                             <td class="pt-3">{{ $item->status }}</td>
                             <td class="pt-3">
-                                <a href="/admin/jual/detail/{{ $item->id_properti }}" class="text-decoration-underline">
+                                <a href="/admin/sewa/detail/{{ $item->id_properti }}" class="text-decoration-underline">
                                     klik disini
                                 </a>
                             </td>
