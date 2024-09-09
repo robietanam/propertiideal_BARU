@@ -71,7 +71,15 @@ class PropertiSolutionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $this->param['detail'] = DB::table('properti_solution')
+                                    ->join('kategori_solution', 'kategori_solution.id_kategori_solution', '=', 'properti_solution.kategori_solution_id')
+                                    ->where('id_properti_solution', $id)
+                                    ->first();
+        $this->param['foto'] = DB::table('foto_solution')
+                                    ->join('jenis_foto', 'jenis_foto.id_jenis_foto', '=', 'foto_solution.jenis_foto_id')
+                                    ->where('properti_id', $id)
+                                    ->get();
+        return view('admin.pages.solution.detail', $this->param);
     }
 
     /**
