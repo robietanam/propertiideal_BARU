@@ -34,13 +34,17 @@
                     </div>
                     <h6 class="text-warning">Data Foto : </h6>
                     <hr class="mt-0 mb-4">
+                    <form action="/foto-solution/create/{{$detail->id_properti_solution}}">
+                        @csrf
+                        <button class="btn btn-info">Tambah Foto</button>
+                    </form>
                     <table id="example" class="table" style="width:100%" border="1">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Jenis Foto</th>
                                 <th>Deskripsi Foto</th>
                                 <th>Foto</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,9 +54,17 @@
                             @foreach ($foto as $item)
                                 <tr>
                                     <td class="pt-3">{{ $no++ }}</td>
-                                    <td class="pt-3">{{ $item->jenis_foto }}</td>
-                                    <td class="pt-3">{{ $item->deskripsi_foto }}</td>
-                                    <td class="pt-3"><img src="{{asset('upload/ruko/'.$item->foto_properti)}}" alt=""></td>
+                                    <td class="pt-3">{!! $item->deskripsi_foto !!}</td>
+                                    <td class="pt-3"><img src="{{asset('upload/solution/'.$item->foto_solution)}}" alt="" class="img-fluid" width="300"></td>
+                                    <td class="pt-3 d-flex gap-3">
+                                        <a href="/foto-solution/edit/{{$item->id_foto_solution}}">
+                                            <button class="btn btn-warning">Edit</button>
+                                        </a>
+                                        <form action="/foto-solution/{{$item->id_foto_solution}}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary" onclick="confirm('Apakah anda yakin ingin menghapus data ini')">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

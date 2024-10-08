@@ -27,7 +27,7 @@
           <div class="col-lg-6">
             <label class="form-control-label" for="input-username">Privacy & Policy</label><br>
             <div class="input-group input-group-outline mb-4">
-              <textarea class="w-100 form-control" name="pp" id="" rows="8">{{$profile->privacy_policy}}</textarea>
+              <textarea class="w-100 form-control ckeditor" id="ckeditor" name="pp" id="" rows="8">{!!$profile->privacy_policy!!}</textarea>
             </div>
           </div>
         </div>
@@ -64,3 +64,6 @@
   </div>
 </div>
 @endsection
+@push('script')
+<script src="{{asset('vendor/ckeditor/ckeditor.js')}}"></script>
+@endpush

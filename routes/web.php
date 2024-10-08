@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\FotoSolutionController;
 use App\Http\Controllers\Admin\KategoriSolutionController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\PropertiController;
@@ -72,7 +73,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/properti-solution/tersedia/{id}', [PropertiSolutionController::class, 'tersedia']);
     Route::get('/properti-solution/nonaktif/{id}', [PropertiSolutionController::class, 'nonaktif']);
     Route::get('/properti-solution/tidaktersedia/{id}', [PropertiSolutionController::class, 'tidaktersedia']);
-
+    Route::get('/foto-solution/create/{id}', [FotoSolutionController::class, "create"]);
+    Route::post('/foto-solution', [FotoSolutionController::class, "store"]);
+    Route::get('/foto-solution/edit/{id}', [FotoSolutionController::class, "edit"]);
+    Route::put('/foto-solution/{id}', [FotoSolutionController::class, "update"]);
+    Route::post('/foto-solution/{id}', [FotoSolutionController::class, "destroy"]);
 });
 
 Route::middleware('auth')->group(function () {

@@ -1,5 +1,5 @@
 <nav class="sticky top-0 z-50">
-    <div class="w-full bg-primarybase h-6 flex justify-center items-center">
+    <div class="w-full bg-primarybase h-8 flex justify-center items-center">
         <div class="">
             <p class="text-white font-medium text-sm">Wujudukan properti idealmu bersama properti ideal! 🏠</p>
         </div>

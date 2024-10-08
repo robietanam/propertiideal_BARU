@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments("id_foto_solution");
             $table->string("foto_solution", 100);
             $table->text("deskripsi_foto");
-            $table->smallInteger('jenis_foto_id')->unsigned();
+            $table->smallInteger('jenis_foto_id')->unsigned()->nullable();
             $table->integer('properti_id')->unsigned();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
