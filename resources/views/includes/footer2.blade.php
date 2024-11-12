@@ -5,7 +5,7 @@
 </style>
 
 
-<footer class="bg-secondary-blue pt-10" aria-labelledby="footer-heading">
+<footer class="bg-primarybase pt-10" aria-labelledby="footer-heading">
     <div class="mx-auto max-w-full px-6 pb-8 lg:px-20 py-5">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
