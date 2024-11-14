@@ -4,15 +4,16 @@
 
 @section('content')
     <div>
-        <div class="container mx-auto py-5">
+        <div class="container mx-auto py-5 px-4">
             @if (session('error'))
                 <p>{{ session('error') }}</p>
             @endif
             @if (session('success'))
                 <p>{{ session('success') }}</p>
             @endif
-            <div class="rounded-lg">
-                <h1 class="text-3xl font-bold mb-4 text-textbase">Yuk, mulai listing properti Anda!</h1>
+            <div class="rounded-lg" x-data="{ isOpen: false }">
+                <h1 class ="text-3xl font-bold mb-4 text-textbase">Yuk, mulai listing properti
+                    Anda!</h1>
                 <p class="text-textbase text-xl  mb-6">Silahkan diisi sesuai keadaan asli properti Anda</p>
                 <form action="{{ route('pages.dashboard.properti.apartement.store') }}" method="POST"
                     enctype="multipart/form-data">
@@ -173,16 +174,18 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label class="text-lg font-medium text-textbase" for="harga">Harga *</label>
-                            <input name="harga" id="harga" type="text" placeholder="Masukkan harga"
+                            <input name="harga" id="harga" type="number" placeholder="Masukkan harga (Rupiah)"
                                 class="border p-2 rounded w-full">
                             @error('harga')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="luas_apartement">Luas Apartment *</label>
-                            <input name="luas_apartement" id="luas_apartement" type="text"
-                                placeholder="Masukkan luas apartement" class="border p-2 rounded w-full">
+                            <label class="text-lg font-medium text-textbase" for="luas_apartement">Luas Apartment
+                                *</label>
+                            <input name="luas_apartement" id="luas_apartement" type="number"
+                                placeholder="Masukkan luas apartement (m2)" class="border p-2 rounded w-full">
+                            <p class="font-extralight text-sm mt-1">Masukkan dalam satuan Meter Kubik (m2)</p>
                             @error('luas_apartement')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
@@ -190,9 +193,18 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="latitude">Latitude apartment *</label>
-                            <input name="latitude" id="latitude" type="text" placeholder="Latitude apartment"
-                                class="border p-2 rounded w-full">
+                            <label class="text-lg font-medium text-textbase" for="latitude">Latitude apartment
+                                *</label>
+                            <div class="flex gap-2 items-center">
+                                <input name="latitude" id="latitude" type="number" placeholder="Latitude apartment"
+                                    class="border p-2 rounded w-full">
+                                <svg @click="isOpen = !isOpen" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="#2d2d2d" viewBox="0 0 256 256">
+                                    <path
+                                        d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z">
+                                    </path>
+                                </svg>
+                            </div>
                             @error('latitude')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
@@ -200,8 +212,16 @@
                         <div>
                             <label class="text-lg font-medium text-textbase" for="longitude">Longitude apartment
                                 *</label>
-                            <input name="longitude" id="longitude" type="text" placeholder="Masukkan longitude"
-                                class="border p-2 rounded w-full">
+                            <div class="flex gap-2 items-center">
+                                <input name="longitude" id="longitude" type="number" placeholder="Masukkan longitude"
+                                    class="border p-2 rounded w-full">
+                                <svg @click="isOpen = !isOpen" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" fill="#2d2d2d" viewBox="0 0 256 256">
+                                    <path
+                                        d="M140,180a12,12,0,1,1-12-12A12,12,0,0,1,140,180ZM128,72c-22.06,0-40,16.15-40,36v4a8,8,0,0,0,16,0v-4c0-11,10.77-20,24-20s24,9,24,20-10.77,20-24,20a8,8,0,0,0-8,8v8a8,8,0,0,0,16,0v-.72c18.24-3.35,32-17.9,32-35.28C168,88.15,150.06,72,128,72Zm104,56A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z">
+                                    </path>
+                                </svg>
+                            </div>
                             @error('longitude')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
@@ -209,9 +229,10 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="jumlah_kamar_tidur">Jumlah kamar tidur
+                            <label class="text-lg font-medium text-textbase" for="jumlah_kamar_tidur">Jumlah kamar
+                                tidur
                                 apartment *</label>
-                            <input name="jumlah_kamar_tidur" id="jumlah_kamar_tidur" type="text"
+                            <input name="jumlah_kamar_tidur" id="jumlah_kamar_tidur" type="number"
                                 placeholder="Jumlah kamar tidur apartment" class="border p-2 rounded w-full">
                             @error('jumlah_kamar_tidur')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -221,7 +242,7 @@
                             <label class="text-lg font-medium text-textbase" for="jumlah_kamar_mandi">Jumlah kamar
                                 mandi
                                 *</label>
-                            <input name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" type="text"
+                            <input name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" type="number"
                                 placeholder="Masukkan jumlah kamar mandi" class="border p-2 rounded w-full">
                             @error('jumlah_kamar_mandi')
                                 <span class="text-red-500">{{ $message }}</span>
@@ -249,6 +270,39 @@
                         </button>
                     </div>
                 </form>
+                {{-- modal --}}
+                <div x-show="isOpen" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50">
+
+                    <div x-show="isOpen" @click.away="isOpen = false"
+                        class="flex flex-col p-6 gap-6 bg-white rounded-xl border border-secondary-white w-full h-fit mt-10 md:mt-0 md:w-1/2 max-w-lg absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <button @click="isOpen = false" class="absolute top-2 right-2 text-xl text-gray-600">
+                            &times;
+                        </button>
+                        <p class="text-xl font-semibold">Latitude & Longitude</p>
+                        <div class="flex flex-col gap-3">
+                            <p>Buka <a target="_blank" href="https://www.google.com/maps">Google Maps.</a></p>
+                            <div class="flex flex-col gap-2">
+                                <p>Telusuri tempat atau area yang akan dicari.</p>
+                                <img src="/img/search-location.png" width="150" alt="search-location">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <p>Klik kanan tempat atau area pada peta. Jika menggunakan Ponsel cukup tahan lama area
+                                    pada
+                                    peta.
+                                </p>
+                                <img src="/img/get-data-location.png" width="150" alt="get-data-location">
+                            </div>
+                            <p>Tindakan ini akan membuka jendela pop-up. Anda dapat menemukan lintang dan bujur dalam
+                                format
+                                desimal
+                                di
+                                bagian atas.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

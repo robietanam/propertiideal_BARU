@@ -3,7 +3,7 @@
 @section('title', 'Dashboard | Partner')
 
 @section('content')
-    <section class="flex justify-between mb-5">
+    <section class="flex justify-between flex-wrap gap-3 mb-5 px-4">
         @if (session('error'))
             <p>{{ session('error') }}</p>
         @endif
@@ -22,7 +22,7 @@
             </a>
         </div>
     </section>
-    <section class="container mx-auto">
+    <section class="container mx-auto px-4">
         <div class="flex flex-col">
             <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
