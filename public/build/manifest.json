@@ -1,0 +1,29 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-MPXJ6wTU.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/fonts/Montserrat.ttf": {
+    "file": "assets/Montserrat-i02rBV5P.ttf",
+    "src": "resources/fonts/Montserrat.ttf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-er_q2Xav.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-B0a9OMnn.css"
+    ]
+  },
+  "resources/js/welcome.js": {
+    "file": "assets/welcome-cL11pq9n.js",
+    "name": "welcome",
+    "src": "resources/js/welcome.js",
+    "isEntry": true,
+    "css": [
+      "assets/welcome-CEzdm8Kq.css"
+    ]
+  }
+}
