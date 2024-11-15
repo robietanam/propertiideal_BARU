@@ -3,43 +3,80 @@
 @section('title', 'Properti Ideal | Tentang')
 
 @section('content')
-    <section class="py-20 bg-white">
-        <div class="flex flex-col px-8 mx-auto space-y-12 max-w-full lg:px-20 md:px-20 sm:px-0 xl:px-12">
-            <div class="relative max-w-full lg:px-20 mx-auto">
-                <h2 class="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">Wujudkan Propeti Idealmu Bersama
+    <section class="py-20 bg-white" x-data="{ animate: false }" x-init="setTimeout(() => animate = true, 800)">
+        <div class="flex flex-col mx-auto space-y-12 max-w-full ">
+            <div
+                class="relative max-w-full xl:px-28 lg:px-24 md:px-20 sm:px-0 mx-auto flex flex-col gap-6 items-center justify-center ">
+                <p class="text-primary-blue font-semibold text-center w-full" x-show="animate"
+                    x-transition:enter="transform transition-transform duration-700"
+                    x-transition:enter-start="-translate-y-full opacity-0" x-transition:enter-end="translate-y-0 opacity-100">
+                    Mengenal Tentang Kami</p>
+                <h2 class="w-full text-3xl font-bold text-center md:text-4xl" x-show="animate"
+                    x-transition:enter="transform transition-transform duration-700 delay-200"
+                    x-transition:enter-start="-translate-y-full opacity-0"
+                    x-transition:enter-end="translate-y-0 opacity-100">Wujudkan Propeti Idealmu Bersama
                     Properti Ideal! 🤩</h2>
-                <p class="py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">Dengan layanan terintegrasi dan berbagai pilihan, kami siap membantu Anda menjual atau membeli properti dengan proses yang mudah dan menyenangkan.</p>
+                <p class=" text-lg text-center text-gray-700 " x-show="animate"
+                    x-transition:enter="transform transition-transform duration-1000 delay-500"
+                    x-transition:enter-start="translate-y-full opacity-0"
+                    x-transition:enter-end="translate-y-0 opacity-100">Dengan layanan
+                    terintegrasi dan berbagai pilihan, kami siap membantu Anda menjual atau membeli properti dengan proses
+                    yang mudah dan menyenangkan.</p>
             </div>
-            <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
-                <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12 sm:order-last">
-                    <img class="rounded-lg shadow-xl"
-                        src="https://www.bsdcity.com/app/uploads/2022/07/savia-park-cluster-1.jpg" alt="">
-                </div>
-                <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
-                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600">Properti Solution</p>
-                    <h3 class="mt-2 text-2xl font-semibold sm:text-left md:text-4xl">Menyediakan layanan sesuai kebutuhan
-                        Anda</h3>
-                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Kami di Properti Ideal berkomitmen untuk menyediakan layanan yang sesuai dengan kebutuhan spesifik Anda. Baik itu untuk pembangunan rumah baru, renovasi ruang yang ada, atau desain interior yang menawan, tim ahli kami siap memberikan solusi menyeluruh untuk memenuhi semua keinginan Anda. 🤩
+            <div class="grid grid-cols-10 bg-secondary-blue h-96 px-14">
+                <div class="col-span-4 flex flex-col gap-4 self-center" x-show="animate"
+                    x-transition:enter="transform  transition-transform duration-700"
+                    x-transition:enter-start="-translate-x-full opacity-0"
+                    x-transition:enter-end="translate-x-0 opacity-100">
+                    <p
+                        class="bg-primary-yellow text-secondary-blue text-base  font-semibold py-[2px] px-6 w-fit rounded-full text-center">
+                        Layanan
                     </p>
+                    <p class="text-3xl text-white font-bold">Layanan Kami</p>
+                    <p class="text-sm text-white ">Segalanya lebih mudah dengan pelayanan yang maksimal.</p>
                 </div>
-            </div>
-            <div class="flex flex-col mb-8 animated fadeIn sm:flex-row">
-                <div class="flex items-center mb-8 sm:w-1/2 md:w-5/12">
-                    <img class="rounded-lg shadow-xl"
-                        src="https://events.rumah123.com/wp-content/uploads/sites/38/2024/01/04171043/klasika.jpg"
-                        alt="">
+                <div class="col-span-1 relative flex justify-center items-center">
+                    <div class="h-full w-0.5 border-l border-gray-300 border-dashed  opacity-50"></div>
+
+                    <img x-show="animate" x-transition:enter="transform ease-out transition-transform duration-500"
+                        x-transition:enter-start="scale-0 opacity-0" x-transition:enter-end="scale-100 opacity-100"
+                        src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
+                        class="absolute w-14 aspect-square top-[15%] -translate-y-[15%] border border-white rounded-full "
+                        alt="Icon Propertiideal">
+
+                    <img x-show="animate"
+                        x-transition:enter="transform ease-out transition-transform duration-500 delay-700"
+                        x-transition:enter-start="scale-0 opacity-0" x-transition:enter-end="scale-100 opacity-100"
+                        src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
+                        class="absolute w-14 aspect-square top-[65%] -translate-y-[65%] border border-white rounded-full "
+                        alt="Icon Propertiideal">
                 </div>
-                <div class="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
-                    <p class="mb-2 text-sm font-semibold leading-none text-left text-indigo-600">Properti Ideal
-                    </p>
-                    <h3 class="mt-2 font-semibold text-2xl sm:text-left md:text-4xl">Lift-up Properti Anda, Beli hunian impian anda dengan Properti Ideal! 🤩</h3>
-                    <p class="mt-5 text-lg text-gray-700 text md:text-left">Dari pilihan hunian yang luas hingga layanan yang mempermudah setiap langkah pembelian, Properti Ideal memastikan bahwa Anda mendapatkan pengalaman yang memuaskan dan hasil yang sesuai dengan harapan Anda. Bergabunglah dengan kami dan temukan hunian impian Anda hari ini!</p>
+                <div class="col-span-5 p-8 flex flex-col gap-10">
+                    <div x-show="animate" x-transition:enter="transform  transition-transform duration-500 delay-500"
+                        x-transition:enter-start="translate-x-full opacity-0"
+                        x-transition:enter-end="translate-x-0 opacity-100"
+                        class="px-5 py-3 bg-white flex flex-col gap-4 rounded-b-2xl rounded-tr-3xl">
+                        <p class="texl-xl font-semibold">Properti Solution</p>
+                        <p class="text-sm text-justify ">Properti Ideal berkomitmen menyediakan layanan yang disesuaikan
+                            dengan kebutuhan
+                            Anda, mulai dari
+                            pembangunan rumah, renovasi, hingga desain interior, dengan solusi lengkap dari tim profesional
+                            kami.</p>
+                    </div>
+                    <div x-show="animate" x-transition:enter="transform  transition-transform duration-500 delay-1000"
+                        x-transition:enter-start="translate-x-full opacity-0"
+                        x-transition:enter-end="translate-x-0 opacity-100"
+                        class="px-5 py-3 bg-white flex flex-col gap-4 rounded-b-2xl rounded-tr-3xl">
+                        <p class="texl-xl font-semibold">Properti Ideal</p>
+                        <p class="text-sm text-justify">Dari hunian luas hingga layanan yang memudahkan proses pembelian,
+                            Properti Ideal memastikan pengalaman yang memuaskan dan hasil sesuai harapan. Bergabunglah
+                            dengan kami dan temukan hunian impian Anda sekarang!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-
     {{-- <div class="px-3 md:lg:xl:px-40   border-t border-b py-20 bg-opacity-10"
         style="background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png') ;">
         <div class="grid grid-cols-1 md:lg:xl:grid-cols-3 group bg-white shadow-xl shadow-neutral-100 border ">
@@ -140,8 +177,8 @@
     <div class="text-white mt-24 container mx-auto p-8 overflow-hidden md:rounded-lg md:p-10 lg:p-12">
         <div class="mx-auto px-4 md:px-8">
             <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12 flex-col">
-                <div class="flex items-center flex-col">
-                    <h2 class="text-6xl font-bold text-gray-800 lg:text-6xl ">Dokumentasi Properti Ideal</h2>
+                <div class="flex items-center flex-col" data-aos="zoom-in-down">
+                    <h2 class="text-6xl font-bold text-gray-800 lg:text-6xl">Dokumentasi Properti Ideal</h2>
                     <p class="max-w-screen text-xl mt-3 text-gray-500 ">
                         Ini adalah aktivitas, kemitraan, produk, penjalanan, dan sejarah dari Properti Ideal
                     </p>
@@ -149,12 +186,12 @@
 
             </div>
 
-            <div class="grid grid-cols-3 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <div data-aos="zoom-in-right" class="grid grid-cols-3 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                    <img src="https://infobanknews.com/wp-content/uploads/2022/08/IMG-20220822-WA0005.jpg"
-                        loading="lazy" alt="Photo by Minh Pham"
+                    <img src="https://infobanknews.com/wp-content/uploads/2022/08/IMG-20220822-WA0005.jpg" loading="lazy"
+                        alt="Photo by Minh Pham"
                         class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
                     <div
@@ -213,11 +250,11 @@
         </div>
 
         <div class="py-24 px-8 lg:px-20 max-w-full mx-auto flex flex-col md:flex-row gap-12">
-            <div class="flex flex-col text-left basis-1/2">
+            <div data-aos="zoom-in" class="flex flex-col text-left basis-1/2">
                 <p class="inline-block text-textbase font-semibold text-primary mb-4">Pertanyaan dari calon Partner</p>
                 <p class="sm:text-4xl text-4xl text-textbase font-bold text-base-content">Paling sering ditanyakan</p>
             </div>
-            <ul class="basis-1/2">
+            <ul class="basis-1/2" data-aos="zoom-in">
                 <li>
                     <button
                         class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"

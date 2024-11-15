@@ -27,21 +27,26 @@ class WebPagesController extends Controller
         $query = Properti::query();
 
         if ($request->has('category')) {
-            $kategoriParams = KategoriProperti::where('slug', $request->category)->where('kategori_penjualan_id', 1)->first();
-            $kategoriId = $kategoriParams->id_kategori_properti;
+            $kategoriParams = KategoriProperti::where('slug', $request->category)
+                ->first();
 
-            $query->where('kategori_properti_id', $kategoriId);
+            if ($kategoriParams) {
+                $query->where('kategori_properti_id', $kategoriParams->id_kategori_properti);
+            }
         }
 
-        if ($request->has('minimal') && $request->minimal !== null) {
+        if ($request->filled('minimal')) {
             $query->where('harga', '>=', $request->minimal);
         }
 
-        if ($request->has('maksimal') && $request->maksimal !== null) {
+        if ($request->filled('maksimal')) {
             $query->where('harga', '<=', $request->maksimal);
         }
 
-        $properties = $query->with('foto_properti')->where('kategori_penjualan_id', 1)->get();
+        $properties = $query
+            ->where('kategori_penjualan_id', 1)
+            ->with('foto_properti') 
+            ->get();
         // foreach($properties as $foto){
         //     dd($foto->foto_properti);
         // }
@@ -55,7 +60,7 @@ class WebPagesController extends Controller
         $query = Properti::query();
 
         if ($request->has('category')) {
-            $kategoriParams = KategoriProperti::where('slug', $request->category)->where('kategori_penjualan_id', 1)->first();
+            $kategoriParams = KategoriProperti::where('slug', $request->category)->first();
             $kategoriId = $kategoriParams->id_kategori_properti;
 
             $query->where('kategori_properti_id', $kategoriId);
@@ -74,11 +79,36 @@ class WebPagesController extends Controller
     }
 
     public function detail_properties($slug){
-        $propertiCollection = Properti::with('foto_properti', 'partner.user')->where('slug', $slug)->first();
-        // dd($propertiCollection);
-
-        // dd($propertiCollection->foto_properti);
-        return view('client.pages.buy.show', compact('propertiCollection'));
+        $propertiCollection = Properti::with('foto_properti', 'partner.user')->where('slug', $slug)
+        
+        ->first();
+        if (!$propertiCollection) {
+            abort(404); // or return a suitable message if the property is not found
+        }
+    
+        // Determine the category based on the property data
+        $category = null;
+    
+        // Check which category applies to the property
+        if ($propertiCollection->kategori_properti_id == 1) {
+            $category = 'rumah';
+        } elseif ($propertiCollection->kategori_properti_id == 2) {
+            $category = 'kos';
+        } elseif ($propertiCollection->kategori_properti_id == 3) {
+            $category = 'tanah';
+        } elseif ($propertiCollection->kategori_properti_id == 4) {
+            $category = 'apartement';
+        } elseif ($propertiCollection->kategori_properti_id == 5) {
+            $category = 'ruko';
+        }
+    
+        // Dynamically load the relationship based on the determined category
+        if ($category) {
+            $propertiCollection->load('properti_' . $category); // dynamically load the correct property relationship
+        }
+    
+        // Return the property details along with the correct relationship
+        return view('client.pages.buy.show', compact('propertiCollection', 'category'));
     }
 
     public function by_properties(){

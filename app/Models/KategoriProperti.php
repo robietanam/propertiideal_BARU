@@ -18,4 +18,8 @@ class KategoriProperti extends Model
         'deskripsi_kategori',
         'slug',
     ];
+    public function properti()
+    {
+        return $this->hasMany(Properti::class, 'kategori_properti_id', 'id_kategori_properti');
+    }
 }

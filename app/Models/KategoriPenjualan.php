@@ -16,4 +16,8 @@ class KategoriPenjualan extends Model
         'deskripsi_kategori',
         'slug'
     ];
+    public function properti()
+    {
+        return $this->hasMany(Properti::class, 'kategori_penjualan_id');
+    }
 }

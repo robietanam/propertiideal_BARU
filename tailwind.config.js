@@ -109,6 +109,7 @@ export default {
         "Noto Color Emoji",
       ],
       sans: [
+        "Montserrat",
         "Inter",
         "ui-sans-serif",
         "system-ui",

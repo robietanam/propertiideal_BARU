@@ -80,15 +80,15 @@
             </div>
             <div class="hidden xl:flex gap-3">
                 <a href="/"
-                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hidden md:flex hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beranda</a>
+                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hidden md:flex border-b-2 border-transparent hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beranda</a>
                 <a href="{{ route('pages.sell') }}"
-                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Jual</a>
+                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Jual</a>
                 <a href="{{ route('pages.buy') }}"
-                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beli</a>
+                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beli</a>
                 <a href="{{ route('pages.rental') }}"
-                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Sewa</a>
+                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Sewa</a>
                 <a href="{{ route('pages.about') }}"
-                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Tentang</a>
+                    class="text-sm font-medium text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Tentang</a>
             </div>
 
 
@@ -170,7 +170,7 @@
             </button>
         </div>
         {{-- dropdown menu mobile --}}
-        <div class="flex flex-col gap-3 items-center w-full py-2" x-show="isOpen" @click.away="isOpen = false">
+        <div class="flex flex-col gap-3 items-center w-full py-4" x-show="isOpen" @click.away="isOpen = false">
             <div class="lg:hidden md:mr-0">
                 <div x-data="{ isOpen: false }">
                     <button @click="isOpen = !isOpen"
@@ -234,15 +234,15 @@
                 </div>
             </div>
             <a href="/"
-                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beranda</a>
+                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beranda</a>
             <a href="{{ route('pages.sell') }}"
-                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Jual</a>
+                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Jual</a>
             <a href="{{ route('pages.buy') }}"
-                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beli</a>
+                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Beli</a>
             <a href="{{ route('pages.rental') }}"
-                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Sewa</a>
+                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Sewa</a>
             <a href="{{ route('pages.about') }}"
-                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold hover:border-0 hover:border-b-2 hover:border-primary-blue hover:text-primary-blue py-1 px-6">Tentang</a>
+                class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Tentang</a>
             <div class="flex flex-wrap md:hidden">
                 @if (Auth::check() && Auth::user()->role == 'Customer')
                     <div class="md:visible sm:visible md:flex pl-10">

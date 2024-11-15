@@ -3,7 +3,7 @@
 @section('title', 'Properti Ideal | Partner')
 
 @section('content')
-    <div>
+    <div class="max-w-3xl mx-auto px-8">
         @if (session('success'))
             <div id="successMessage"
                 class="fixed top-0 left-0 w-full h-full flex justify-center items-center backdrop-blur-md bg-white/30 bg-opacity-50 z-50">
@@ -92,7 +92,7 @@
                 </span>
             </h1>
         </div>
-        <div class="container mx-auto py-5">
+        <div class="container mx-auto py-5 ">
             <div class="rounded-lg">
                 <h1 class="text-2xl font-bold mb-4 text-textbase">Bagian 1 ・ Formulir untuk akun partner</h1>
                 <p class="text-textbase text-xl  mb-6">Silahkan diisi sesuai akun yang anda inginkan</p>
@@ -153,24 +153,26 @@
                 <p class="text-textbase text-xl  mb-6"><span class="font-bold">Penting! </span>Silahkan diisi dengan
                     kesesuaian data yang ada
                     dilapangan dikarenakan akan ada pengecekan dari admin ke lokasi</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="text-lg font-medium text-textbase" for="link_instagram">Link instagram (opsional)</label>
-                            <input name="link_instagram" id="link_instagram" type="text" placeholder="Masukkan link instagram"
-                                class="border p-2 rounded w-full">
-                            @error('link_instagram')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div>
-                            <label class="text-lg font-medium text-textbase" for="link_website">Link website (opsional)</label>
-                            <input name="link_website" id="link_website" type="text" placeholder="Masukkan link website"
-                                class="border p-2 rounded w-full">
-                            @error('link_website')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="text-lg font-medium text-textbase" for="link_instagram">Link instagram
+                            (opsional)</label>
+                        <input name="link_instagram" id="link_instagram" type="text"
+                            placeholder="Masukkan link instagram" class="border p-2 rounded w-full">
+                        @error('link_instagram')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
+                    <div>
+                        <label class="text-lg font-medium text-textbase" for="link_website">Link website
+                            (opsional)</label>
+                        <input name="link_website" id="link_website" type="text" placeholder="Masukkan link website"
+                            class="border p-2 rounded w-full">
+                        @error('link_website')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="provinsi_partner">Provinsi *</label>
@@ -215,7 +217,7 @@
                         @enderror
                     </div>
                 </div>
-                
+
                 <div class="mb-4">
                     <label for="alamat_partner">Detail alamat *</label>
                     <input name="alamat_partner" id="alamat_partner" type="text" placeholder="Detail alamat"

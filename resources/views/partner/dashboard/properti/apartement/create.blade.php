@@ -181,11 +181,10 @@
                             @enderror
                         </div>
                         <div>
-                            <label class="text-lg font-medium text-textbase" for="luas_apartement">Luas Apartment
-                                *</label>
+                            <label class="text-lg font-medium text-textbase" for="luas_apartement">Luas Apartment *
+                                (<span>m<sup>2</sup></span>)</label>
                             <input name="luas_apartement" id="luas_apartement" type="number"
                                 placeholder="Masukkan luas apartement (m2)" class="border p-2 rounded w-full">
-                            <p class="font-extralight text-sm mt-1">Masukkan dalam satuan Meter Kubik (m2)</p>
                             @error('luas_apartement')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
@@ -276,24 +275,44 @@
                     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50">
 
-                    <div x-show="isOpen" @click.away="isOpen = false"
-                        class="flex flex-col p-6 gap-6 bg-white rounded-xl border border-secondary-white w-full h-fit mt-10 md:mt-0 md:w-1/2 max-w-lg absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div x-show="isOpen" @click.away="isOpen = false" :class="{ '!block': isOpen }"
+                        class="hidden flex flex-col p-6 gap-6 bg-white rounded-xl border border-secondary-white w-full h-fit mt-10 md:mt-0 md:w-1/2 max-w-lg absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <button @click="isOpen = false" class="absolute top-2 right-2 text-xl text-gray-600">
                             &times;
                         </button>
                         <p class="text-xl font-semibold">Latitude & Longitude</p>
                         <div class="flex flex-col gap-3">
-                            <p>Buka <a target="_blank" href="https://www.google.com/maps">Google Maps.</a></p>
+                            <p>Buka <a target="_blank" class="underline" href="https://www.google.com/maps">Google
+                                    Maps.</a></p>
                             <div class="flex flex-col gap-2">
                                 <p>Telusuri tempat atau area yang akan dicari.</p>
-                                <img src="/img/search-location.png" width="150" alt="search-location">
+                                <img class="w-fit h-10" src="/img/search-location.png" alt="search-location">
                             </div>
                             <div class="flex flex-col gap-2">
                                 <p>Klik kanan tempat atau area pada peta. Jika menggunakan Ponsel cukup tahan lama area
                                     pada
                                     peta.
                                 </p>
-                                <img src="/img/get-data-location.png" width="150" alt="get-data-location">
+                                <div class="grid grid-cols-2 w-full h-72">
+                                    <div class="flex items-center justify-center h-72 w-full">
+                                        <img src="/img/get-data-location.png" class="h-full w-full object-contain"
+                                            alt="get-data-location">
+                                    </div>
+                                    <div class="flex flex-col items-center justify-center h-72 w-full">
+                                        <img src="/img/get-data-location2.png" class="h-fit w-full object-contain"
+                                            alt="get-data-location">
+                                        <div class="flex flex-col w-full justify-center items-start gap-1 px-2">
+                                            <div class="flex flex-row gap-2 ">
+                                                <div class="w-4 h-4 bg-red-500"> </div>
+                                                <p>: Latitude</p>
+                                            </div>
+                                            <div class="flex flex-row gap-2 ">
+                                                <div class="w-4 h-4 bg-blue-500"> </div>
+                                                <p>: Longitude</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <p>Tindakan ini akan membuka jendela pop-up. Anda dapat menemukan lintang dan bujur dalam
                                 format

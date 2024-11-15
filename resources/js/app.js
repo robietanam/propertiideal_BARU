@@ -1,10 +1,13 @@
 import Aos from 'aos';
 import './bootstrap';
+import 'aos/dist/aos.css';
 
 import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
-
 Alpine.start();
 
-Aos.init();
+window.Alpine = Alpine;
+
+Aos.init({
+    once: true,
+});

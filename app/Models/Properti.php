@@ -28,6 +28,21 @@ class Properti extends Model
         'kategori_penjualan_id',
         'partner_id',
     ];
+     /**
+     * Get the kategori properti that owns the properti.
+     */
+    public function kategoriProperti()
+    {
+        return $this->belongsTo(KategoriProperti::class, 'kategori_properti_id', 'id_kategori_properti');
+    }
+
+    /**
+     * Get the kategori penjualan that owns the properti.
+     */
+    public function kategoriPenjualan()
+    {
+        return $this->belongsTo(KategoriPenjualan::class, 'kategori_penjualan_id');
+    }
 
     public function properti_apartement() : HasMany {
         return $this->hasMany(PropertiApartement::class, 'properti_id', 'id_properti');

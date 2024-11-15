@@ -25,7 +25,6 @@
         * {
             font-family: Montserrat;
         }
-
     </style>
 </head>
 
