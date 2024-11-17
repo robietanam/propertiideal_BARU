@@ -3,13 +3,13 @@
 @section('title', 'Properti Ideal | Daftar')
 
 @section('content')
-    <div class="flex h-screen">
-        <div class="w-full  lg:w-1/2 flex justify-center">
+    <div class="flex">
+        <div class="px-6 md:px-0 w-full lg:w-1/2 flex justify-center">
 
-            <div class="max-w-md w-full">
-                <div class="flex mt-20 items-center justify-center gap-y-10 sm:py-16 lg:py-20 my-10">
+            <div class="max-w-md py-6 w-full">
+                <div class="flex items-center justify-center gap-y-10 lg:py-3 my-10">
                     <a href="{{ route('login') }}" class="flex items-center gap-x-4">
-                        <img class="h-12 w-12 my-3 mr-4" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt="">
+                        <img class="h-12 w-12 my-1 mr-4" src="{{ asset('img/icons/properti-ideal-icon.png') }}" alt="">
                         <div class="flex flex-col">
                             <div class="text-xl font-bold text-primarybase ">Properti Ideal</div>
                             <div class="text-md font-semibold text-primarybase ">Jual properti Anda bersama kami</div>
@@ -51,7 +51,8 @@
                             class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
                     </div>
                     <div>
-                        <label for="konfirmasi_password" class="block text-gray-800 text-md font-semibold mb-2">Konfirmasi Password
+                        <label for="konfirmasi_password" class="block text-gray-800 text-md font-semibold mb-2">Konfirmasi
+                            Password
                             *</label>
                         <input type="password" id="konfirmasi_password" name="konfirmasi_password"
                             class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">

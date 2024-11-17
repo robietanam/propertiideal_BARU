@@ -6,7 +6,7 @@
     <section class="py-20 bg-white" x-data="{ animate: false }" x-init="setTimeout(() => animate = true, 800)">
         <div class="flex flex-col mx-auto space-y-12 max-w-full ">
             <div
-                class="relative max-w-full xl:px-28 lg:px-24 md:px-20 sm:px-0 mx-auto flex flex-col gap-6 items-center justify-center ">
+                class="relative px-8 max-w-full xl:px-28 lg:px-24 md:px-20 sm:px-0 mx-auto flex flex-col gap-6 items-center justify-center ">
                 <p class="text-primary-blue font-semibold text-center w-full" x-show="animate"
                     x-transition:enter="transform transition-transform duration-700"
                     x-transition:enter-start="-translate-y-full opacity-0" x-transition:enter-end="translate-y-0 opacity-100">
@@ -23,7 +23,7 @@
                     terintegrasi dan berbagai pilihan, kami siap membantu Anda menjual atau membeli properti dengan proses
                     yang mudah dan menyenangkan.</p>
             </div>
-            <div class="grid grid-cols-10 bg-secondary-blue h-96 px-14">
+            <div class="grid grid-cols-1 md:grid-cols-10 bg-secondary-blue h-fit md:h-96 py-16 md:py-0 px-8 md:px-14">
                 <div class="col-span-4 flex flex-col gap-4 self-center" x-show="animate"
                     x-transition:enter="transform  transition-transform duration-700"
                     x-transition:enter-start="-translate-x-full opacity-0"
@@ -35,7 +35,7 @@
                     <p class="text-3xl text-white font-bold">Layanan Kami</p>
                     <p class="text-sm text-white ">Segalanya lebih mudah dengan pelayanan yang maksimal.</p>
                 </div>
-                <div class="col-span-1 relative flex justify-center items-center">
+                <div class="col-span-1 hidden relative md:flex justify-center items-center">
                     <div class="h-full w-0.5 border-l border-gray-300 border-dashed  opacity-50"></div>
 
                     <img x-show="animate" x-transition:enter="transform ease-out transition-transform duration-500"
@@ -51,7 +51,7 @@
                         class="absolute w-14 aspect-square top-[65%] -translate-y-[65%] border border-white rounded-full "
                         alt="Icon Propertiideal">
                 </div>
-                <div class="col-span-5 p-8 flex flex-col gap-10">
+                <div class="col-span-5 px-0 md:px-8 py-8 flex flex-col gap-10">
                     <div x-show="animate" x-transition:enter="transform  transition-transform duration-500 delay-500"
                         x-transition:enter-start="translate-x-full opacity-0"
                         x-transition:enter-end="translate-x-0 opacity-100"
@@ -174,11 +174,11 @@
         </div>
     </div> --}}
 
-    <div class="text-white mt-24 container mx-auto p-8 overflow-hidden md:rounded-lg md:p-10 lg:p-12">
-        <div class="mx-auto px-4 md:px-8">
+    <div class="text-white mt-24 container mx-auto px-6 md:px-8 py-8 overflow-hidden md:rounded-lg md:p-10 lg:p-12">
+        <div class="mx-auto px-0 md:px-4">
             <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12 flex-col">
                 <div class="flex items-center flex-col" data-aos="zoom-in-down">
-                    <h2 class="text-6xl font-bold text-gray-800 lg:text-6xl">Dokumentasi Properti Ideal</h2>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-800 lg:text-6xl">Dokumentasi Properti Ideal</h2>
                     <p class="max-w-screen text-xl mt-3 text-gray-500 ">
                         Ini adalah aktivitas, kemitraan, produk, penjalanan, dan sejarah dari Properti Ideal
                     </p>
@@ -186,7 +186,7 @@
 
             </div>
 
-            <div data-aos="zoom-in-right" class="grid grid-cols-3 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <div data-aos="zoom-in-right" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
                 <!-- image - start -->
                 <a href="#"
                     class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
@@ -249,7 +249,7 @@
             </div>
         </div>
 
-        <div class="py-24 px-8 lg:px-20 max-w-full mx-auto flex flex-col md:flex-row gap-12">
+        <div class="py-24 px-0 md:px-8 lg:px-20 max-w-full mx-auto flex flex-col md:flex-row gap-12">
             <div data-aos="zoom-in" class="flex flex-col text-left basis-1/2">
                 <p class="inline-block text-textbase font-semibold text-primary mb-4">Pertanyaan dari calon Partner</p>
                 <p class="sm:text-4xl text-4xl text-textbase font-bold text-base-content">Paling sering ditanyakan</p>

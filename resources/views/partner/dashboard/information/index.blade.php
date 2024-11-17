@@ -44,7 +44,7 @@
                                 </h4>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 px-2 w-full">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 w-full">
                             <div
                                 class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
                                 <p class="text-sm text-gray-600">Email</p>

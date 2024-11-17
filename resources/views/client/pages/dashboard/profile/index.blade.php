@@ -74,9 +74,9 @@
     @endif
     <section class="flex flex-col justify-center mx-auto max-w-7xl">
         <div class="bg-white antialiased my-4 justify-center flex">
-            <div class="flex w-full flex-col mb-5">
+            <div class="flex px-6 md:px-0 w-full flex-col mb-5">
                 <div class="mt-2 mb-6 w-full">
-                    <h4 class=" text-2xl font-bold text-textbase">
+                    <h4 class=" text-2xl text-center md:text-start font-bold text-textbase">
                         Pengaturan akun
                     </h4>
                 </div>
@@ -85,9 +85,9 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="mb-2 flex flex-wrap w-full">
+                        <div class="mb-2 flex flex-wrap w-full justify-center md:justify-start">
                             <div class="mr-4">
-                                <label for="foto_profile" class="block text-lg font-semibold text-textbase mb-2">Foto
+                                <label for="foto_profile" class="block text-center md:text-start text-lg font-semibold text-textbase mb-2">Foto
                                     profil</label>
                                 @if ($user->foto_profile == 'user.png')
                                     <img class="w-52 h-52 rounded" src="{{ asset('img/person_1.jpg') }}"

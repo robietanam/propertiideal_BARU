@@ -96,7 +96,7 @@
         <div class="flex gap-6">
             <div class="flex flex-wrap">
                 @if (Auth::check() && Auth::user()->role == 'Customer')
-                    <div class="md:visible sm:visible md:flex pl-10">
+                    <div class="hidden md:visible sm:visible md:flex pl-0 md:pl-10">
                         <div x-data="{ isOpen: false }">
                             <button @click="isOpen = !isOpen"
                                 class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 ring-1 ring-primarybase">
@@ -245,7 +245,7 @@
                 class="text-sm font-medium w-full text-center text-textbase md:text-lg md:font-semibold border-b-2 border-transparent  hover:border-primary-blue hover:text-primary-blue py-1 px-6">Tentang</a>
             <div class="flex flex-wrap md:hidden">
                 @if (Auth::check() && Auth::user()->role == 'Customer')
-                    <div class="md:visible sm:visible md:flex pl-10">
+                    <div class="visible sm:visible md:flex pl-0 md:pl-10">
                         <div x-data="{ isOpen: false }">
                             <button @click="isOpen = !isOpen"
                                 class="flex cursor-pointer items-center gap-x-3 rounded-md py-2 px-4 ring-1 ring-primarybase">

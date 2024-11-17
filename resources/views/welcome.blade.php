@@ -56,7 +56,7 @@
             <p class="text-2xl md:text-4xl font-semibold text-black">Layanan Terbaik Kami</p>
             <p class="text-sm text-black">Segalanya lebih mudah dengan pelayanan yang maksimal.</p>
         </div>
-        <div class="grid grid-cols-2 gap-12 md:gap-20 px-10 justify-center">
+        <div class="grid grid-cols-2 gap-12 px-6 md:gap-20 md:px-10 justify-center">
             <div data-aos="flip-left" class="max-md:col-span-2">
                 <div
                     class="relative flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">

@@ -3,10 +3,10 @@
 @section('title', 'Dashboard | Partner')
 
 @section('content')
-    <div class="flex flex-col">
+    <div class="flex flex-col px-6 md:px-0">
         <h2 class="mb-4 text-2xl font-bold">Dashboard</h2>
-        <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5">
-                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5">
+                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                     <div class="flex h-12 w-12 items-center justify-center rounded-full border border-blue-100 bg-blue-50">
                         <img src="{{ asset('icons/house.svg') }}" alt="" class="h-7 w-7">
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                     <div class="flex h-12 w-12 items-center justify-center rounded-full border border-red-100 bg-red-50">
                         <img src="{{ asset('icons/nature_peopl.svg') }}" alt="" class="h-7 w-7">
                     </div>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                     <div
                         class="flex h-12 w-12 items-center justify-center rounded-full border border-indigo-100 bg-indigo-50">
                         <img src="{{ asset('icons/night_shelter.svg') }}" alt="" class="h-7 w-7">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                     <div
                         class="flex h-12 w-12 items-center justify-center rounded-full border border-indigo-100 bg-indigo-50">
                         <img src="{{ asset('icons/ruko.svg') }}" alt="" class="h-7 w-7">
@@ -65,7 +65,7 @@
                 </div>
 
 
-                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+                <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                     <div
                         class="flex h-12 w-12 items-center justify-center rounded-full border border-indigo-100 bg-indigo-50">
                         <img src="{{ asset('icons/all_properties.svg') }}" alt="" class="h-7 w-7">
@@ -88,7 +88,7 @@
                 </div>
             </div>
 
-            <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-1">
+            <div class="flex items-start rounded-xl bg-white p-4 shadow-lg col-span-2 md:col-span-1">
                 <div class="flex h-12 w-12 items-center justify-center rounded-full border border-indigo-100 bg-indigo-50">
                     <img src="{{ asset('icons/verified_at.svg') }}" alt="" class="h-7 w-7">
                 </div>

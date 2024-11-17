@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <div class="container mx-auto py-5">
+        <div class="container px-6 md:px-0 mx-auto py-5">
             @if (session('error'))
                 <p>{{ session('error') }}</p>
             @endif
@@ -252,7 +252,7 @@
                     x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black bg-opacity-50">
 
                     <div x-show="isOpen" @click.away="isOpen = false" :class="{ '!block': isOpen }"
-                        class="hidden flex flex-col p-6 gap-6 bg-white rounded-xl border border-secondary-white w-full h-fit mt-10 md:mt-0 md:w-1/2 max-w-lg absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        class="flex flex-col p-6 gap-6 bg-white rounded-xl border border-secondary-white w-full h-fit mt-10 md:mt-0 md:w-1/2 max-w-lg absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <button @click="isOpen = false" class="absolute top-2 right-2 text-xl text-gray-600">
                             &times;
                         </button>

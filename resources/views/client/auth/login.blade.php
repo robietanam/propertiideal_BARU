@@ -12,7 +12,7 @@
             </div>
         </div>
         <!-- Right Pane -->
-        <div class="w-full  lg:w-1/2 flex justify-center">
+        <div class="px-6 md:px-0 w-full lg:w-1/2 flex justify-center">
             <div class="max-w-md w-full">
                 <div class="flex mt-20 items-center justify-center gap-y-10 sm:py-16 lg:py-20 my-10">
                     <a href="{{ route('login') }}" class="flex items-center gap-x-4">

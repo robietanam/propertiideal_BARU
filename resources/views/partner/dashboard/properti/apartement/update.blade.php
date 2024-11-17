@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <div class="container mx-auto py-5">
+        <div class="container mx-auto py-5 px-6 md:px-0">
             @if (session('error'))
                 <p>{{ session('error') }}</p>
             @endif

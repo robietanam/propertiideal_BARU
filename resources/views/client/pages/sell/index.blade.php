@@ -41,7 +41,7 @@
                         <p class="text-lg text-textbase">Jual properti, beli properti
                             dengan berbagai layanan yang tersedia di Properti Ideal.</p>
                     </div>
-                    <div class="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-0 sm:gap-x-4">
+                    <div class="mt-12 grid-cols-1 grid md:grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-0 sm:gap-x-4">
                         <a x-show="animate" x-transition:enter="transform ease-out transition-transform duration-700"
                             x-transition:enter-start="scale-0 opacity-0" x-transition:enter-end="scale-100 opacity-100"
                             href="{{ route('pages.submission') }}"
@@ -70,7 +70,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="w-full mx-auto mt-16 px-16 text-center md:w-10/12" x-show="animate"
+                <div class="w-full mx-auto mt-16 px-0 md:px-16 text-center md:w-10/12" x-show="animate"
                     x-transition:enter="transform ease-out transition-transform duration-700"
                     x-transition:enter-start="scale-0 opacity-0" x-transition:enter-end="scale-100 opacity-100">
                     <div class="relative z-0 w-full mt-8">
