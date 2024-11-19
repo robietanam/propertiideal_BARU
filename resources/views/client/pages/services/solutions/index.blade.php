@@ -3,160 +3,72 @@
 @section('title', 'Properti Ideal | Solution')
 
 @section('content')
-    <div class="bg-white py-12">
-        <div class="mx-auto max-w-full px-6 lg:px-20">
-
-            <div class="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center pb-10">
-                <h2
-                    class="text-base font-semibold leading-7 text-blue-100 bg-blue-600 px-3 rounded-lg mb-4 lg:mb-4">
-                    Properti Solution</h2>
-                <h1 class="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">Meyediakan
-                    Layanan Properti
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900">Sesuai
-                        Kebutuhan Anda</span>
-                </h1>
+    <div class="bg-white">
+        <div class="flex flex-col px-6 md:px-16 py-16 gap-12 md:gap-24 bg-white">
+            <div class="flex flex-col gap-3 text-center items-center" data-aos="zoom-in">
+                <p class="bg-primary-blue text-white text-base font-semibold py-[2px] px-6 w-fit rounded-full">Properti
+                    Solution</p>
+                <p class="text-2xl md:text-4xl font-semibold text-black">Menyediakan Layanan</p>
+                <p class="text-2xl md:text-4xl font-semibold text-primary-blue">Sesuai Kebutuhan Anda</p>
+                <p class="text-sm text-black">Temukan berbagai propeti yang terbaik dengan pelayanan cepat dan terpercaya.
+                </p>
             </div>
-
-            <ul role="list" class="grid xs:grid-cols-1 gap-6 px-8 sm:grid-cols-2 lg:grid-cols-2">
-                <div class="w-full px-4">
-                    <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
-                        <div class="bg-gray-50 rounded-lg">
-                            <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="{{ asset('icons/solusi-renovasi.png') }}" alt="icons-child" class="h-16" />
-                                </div>
-                            </div>
-                            <div class="py-8 px-10">
-                                <p class="text-3xl font-semibold text-textbase leading-sm">
-                                    Solusi Pembangunan & Renovasi
-                                </p>
-                                <p class="text-xl text-textbase leading-sm mt-2">
-                                    Pembangunan & Renovasi semakin mudah.
-                                </p>
-                                <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                    <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                        Pelajari selengkapnya
-                                    </a>
-                                    <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                            fill="#AAC14C" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-2 gap-12 px-6 md:gap-20 md:px-10 justify-center">
+                <div data-aos="flip-left" class="max-md:col-span-2">
+                    <div
+                        class="relative bg-secondary-blue flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
+                        <img src="{{ asset('img/icons/properti-ideal-light-icon.svg') }}"
+                            class="absolute w-14 aspect-square left-1/2 -translate-x-1/2 -top-5" alt="Icon Propertiideal">
+                        <p class="text-xl font-semibold text-white">Solusi Pembangunan & Renovasin</p>
+                        <p class="text-base text-white">Dengan Properti Ideal, Anda mendapatkan layanan pembangunan dan
+                            renovasi yang menyeluruh – mulai dari perencanaan, desain, hingga eksekusi, semua dilakukan oleh
+                            tim profesional.</p>
+                        <a href="/layanan/propertisolution"
+                            class="text-base font-semibold text-primary-yellow underline">Jelajahi Sekarang</a>
                     </div>
                 </div>
+                <div data-aos="flip-right" class="max-md:col-span-2">
+                    <div
+                        class="relative flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
 
-
-                <li class="col-span-1 rounded-lg">
-                    <div class="w-full px-4">
-                        <div
-                            class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
-                            <div class="bg-gray-50 rounded-lg">
-                                <div class="relative flex">
-                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <img src="{{ asset('icons/solusi-reparasi.png') }}" alt="icons-child" class="h-16" />
-                                    </div>
-                                </div>
-                                <div class="py-8 px-10">
-                                    <p class="text-3xl font-semibold text-textbase leading-sm">
-                                        Solusi Reparasi Hunian
-                                    </p>
-                                    <p class="text-xl text-textbase leading-sm mt-2">
-                                        Lengkapi rumah Anda dengan barang-barang berkualitas. 🤩
-                                    </p>
-                                    <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                        <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                            Pelajari selengkapnya
-                                        </a>
-                                        <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                                fill="#AAC14C" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-            <ul role="list" class="grid xs:grid-cols-1 gap-6 px-8 sm:grid-cols-2 lg:grid-cols-2 mt-12">
-                <div class="w-full px-4">
-                    <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
-                        <div class="bg-gray-50 rounded-lg">
-                            <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="{{ asset('icons/solusi-desain-interior.png') }}" alt="icons-child" class="h-16" />
-                                </div>
-                            </div>
-                            <div class="py-8 px-10">
-                                <p class="text-3xl font-semibold text-textbase leading-sm">
-                                    Solusi Design Interior
-                                </p>
-                                <p class="text-xl text-textbase leading-sm mt-2">
-                                    Percantik Interior Anda dengan design yang memukau! 🤩
-                                </p>
-                                <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                    <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                        Pelajari selengkapnya
-                                    </a>
-                                    <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                            fill="#AAC14C" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
+                            class="absolute w-14 aspect-square left-1/2 -translate-x-1/2 -top-5" alt="Icon Propertiideal">
+                        <p class="text-xl font-semibold text-black">Solusi Reparasi Hunian</p>
+                        <p class="text-base text-black">Dari kerusakan kecil hingga masalah besar, Properti Ideal
+                            menyediakan layanan reparasi hunian terpercaya untuk semua kebutuhan rumah Anda.</p>
+                        <a href="/layanan/propertisolution"
+                            class="text-base font-semibold text-primary-blue underline">Jelajai
+                            Sekarang</a>
                     </div>
                 </div>
-
-
-                <li class="col-span-1 rounded-lg">
-                    <div class="w-full px-4">
-                        <div
-                            class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
-                            <div class="bg-gray-50 rounded-lg">
-                                <div class="relative flex">
-                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <img src="{{ asset('icons/solusi-desain-eksterior.png') }}" alt="icons-child" class="h-16" />
-                                    </div>
-                                </div>
-                                <div class="py-8 px-10">
-                                    <p class="text-3xl font-semibold text-textbase leading-sm">
-                                        Solusi Design Eksterior
-                                    </p>
-                                    <p class="text-xl text-textbase leading-sm mt-2">
-                                        Pemandanan eksterior jadi lebih indah dan cepat! 🤩
-                                    </p>
-                                    <div class="flex flex-wrap items-center mt-2 cursor-pointer">
-                                        <a href="" class="flex text-primarybase font-semibold text-xl mr-3">
-                                            Pelajari selengkapnya
-                                        </a>
-                                        <svg width="28" height="20" viewBox="0 0 28 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M21.8407 11.7976H1.79759C1.28827 11.7976 0.861346 11.6253 0.516807 11.2808C0.172269 10.9362 0 10.5093 0 10C0 9.49068 0.172269 9.06375 0.516807 8.71922C0.861346 8.37468 1.28827 8.20241 1.79759 8.20241H21.8407L16.7176 3.07927C16.3581 2.71976 16.1858 2.30032 16.2008 1.82096C16.2158 1.3416 16.388 0.922164 16.7176 0.562646C17.0771 0.203128 17.504 0.0158787 17.9984 0.000898796C18.4927 -0.0140811 18.9196 0.158188 19.2792 0.517706L27.5031 8.74169C27.6829 8.92144 27.8102 9.11618 27.8851 9.3259C27.96 9.53562 27.9975 9.76032 27.9975 10C27.9975 10.2397 27.96 10.4644 27.8851 10.6741C27.8102 10.8838 27.6829 11.0786 27.5031 11.2583L19.2792 19.4823C18.9196 19.8418 18.4927 20.0141 17.9984 19.9991C17.504 19.9841 17.0771 19.7969 16.7176 19.4374C16.388 19.0778 16.2158 18.6584 16.2008 18.179C16.1858 17.6997 16.3581 17.2802 16.7176 16.9207L21.8407 11.7976Z"
-                                                fill="#AAC14C" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div data-aos="flip-left" class="max-md:col-span-2">
+                    <div
+                        class="relative flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
+                        <img src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
+                            class="absolute w-14 aspect-square left-1/2 -translate-x-1/2 -top-5" alt="Icon Propertiideal">
+                        <p class="text-xl font-semibold text-black">Solusi Design Interior</p>
+                        <p class="text-base text-black">Dengan Properti Ideal, memulai proyek desain interior menjadi sangat
+                            mudah. Pilih kategori desain, masukkan preferensi Anda, dan biarkan tim kami menangani sisanya.
+                        </p>
+                        <a href="/layanan/propertisolution"
+                            class="text-base font-semibold text-primary-blue underline">Jelajahi Sekarang</a>
                     </div>
-                </li>
-            </ul>
+                </div>
+                <div data-aos="flip-right" class="max-md:col-span-2">
+                    <div
+                        class="relative bg-secondary-blue flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
+
+                        <img src="{{ asset('img/icons/properti-ideal-light-icon.svg') }}"
+                            class="absolute w-14 aspect-square left-1/2 -translate-x-1/2 -top-5" alt="Icon Propertiideal">
+                        <p class="text-xl font-semibold text-white">Solusi Design Eksterior</p>
+                        <p class="text-base text-white">Dari fasad modern hingga taman hijau yang asri, Properti Ideal
+                            menyediakan layanan desain eksterior yang lengkap sesuai gaya dan kebutuhan Anda.</p>
+                        <a href="/layanan/propertisolution"
+                            class="text-base font-semibold text-primary-yellow underline">Jelajai
+                            Sekarang</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
