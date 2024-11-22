@@ -12,6 +12,7 @@ use App\Http\Controllers\Partner\Auth\AuthPartnerController;
 use App\Http\Controllers\Partner\DashboardPartnerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\Auth\AuthUserController;
+use App\Http\Controllers\User\Auth\SocialiteController;
 use App\Http\Controllers\User\ProfileUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,9 @@ Route::get('daftar-partner', [WebPagesController::class, 'submission'])->name('p
 
 Route::get('/admin/login', [AuthAdminController::class, 'index'])->name('admin.login');
 Route::post('/admin/login', [AuthAdminController::class, 'store'])->name('admin.postlogin');
+
+Route::get('/login/google', [SocialiteController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/login/google/callback', [SocialiteController::class, 'handleGoogleCallback']);
 
 Route::middleware('auth')->group(function () {
 

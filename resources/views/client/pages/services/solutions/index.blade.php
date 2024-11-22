@@ -3,17 +3,32 @@
 @section('title', 'Properti Ideal | Solution')
 
 @section('content')
-    <div class="bg-white">
+    <div class="bg-white relative overflow-x-hidden" x-data="{ animate: false }" x-init="setTimeout(() => animate = true, 800)">
+
+        <img src="{{ asset('img/assets/assets-1.svg') }}" alt="bulet"
+            class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 ">
+        <img src="{{ asset('img/assets/assets-1.svg') }}" alt="bulet"
+            class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 max-md:hidden">
         <div class="flex flex-col px-6 md:px-16 py-16 gap-12 md:gap-24 bg-white">
             <div class="flex flex-col gap-3 text-center items-center" data-aos="zoom-in">
-                <p class="bg-primary-blue text-white text-base font-semibold py-[2px] px-6 w-fit rounded-full">Properti
+                <p x-show="animate" x-transition:enter="transform transition-transform duration-700"
+                    x-transition:enter-start="-translate-y-full opacity-0"
+                    x-transition:enter-end="translate-y-0 opacity-100"
+                    class="bg-primary-blue text-white text-base font-semibold py-[2px] px-6 w-fit rounded-full">Properti
                     Solution</p>
-                <p class="text-2xl md:text-4xl font-semibold text-black">Menyediakan Layanan</p>
-                <p class="text-2xl md:text-4xl font-semibold text-primary-blue">Sesuai Kebutuhan Anda</p>
-                <p class="text-sm text-black">Temukan berbagai propeti yang terbaik dengan pelayanan cepat dan terpercaya.
+                <p x-show="animate" x-transition:enter="transform transition-transform duration-700"
+                    x-transition:enter-start="-translate-x-full opacity-0"
+                    x-transition:enter-end="translate-x-0 opacity-100"
+                    class="text-2xl md:text-4xl font-semibold text-black">Menyediakan Layanan</p>
+                <p x-show="animate" x-transition:enter="transform transition-transform duration-700"
+                    x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100"
+                    class="text-2xl md:text-4xl font-semibold text-primary-blue">Sesuai Kebutuhan Anda</p>
+                <p x-show="animate" x-transition:enter="transform transition-transform duration-700"
+                    x-transition:enter-start="translate-y-full opacity-0" x-transition:enter-end="translate-y-0 opacity-100"
+                    class="text-sm text-black">Temukan berbagai propeti yang terbaik dengan pelayanan cepat dan terpercaya.
                 </p>
             </div>
-            <div class="grid grid-cols-2 gap-12 px-6 md:gap-20 md:px-10 justify-center">
+            <div id="cards" class="grid grid-cols-2 gap-12 px-6 md:gap-20 md:px-10 justify-center">
                 <div data-aos="flip-left" class="max-md:col-span-2">
                     <div
                         class="relative bg-secondary-blue flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
@@ -37,7 +52,7 @@
                         <p class="text-base text-black">Dari kerusakan kecil hingga masalah besar, Properti Ideal
                             menyediakan layanan reparasi hunian terpercaya untuk semua kebutuhan rumah Anda.</p>
                         <a href="/layanan/propertisolution"
-                            class="text-base font-semibold text-primary-blue underline">Jelajai
+                            class="text-base font-semibold text-primary-blue underline">Jelajahi
                             Sekarang</a>
                     </div>
                 </div>
@@ -64,7 +79,7 @@
                         <p class="text-base text-white">Dari fasad modern hingga taman hijau yang asri, Properti Ideal
                             menyediakan layanan desain eksterior yang lengkap sesuai gaya dan kebutuhan Anda.</p>
                         <a href="/layanan/propertisolution"
-                            class="text-base font-semibold text-primary-yellow underline">Jelajai
+                            class="text-base font-semibold text-primary-yellow underline">Jelajahi
                             Sekarang</a>
                     </div>
                 </div>
@@ -135,5 +150,7 @@
     <script
         src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js">
     </script>
-
+    @push('js')
+        <script></script>
+    @endpush
 @endsection

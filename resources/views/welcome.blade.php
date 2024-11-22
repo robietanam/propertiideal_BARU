@@ -42,7 +42,8 @@
                             </path>
                         </svg>
                     </a>
-                    <a href="/sewa" class="text-white px-4 py-2 border border-white rounded w-fit items-center flex gap-2">
+                    <a href="/sewa"
+                        class="text-white px-4 py-2 border border-white rounded w-fit items-center flex gap-2">
                         <p class="text-sm font-semibold">Sewa Properti</p>
                     </a>
                 </div>
@@ -58,20 +59,21 @@
         </div>
         <div class="grid grid-cols-2 gap-12 px-6 md:gap-20 md:px-10 justify-center">
             <div data-aos="flip-left" class="max-md:col-span-2">
-                <div
+                <a href="/layanan/propertisolution"
                     class="relative flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
                     <img src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
                         class="absolute w-14 aspect-square left-1/2 -translate-x-1/2 -top-5" alt="Icon Propertiideal">
                     <p class="text-xl font-semibold text-black">Properti Solution</p>
-                    <p class="text-base text-black">Properti Ideal berkomitmen menyediakan layanan yang disesuaikan dengan
+                    <p class="text-base text-black">Properti Ideal berkomitmen menyediakan layanan yang disesuaikan
+                        dengan
                         kebutuhan Anda,
                         mulai dari pembangunan rumah, renovasi, hingga desain interior, dengan solusi lengkap dari tim
                         profesional kami.</p>
-                    <a href="/layanan/propertisolution" class="text-base font-semibold text-primary-blue underline">Jelajahi Sekarang</a>
-                </div>
+                    <p class="text-base font-semibold text-primary-blue underline">Jelajahi Sekarang</p>
+                </a>
             </div>
             <div data-aos="flip-right" class="max-md:col-span-2">
-                <div
+                <a href="/layanan/propertiideal"
                     class="relative flex flex-col text-center border rounded-3xl gap-3 pt-12 pb-6 px-6 w-full hover:cursor-pointer hover:scale-110 transition-transform ease-in-out">
 
                     <img src="{{ asset('img/icons/properti-ideal-dark-icon.svg') }}"
@@ -80,10 +82,11 @@
                     <p class="text-base text-black">Dari hunian luas hingga layanan yang memudahkan proses pembelian,
                         Properti
                         Ideal
-                        memastikan pengalaman yang memuaskan dan hasil sesuai harapan. Bergabunglah dengan kami dan temukan
+                        memastikan pengalaman yang memuaskan dan hasil sesuai harapan. Bergabunglah dengan kami dan
+                        temukan
                         hunian impian Anda sekarang!</p>
-                    <a href="/layanan/propertiideal" class="text-base font-semibold text-primary-blue">Jelajai Sekarang</a>
-                </div>
+                    <p class="text-base font-semibold text-primary-blue underline">Jelajahi Sekarang</p>
+                </a>
             </div>
         </div>
     </div>
@@ -98,7 +101,8 @@
             <p data-aos="zoom-out-right" class="text-sm text-white">Ikuti dan pantau terus media sosial kami agar tidak
                 ketinggalan konten dan promo
                 menarik dari kami!</p>
-            <a href="https://www.instagram.com/propertiideal_id/" target="_blank" class="text-white px-4 py-2 border border-white rounded w-fit items-center flex gap-2"
+            <a href="https://www.instagram.com/propertiideal_id/" target="_blank"
+                class="text-white px-4 py-2 border border-white rounded w-fit items-center flex gap-2"
                 data-aos="zoom-in-up">
                 <p class="text-sm font-semibold">Follow</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#f8f1f1" viewBox="0 0 256 256">

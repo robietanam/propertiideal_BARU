@@ -66,6 +66,7 @@ class AuthUserController extends Controller
             'name' => $request->name,
             'nama' => $request->nama,
             'email' => $request->email,
+            'foto_profile' => 'user.png',
             'password' => Hash::make($request->password),
             'role' => 'Customer',
         ]);

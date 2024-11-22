@@ -32,8 +32,8 @@
                     </button>
 
                     <div @click.away="isOpen = false" @keydown.escape="isOpen = false"
-                        x-show.transition.opacity="isOpen"
-                        class="absolute mt-3 transform bg-white rounded-md shadow-lg  min-w-max">
+                        x-show.transition.opacity="isOpen" :class="{ '!absolute': isOpen }"
+                        class="hidden absolute mt-3 transform bg-white rounded-md shadow-lg  min-w-max">
                         <ul class="flex flex-col ">
                             <li class=" rounded-t-md cursor-pointer hover:ring-1 hover:ring-primarybase">
                                 <a href="{{ route('pages.services.propertiideal') }}"
@@ -111,7 +111,7 @@
                                     @endif
                                 </div>
                                 <span class="font-semibold whitespace-nowrap text-textbase">
-                                    {{ auth()->user()->nama }}
+                                    {{ auth()->user()->name }}
                                 </span>
                             </button>
 
@@ -170,7 +170,8 @@
             </button>
         </div>
         {{-- dropdown menu mobile --}}
-        <div class="flex flex-col gap-3 items-center w-full py-4" x-show="isOpen" @click.away="isOpen = false">
+        <div class="hidden flex flex-col gap-3 items-center w-full py-4" x-show="isOpen" @click.away="isOpen = false"
+            :class="{ '!flex': isOpen }">
             <div class="lg:hidden md:mr-0">
                 <div x-data="{ isOpen: false }">
                     <button @click="isOpen = !isOpen"

@@ -7,8 +7,7 @@
         <div class="mx-auto max-w-full px-6 lg:px-20">
 
             <div class="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center pb-10">
-                <h2
-                    class="text-base font-semibold leading-7 text-blue-100 bg-blue-600 px-3 rounded-lg mb-4 lg:mb-4">
+                <h2 class="text-base font-semibold leading-7 text-blue-100 bg-blue-600 px-3 rounded-lg mb-4 lg:mb-4">
                     Properti Solution</h2>
                 <h1 class="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-gray-900 text-center">Meyediakan
                     Layanan Properti
@@ -23,7 +22,8 @@
                     <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
                         <div class="bg-gray-50 rounded-lg">
                             <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
+                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                    class="w-full bg-cover rounded-lg" />
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <img src="{{ asset('icons/solusi-renovasi.png') }}" alt="icons-child" class="h-16" />
                                 </div>
@@ -50,17 +50,17 @@
                         </div>
                     </div>
                 </div>
-
-
                 <li class="col-span-1 rounded-lg">
                     <div class="w-full px-4">
                         <div
                             class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
                             <div class="bg-gray-50 rounded-lg">
                                 <div class="relative flex">
-                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
+                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                        class="w-full bg-cover rounded-lg" />
                                     <div class="absolute inset-0 flex items-center justify-center">
-                                        <img src="{{ asset('icons/solusi-reparasi.png') }}" alt="icons-child" class="h-16" />
+                                        <img src="{{ asset('icons/solusi-reparasi.png') }}" alt="icons-child"
+                                            class="h-16" />
                                     </div>
                                 </div>
                                 <div class="py-8 px-10">
@@ -93,9 +93,11 @@
                     <div class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
                         <div class="bg-gray-50 rounded-lg">
                             <div class="relative flex">
-                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
+                                <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                    class="w-full bg-cover rounded-lg" />
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="{{ asset('icons/solusi-desain-interior.png') }}" alt="icons-child" class="h-16" />
+                                    <img src="{{ asset('icons/solusi-desain-interior.png') }}" alt="icons-child"
+                                        class="h-16" />
                                 </div>
                             </div>
                             <div class="py-8 px-10">
@@ -128,9 +130,11 @@
                             class="relative flex flex-col bg-white ring-1 ring-primarybase w-full mb-4 shadow-lg rounded-lg">
                             <div class="bg-gray-50 rounded-lg">
                                 <div class="relative flex">
-                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña" class="w-full bg-cover rounded-lg" />
+                                    <img src="{{ asset('icons/bg-for-card.png') }}" alt="montaña"
+                                        class="w-full bg-cover rounded-lg" />
                                     <div class="absolute inset-0 flex items-center justify-center">
-                                        <img src="{{ asset('icons/solusi-desain-eksterior.png') }}" alt="icons-child" class="h-16" />
+                                        <img src="{{ asset('icons/solusi-desain-eksterior.png') }}" alt="icons-child"
+                                            class="h-16" />
                                     </div>
                                 </div>
                                 <div class="py-8 px-10">

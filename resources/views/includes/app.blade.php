@@ -29,14 +29,12 @@
 </head>
 
 <body class="bg-white">
-    <div class="min-h-screen flex flex-col">
+    <div class="min-h-screen flex flex-col ">
         @include('includes.navbar')
-        <div class="flex h-full">
-            <div class="md:ml-0 flex-1">
-                <main class="h-full bg-white">
-                    @yield('content')
-                </main>
-            </div>
+        <div class="flex h-full justify-center">
+            <main class="h-full bg-white ">
+                @yield('content')
+            </main>
         </div>
         @include('includes.footer')
     </div>
