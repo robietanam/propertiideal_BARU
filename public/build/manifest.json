@@ -1,6 +1,17 @@
 {
+  "_splide.min-!~{005}~.js": {
+    "file": "assets/splide-CEzdm8Kq.css",
+    "src": "_splide.min-!~{005}~.js"
+  },
+  "_splide.min-CCCykiSw.js": {
+    "file": "assets/splide.min-CCCykiSw.js",
+    "name": "splide.min",
+    "css": [
+      "assets/splide-CEzdm8Kq.css"
+    ]
+  },
   "resources/css/app.css": {
-    "file": "assets/app-Ckezqvby.css",
+    "file": "assets/app-CFfOh5CY.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -17,13 +28,22 @@
       "assets/app-B0a9OMnn.css"
     ]
   },
+  "resources/js/layanan.js": {
+    "file": "assets/layanan-DlUYxclU.js",
+    "name": "layanan",
+    "src": "resources/js/layanan.js",
+    "isEntry": true,
+    "imports": [
+      "_splide.min-CCCykiSw.js"
+    ]
+  },
   "resources/js/welcome.js": {
-    "file": "assets/welcome-cL11pq9n.js",
+    "file": "assets/welcome-eBrF0FGv.js",
     "name": "welcome",
     "src": "resources/js/welcome.js",
     "isEntry": true,
-    "css": [
-      "assets/welcome-CEzdm8Kq.css"
+    "imports": [
+      "_splide.min-CCCykiSw.js"
     ]
   }
 }
